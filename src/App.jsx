@@ -1,313 +1,204 @@
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 import './App.css'
 
-const triPowerImages = {
-  plant: 'https://tri-powerrecycling.com/uploaded_files/images/Recycling-Center-at-Sunrise.jpg',
+const images = {
+  facility: 'https://tri-powerrecycling.com/uploaded_files/images/Recycling-Center-1200.jpg',
   cooler: 'https://tri-powerrecycling.com/uploaded_files/images/Styrofoam-Cooler-300.jpg',
   clamshell: 'https://tri-powerrecycling.com/uploaded_files/images/Styrofoam-Food-Clamshell-500.jpg',
   cups: 'https://tri-powerrecycling.com/uploaded_files/images/Foam-Cups-300.jpg',
-  facility: 'https://tri-powerrecycling.com/uploaded_files/images/Recycling-Center-1200.jpg',
 }
 
-const tiers = [
+const plans = [
   {
+    id: 'starter',
+    kicker: 'Start here',
     name: 'Garage Starter Kit',
-    price: 39,
-    detail: 'First empty collection package + return label setup',
-    ideal: 'For a new household starting the foam loop.',
+    description: 'Everything you need to begin collecting clean foam at home.',
+    includes: ['Empty collection package', 'Simple sorting guide', 'Text support when you need it'],
   },
   {
-    name: 'Full Bag Swap',
-    price: 49,
-    detail: 'Return label for current foam + new empty garage package',
-    ideal: 'The repeat-order flow: send full foam in, receive the next package.',
-    featured: true,
+    id: 'swap',
+    kicker: 'For returning recyclers',
+    name: 'Full Kit Swap',
+    description: 'Send your collected foam in and keep the good habit going.',
+    includes: ['Prepaid return label', 'Fresh collection package', 'Easy text-to-reorder'],
   },
   {
+    id: 'cleanout',
+    kicker: 'For the big stuff',
     name: 'Big Cleanout Kit',
-    price: 89,
-    detail: 'Oversized label + replacement package for appliance foam',
-    ideal: 'For garages, movers, large coolers, and appliance packaging.',
+    description: 'Made for appliance, furniture, cooler, or moving-day foam.',
+    includes: ['Room for bulky EPS foam', 'Shipping help by text', 'A real recycling destination'],
   },
 ]
 
-const conversation = [
-  { who: 'customer', text: 'My foam bag is full.' },
-  { who: 'ai', text: 'Got it — want me to create a Full Bag Swap using your saved address in South Bend?' },
-  { who: 'customer', text: 'Yes. Send another bag too.' },
-  { who: 'ai', text: 'Done. Your return label is ready. A fresh garage package ships today.' },
-  { who: 'ai label', text: 'Order #GF-1048 · Return label · New kit queued' },
+const accepted = [
+  ['Shipping coolers', images.cooler],
+  ['Food containers & cups', images.clamshell],
+  ['Appliance & electronics foam', images.cups],
 ]
+
+function CheckIcon() {
+  return <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" /></svg>
+}
 
 function App() {
-  const [selectedTier, setSelectedTier] = useState('Full Bag Swap')
-  const [zip, setZip] = useState('46514')
-  const [quantity, setQuantity] = useState(1)
+  const [selectedPlan, setSelectedPlan] = useState('starter')
+  const [zip, setZip] = useState('')
+  const [result, setResult] = useState('')
+  const textNumber = ['+1', '888', '468', '3626'].join('')
 
-  const selected = useMemo(() => tiers.find((tier) => tier.name === selectedTier) || tiers[1], [selectedTier])
-  const total = selected.price * quantity
+  const checkZip = (event) => {
+    event.preventDefault()
+    const cleanZip = zip.trim()
+    if (!/^\d{5}$/.test(cleanZip)) {
+      setResult('Enter a 5-digit ZIP code to continue.')
+      return
+    }
+    setResult(`Great news — ${cleanZip} is on our launch list. Text 888-GOT-FOAM to get started.`)
+  }
 
   return (
     <main>
-      <nav className="glass-nav">
+      <nav className="nav" aria-label="Primary navigation">
         <a href="#top" className="wordmark" aria-label="888 Got Foam home">
-          <span className="mark">888</span> Got Foam
+          <span className="logo-bubble">888</span><span>Got Foam?</span>
         </a>
         <div className="nav-links">
-          <a href="#text-loop">Text-to-order</a>
           <a href="#how">How it works</a>
           <a href="#accepted">What we take</a>
-          <a href="#order">Mock order</a>
+          <a href="#plans">Choose a kit</a>
+          <a href="#faq">FAQ</a>
         </div>
-        <a className="nav-cta" href="#text-loop">Text 888-GOT-FOAM</a>
+        <a className="nav-cta" href={`sms:${textNumber}?body=Hi%20888%20Got%20Foam!%20I%27d%20like%20to%20start%20recycling%20foam.`}>Text us</a>
       </nav>
 
-      <section id="top" className="hero section-dark commerce-hero">
+      <section id="top" className="hero">
         <div className="hero-copy">
-          <p className="eyebrow">Conversational commerce for EPS foam recycling</p>
-          <h1>Text when it’s full. AI handles the rest.</h1>
+          <p className="eyebrow">Foam recycling, delivered</p>
+          <h1>Your foam has somewhere better to go.</h1>
           <p className="hero-subtitle">
-            888 Got Foam makes foam recycling as easy as sending a text: create the order, get the return label, ship in the full package, and receive the next empty garage kit automatically.
+            Skip the landfill and the hunt for a drop-off. We send you a collection kit, you fill it with clean foam, and we help you ship it to a real recycling facility.
           </p>
           <div className="cta-row">
-            <a className="button primary" href="#text-loop">See the text flow</a>
-            <a className="button ghost dark" href="#order">Mock an order</a>
+            <a className="button primary" href="#plans">Get your collection kit</a>
+            <a className="text-link" href="#accepted">See what foam we take <span aria-hidden="true">→</span></a>
           </div>
-          <div className="trust-strip">
-            <span>Powered by Tri-Power Recycling</span>
-            <span>Real EPS processing</span>
-            <span>Text-first repeat ordering</span>
+          <div className="trust-row" aria-label="Program benefits">
+            <span><CheckIcon /> No special trip</span>
+            <span><CheckIcon /> Prepaid return label</span>
+            <span><CheckIcon /> Real EPS recycling</span>
           </div>
         </div>
 
-        <div className="hero-visual sms-stage" aria-label="888 Got Foam SMS order flow">
-          <div className="foam-orb orb-one" />
-          <div className="foam-orb orb-two" />
-          <div className="phone-card commerce-phone">
-            <div className="phone-header">888-GOT-FOAM</div>
-            {conversation.map((message, index) => (
-              <div key={index} className={`message ${message.who === 'customer' ? 'inbound' : message.who === 'ai label' ? 'label-chip' : 'outbound'}`}>
-                {message.text}
-              </div>
-            ))}
-            <div className="mini-status">
-              <span>Return label sent</span>
-              <span>New package ships today</span>
-            </div>
+        <div className="hero-scene" aria-label="A simple text conversation with 888 Got Foam">
+          <div className="foam foam-one" />
+          <div className="foam foam-two" />
+          <div className="phone">
+            <div className="phone-top"><span className="avatar">888</span><strong>888 Got Foam</strong><small>Text message</small></div>
+            <div className="bubble incoming">Hi! Ready to give that foam a better ending?</div>
+            <div className="bubble outgoing">Yes — my collection kit is full.</div>
+            <div className="bubble incoming">Perfect. Your return label is ready. Want a fresh kit sent to the same address?</div>
+            <div className="bubble outgoing short">Yes, please!</div>
+            <div className="label-card"><span>✓</span><div><strong>Return label ready</strong><small>Fresh kit on the way</small></div></div>
           </div>
-          <div className="floating-card card-label">
-            <span>Customer loop</span>
-            <strong>Full bag out<br />Fresh kit in</strong>
-          </div>
+          <div className="scene-note"><strong>One text.</strong><span>Your next step is handled.</span></div>
         </div>
       </section>
 
-      <section id="text-loop" className="section-light text-loop-section">
-        <div className="section-heading narrow">
-          <p className="eyebrow dark">The product is the conversation</p>
-          <h2>No account portal. No rate calculator. Just text.</h2>
-          <p>
-            The website explains the program, but the real conversion path is SMS. Customers should feel like they have a recycling assistant in their pocket.
-          </p>
-        </div>
-        <div className="loop-grid">
-          <article className="loop-card primary-loop">
-            <span className="loop-number">01</span>
-            <h3>Start the garage kit</h3>
-            <p>Customer texts “start” or scans a QR code. AI collects name, address, payment, and sends the first empty collection package.</p>
-          </article>
-          <article className="loop-card">
-            <span className="loop-number">02</span>
-            <h3>Fill over time</h3>
-            <p>The package lives in the garage. Foam from coolers, electronics, appliances, and deliveries goes in instead of the trash.</p>
-          </article>
-          <article className="loop-card">
-            <span className="loop-number">03</span>
-            <h3>Text “bag full”</h3>
-            <p>AI confirms the plan, creates the order, charges the saved payment method, and texts the return label.</p>
-          </article>
-          <article className="loop-card">
-            <span className="loop-number">04</span>
-            <h3>Swap and repeat</h3>
-            <p>The full package ships to Tri-Power. A new empty garage package ships back so the recycling habit never stops.</p>
-          </article>
-        </div>
+      <section className="impact-strip" aria-label="Why recycle foam">
+        <p>Foam is mostly air. <strong>In a landfill, it takes up space for generations.</strong> With the right equipment, clean EPS foam can become useful material again.</p>
       </section>
 
-      <section className="section-dark automation-section">
-        <div className="automation-copy">
-          <p className="eyebrow">Behind every text is an order engine</p>
-          <h2>The AI doesn’t just answer questions. It creates revenue.</h2>
-          <p>
-            Every conversation can become a structured order: customer identity, address, package tier, return label, replacement kit, payment, notifications, and internal fulfillment status.
-          </p>
-        </div>
-        <div className="automation-panel">
-          <div className="panel-row"><span>Intent detected</span><strong>“bag full”</strong></div>
-          <div className="panel-row"><span>Customer matched</span><strong>Saved profile</strong></div>
-          <div className="panel-row"><span>Order created</span><strong>Full Bag Swap</strong></div>
-          <div className="panel-row"><span>Label generated</span><strong>SMS + email</strong></div>
-          <div className="panel-row"><span>Replacement kit</span><strong>Ship today</strong></div>
-        </div>
-      </section>
-
-      <section id="proof" className="section-light proof-grid">
+      <section id="how" className="section how-section">
         <div className="section-heading">
-          <p className="eyebrow dark">The hard part is already solved</p>
-          <h2>888 Got Foam is the easy front door for Tri-Power’s real EPS operation.</h2>
+          <p className="eyebrow blue">From your garage to a new beginning</p>
+          <h2>Recycling foam can finally be simple.</h2>
+          <p>No hunting for a local drop-off. No guessing what to do next. We stay with you from the first box to every refill.</p>
         </div>
-        <div className="proof-cards">
-          <article>
-            <span className="stat">90%</span>
-            <p>EPS foam is mostly air, yet can consume huge landfill volume. The text flow captures it before it becomes trash.</p>
-          </article>
-          <article>
-            <span className="stat">#6</span>
-            <p>Clean expanded polystyrene can be densified and remade into new products when routed to the right facility.</p>
-          </article>
-          <article>
-            <span className="stat">∞</span>
-            <p>The MVP starts with EPS because Tri-Power already has mechanical processing and downstream outlets.</p>
-          </article>
-        </div>
-        <div className="image-band">
-          <img src={triPowerImages.facility} alt="Tri-Power Recycling facility" />
-          <div>
-            <h3>Built on Tri-Power’s infrastructure.</h3>
-            <p>
-              Tri-Power publicly describes itself as the largest independently owned Styrofoam™ / EPS foam recycling center in the United States, using advanced machinery to sort, clean, and process EPS foam.
-            </p>
-            <p>
-              888 Got Foam turns that capability into a consumer habit: text, ship, refill, repeat.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section id="how" className="section-dark cinematic">
-        <p className="eyebrow">Designed for the moment after delivery day</p>
-        <h2>The garage becomes the collection point.</h2>
         <div className="steps">
-          <article>
-            <span>01</span>
-            <h3>Keep the package open</h3>
-            <p>The empty 888 Got Foam kit sits in the garage, utility room, or shipping area and collects clean foam over time.</p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3>Text when full</h3>
-            <p>The customer texts a normal phrase — “full,” “need label,” or “send another bag” — and AI turns it into an order.</p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3>Ship and replenish</h3>
-            <p>Current foam goes to Tri-Power for recycling. A fresh empty package ships out so the customer is always ready.</p>
-          </article>
+          <article><span className="step-number">01</span><div className="step-icon">↘</div><h3>Get your kit</h3><p>Your empty collection package arrives with a clear guide to what belongs inside.</p></article>
+          <article><span className="step-number">02</span><div className="step-icon">＋</div><h3>Fill it at home</h3><p>Save clean, dry foam from deliveries, coolers, appliances, and everyday packaging.</p></article>
+          <article><span className="step-number">03</span><div className="step-icon">•••</div><h3>Text when full</h3><p>Send a quick text. We’ll confirm the details and send your prepaid return label.</p></article>
+          <article><span className="step-number">04</span><div className="step-icon">↻</div><h3>Ship. Refill. Repeat.</h3><p>Your foam heads to Tri-Power for processing, and a fresh kit keeps you collecting.</p></article>
         </div>
       </section>
 
-      <section id="accepted" className="section-light accepted">
-        <div className="section-heading narrow">
-          <p className="eyebrow dark">Foam made understandable</p>
-          <h2>If it snaps and beads, it belongs here.</h2>
-          <p>Consumers don’t need to become polymer experts. The AI can answer questions, ask for a photo, and route edge cases to a human.</p>
-        </div>
-        <div className="accept-grid">
-          <article className="accept-card yes">
-            <h3>Accepted in the MVP</h3>
-            <ul>
-              <li>Clean EPS / #6 foam packaging</li>
-              <li>Foam coolers and shipping inserts</li>
-              <li>Foam cups, trays, clamshells, and egg cartons</li>
-              <li>Appliance, TV, electronics, and RV packaging foam</li>
-            </ul>
-          </article>
-          <article className="accept-card no">
-            <h3>Not accepted</h3>
-            <ul>
-              <li>Packing peanuts</li>
-              <li>Wet, dirty, painted, or food-soaked foam</li>
-              <li>Medical waste or sharps</li>
-              <li>Glass, metal, aerosols, paint, oil, or hazardous materials</li>
-            </ul>
-          </article>
-        </div>
-        <div className="product-row">
-          <img src={triPowerImages.cooler} alt="Styrofoam cooler" />
-          <img src={triPowerImages.clamshell} alt="Foam clamshell food container" />
-          <img src={triPowerImages.cups} alt="Foam cups" />
-        </div>
-      </section>
-
-      <section id="order" className="section-light order-section">
-        <div className="order-intro">
-          <p className="eyebrow dark">Prototype order backend</p>
-          <h2>The checkout is hidden behind the text conversation.</h2>
-          <p>Brent can click this to understand the economics, but customers should mostly experience it as a simple AI text exchange.</p>
-        </div>
-
-        <div className="order-shell">
-          <div className="tier-picker">
-            {tiers.map((tier) => (
-              <button
-                key={tier.name}
-                className={`tier ${selectedTier === tier.name ? 'active' : ''} ${tier.featured ? 'featured' : ''}`}
-                onClick={() => setSelectedTier(tier.name)}
-              >
-                {tier.featured && <span className="badge">Core repeat loop</span>}
-                <strong>{tier.name}</strong>
-                <span>{tier.detail}</span>
-                <p>{tier.ideal}</p>
-                <em>${tier.price}</em>
-              </button>
-            ))}
+      <section id="accepted" className="section accepted-section">
+        <div className="accepted-copy">
+          <p className="eyebrow blue">A quick foam check</p>
+          <h2>If it’s clean, rigid, and breaks into little beads, we probably take it.</h2>
+          <p>Look for expanded polystyrene foam — often marked <strong>#6 EPS</strong>. Not sure? Text us a photo and we’ll help.</p>
+          <div className="yes-no">
+            <div className="answer yes"><strong>Yes, please</strong><span>Clean foam coolers, cups, trays, clamshells, and protective packaging.</span></div>
+            <div className="answer no"><strong>Not this time</strong><span>Packing peanuts, flexible foam, or anything wet, dirty, painted, or food-soaked.</span></div>
           </div>
-
-          <div className="checkout-card">
-            <h3>AI-created order preview</h3>
-            <label>
-              Customer ZIP
-              <input value={zip} onChange={(e) => setZip(e.target.value)} placeholder="e.g. 46514" />
-            </label>
-            <label>
-              Number of swaps
-              <select value={quantity} onChange={(e) => setQuantity(Number(e.target.value))}>
-                {[1, 2, 3, 4, 5].map((n) => <option key={n}>{n}</option>)}
-              </select>
-            </label>
-            <div className="summary-line"><span>Detected intent</span><strong>Bag full + send another</strong></div>
-            <div className="summary-line"><span>Order type</span><strong>{selected.name}</strong></div>
-            <div className="summary-line"><span>Customer receives</span><strong>Return label + new kit</strong></div>
-            <div className="summary-line"><span>Mock total</span><strong>${total}</strong></div>
-            <button className="button primary wide">Create order from SMS</button>
-            <p className="fine-print">Prototype only. Final prices, package dimensions, and carrier rules should be validated against actual fulfillment costs.</p>
-          </div>
+          <a className="button secondary" href={`sms:${textNumber}?body=Hi!%20Can%20you%20tell%20me%20if%20this%20foam%20is%20accepted%3F`}>Text us a photo</a>
+        </div>
+        <div className="foam-gallery">
+          {accepted.map(([label, src]) => <figure key={label}><img src={src} alt={label} /><figcaption><CheckIcon /> {label}</figcaption></figure>)}
         </div>
       </section>
 
-      <section id="partner" className="section-light partner">
-        <div className="section-heading narrow">
-          <p className="eyebrow dark">Why brands will care</p>
-          <h2>Every partner can tell customers: “Text this number when the foam is full.”</h2>
-          <p>Omaha Steaks-style food shippers, EPS manufacturers, retailers, and appliance brands can all plug into the same simple loop.</p>
+      <section className="facility-section">
+        <img src={images.facility} alt="Tri-Power Recycling facility where EPS foam is processed" />
+        <div className="facility-copy">
+          <p className="eyebrow">A real destination for your foam</p>
+          <h2>Not wish-cycled. Actually processed.</h2>
+          <p>Your clean EPS foam goes to Tri-Power Recycling, an established U.S. foam recycler with the specialized equipment to densify it for use in new products.</p>
+          <div className="facility-facts"><span><strong>EPS-focused</strong> processing</span><span><strong>U.S.-based</strong> facility</span><span><strong>Less volume</strong> in landfills</span></div>
         </div>
-        <div className="partner-grid">
-          <article><h3>Food shippers</h3><p>Include the first garage package or QR code with the cooler shipment.</p></article>
-          <article><h3>EPS manufacturers</h3><p>Give regulators and customers a real recycling pathway backed by Tri-Power.</p></article>
-          <article><h3>Retail kits</h3><p>Sell the starter package at hardware and grocery stores with SMS onboarding.</p></article>
-          <article><h3>AI retention</h3><p>Every full bag triggers the next order and keeps the household in the loop.</p></article>
+      </section>
+
+      <section id="plans" className="section plans-section">
+        <div className="section-heading">
+          <p className="eyebrow blue">Make room for a better habit</p>
+          <h2>Choose the kit that fits your foam.</h2>
+          <p>Start small, tackle a big cleanout, or keep your household in the recycling loop.</p>
         </div>
+        <div className="plan-grid">
+          {plans.map((plan) => (
+            <button key={plan.id} className={`plan-card ${selectedPlan === plan.id ? 'selected' : ''}`} onClick={() => setSelectedPlan(plan.id)} aria-pressed={selectedPlan === plan.id}>
+              <span className="plan-kicker">{plan.kicker}</span>
+              <h3>{plan.name}</h3>
+              <p>{plan.description}</p>
+              <ul>{plan.includes.map((item) => <li key={item}><CheckIcon /> {item}</li>)}</ul>
+              <span className="choose">{selectedPlan === plan.id ? 'Selected' : 'Choose this kit'} <span aria-hidden="true">→</span></span>
+            </button>
+          ))}
+        </div>
+        <form className="zip-card" onSubmit={checkZip}>
+          <div><span className="zip-icon">⌖</span><div><strong>Ready to get started?</strong><small>Check your ZIP and see what comes next.</small></div></div>
+          <label><span className="sr-only">ZIP code</span><input inputMode="numeric" maxLength="5" value={zip} onChange={(event) => setZip(event.target.value)} placeholder="ZIP code" /></label>
+          <button className="button primary" type="submit">Check my ZIP</button>
+          {result && <p className="form-result" role="status">{result}</p>}
+        </form>
+      </section>
+
+      <section id="faq" className="section faq-section">
+        <div><p className="eyebrow blue">Questions? We’ve got foam answers.</p><h2>The things people ask us most.</h2><p>Still wondering about something? Text <strong>888-GOT-FOAM</strong> and ask like you would ask a neighbor.</p></div>
+        <div className="faq-list">
+          <details><summary>What exactly is EPS foam?</summary><p>Expanded polystyrene is the lightweight, rigid foam commonly used in shipping coolers, appliance packaging, cups, trays, and protective inserts. It often has a #6 recycling mark and breaks into small beads.</p></details>
+          <details><summary>Does the foam need to be clean?</summary><p>Yes. Please remove tape, labels, cardboard, and food. Foam should be dry and free from dirt, paint, oil, and heavy residue.</p></details>
+          <details><summary>Can I send packing peanuts?</summary><p>Not in an 888 Got Foam kit. Packing peanuts can shift and escape during processing, so please reuse them or check with a local shipping store.</p></details>
+          <details><summary>What happens after I ship it?</summary><p>The foam is received by Tri-Power Recycling and mechanically processed to dramatically reduce its volume. The densified material can then move into manufacturing markets instead of a landfill.</p></details>
+          <details><summary>How do I get another kit?</summary><p>Just text “my kit is full.” We’ll help with the return label and arrange the next empty collection package.</p></details>
+        </div>
+      </section>
+
+      <section className="final-cta">
+        <div className="mini-logo">888</div>
+        <p className="eyebrow">Ready when your foam is.</p>
+        <h2>Save the foam.<br />Send a text.</h2>
+        <p>One simple message gets your household started.</p>
+        <a className="button light" href={`sms:${textNumber}?body=Hi%20888%20Got%20Foam!%20I%27m%20ready%20to%20get%20started.`}>Text 888-GOT-FOAM</a>
       </section>
 
       <footer>
-        <div>
-          <strong>888 Got Foam</strong>
-          <p>Concept site for a text-first consumer EPS recycling program powered by Tri-Power Recycling.</p>
-        </div>
-        <div className="footer-actions">
-          <a href="#text-loop">Text-to-order flow</a>
-          <a href="https://tri-powerrecycling.com/recycle-styrofoam.cfm" target="_blank">Current Home 4 Foam page</a>
-        </div>
+        <a href="#top" className="wordmark"><span className="logo-bubble">888</span><span>Got Foam?</span></a>
+        <p>Simple foam recycling, powered by the real processing experience of Tri-Power Recycling.</p>
+        <div><a href="#accepted">What we take</a><a href="#faq">FAQ</a><a href="https://tri-powerrecycling.com/" target="_blank" rel="noreferrer">Tri-Power Recycling</a></div>
+        <small>Customer experience preview · Program details and availability subject to launch validation.</small>
       </footer>
     </main>
   )
