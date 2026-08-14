@@ -1,0 +1,351 @@
+<style> 
+.alert_top {
+margin-bottom: -5px;
+padding: 16px;
+/*z-index: 50000;
+position: fixed;
+width: 100%;*/
+} 
+.alert_bottom {
+margin-bottom: -5px;
+padding: 16px;
+} 
+#footer_alert_olay {
+position: fixed;
+bottom: 0;
+width: 100%;
+}
+#header_alert_olay {
+position: fixed;
+top: 0;
+width: 100%;
+z-index: 1200;
+}
+</style>
+<style> 
+.alert_close {
+float:right;
+display:inline-block;
+padding:0px 5px;
+background:#fff;
+font-weight: bold;
+border-color:#000;
+border-style:solid;
+border-width:1px;
+border-color:#888;
+cursor: pointer;
+}
+.alert_close:hover {
+float:right;
+display:inline-block;
+padding:0px 5px;
+background:#fff;
+color:#000;
+}
+</style>
+<script>
+function close_alert_js(alert_id, alert_exp, alert_pla){
+var a_id = 'close' + alert_id;
+var bottom_a_id = a_id + 'bottom';
+document.getElementById(a_id).parentNode.parentNode.removeChild(document.getElementById(a_id).parentNode);
+// The stmt above will only close one div. If it's a both (3) then use this if to also close the bottom div.
+if (alert_pla == 3) {
+document.getElementById(bottom_a_id).parentNode.parentNode.removeChild(document.getElementById(bottom_a_id).parentNode);
+}
+setCookie(alert_id, alert_exp);
+};
+function setCookie(avalue, alert_exp) {
+$.ajax({
+type: "POST",
+url: "https://tri-powerrecycling.com/alert-ajax.cfm?act=set",
+data: { id: avalue, exp: alert_exp, }
+});
+};
+</script>
+<div id="header_alert_olay">
+</div>
+<div id="footer_alert_olay" style="z-index: 100;">
+<div class="alert_top" style="background-color: #8BC540;">
+<span class="close12 alert_close" id='close12' onclick='close_alert_js(12,1,2);'>x</span>
+<div style="text-align: center;"><span style="color:#000000;"><strong>We Are Not Currently Accepting Plastics for Recycling With the Exception of&nbsp; EPS Foam aka Styrofoam</strong></span></div>
+</div>
+</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta name="author" content="">
+<meta name="robots" content="max-image-preview:large">
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://tri-powerrecycling.com/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://tri-powerrecycling.com/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://tri-powerrecycling.com/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://tri-powerrecycling.com/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="60x60" href="https://tri-powerrecycling.com/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://tri-powerrecycling.com/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://tri-powerrecycling.com/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://tri-powerrecycling.com/apple-touch-icon-152x152.png" />
+<link rel="icon" type="image/png" href="https://tri-powerrecycling.com/favicon-196x196.png" sizes="196x196" />
+<link rel="icon" type="image/png" href="https://tri-powerrecycling.com/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="https://tri-powerrecycling.com/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="https://tri-powerrecycling.com/favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="https://tri-powerrecycling.com/favicon-128.png" sizes="128x128" />
+<meta name="application-name" content="Tri-Power Recycling"/>
+<meta name="msapplication-TileColor" content="#FFFFFF" />
+<meta name="msapplication-TileImage" content="mstile-144x144.png" />
+<meta name="msapplication-square70x70logo" content="https://tri-powerrecycling.com/mstile-70x70.png" />
+<meta name="msapplication-square150x150logo" content="https://tri-powerrecycling.com/mstile-150x150.png" />
+<meta name="msapplication-wide310x150logo" content="https://tri-powerrecycling.com/mstile-310x150.png" />
+<meta name="msapplication-square310x310logo" content="https://tri-powerrecycling.com/mstile-310x310.png" />
+<meta property="og:url" content="http://tri-powerrecycling.com/services/cardboard-recycling-disposal.cfm" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Cardboard Recycling | Disposal of Cardboard Boxes | Near Elkhart, IN" />
+<meta property="og:description" content="Cardboard recycling at our facility includes items such as moving boxes, shipping boxes, corrugated cardboard & clean food containers like pizza boxes" />
+<meta property="og:image" content="https://tri-powerrecycling.com/img/Cardboard-Recycling-Bundle.jpg" />
+<meta property="og:image:type" content="image/jpg" />
+<meta property="og:image:width" content="768" />
+<meta property="og:image:height" content="512" />
+<title>Cardboard Recycling | Disposal of Cardboard Boxes | Near Elkhart, IN</title>
+<meta name="description" content="Cardboard recycling at our facility includes items such as moving boxes, shipping boxes, corrugated cardboard & clean food containers like pizza boxes"> 
+<link rel="canonical" href="https://tri-powerrecycling.com/services/cardboard-recycling-disposal.cfm">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i" rel="stylesheet">
+<!-- CDN CSS Files -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+<link href="https://tri-powerrecycling.com/assets/vendor/vendors.css" rel="stylesheet">
+<link href="https://tri-powerrecycling.com/assets/vendor/aos/aos.css" rel="stylesheet">
+<!-- Main CSS File -->
+<link href="https://tri-powerrecycling.com/css/main.css" rel="stylesheet">
+<meta name="geo.region" content="US-IN" />
+<meta name="geo.placename" content="Elkhart" />
+<meta name="geo.position" content="41.6997566,-85.9997329" />
+<meta name="ICBM" content="41.6997566,-85.9997329" />
+<meta name="zipcode" content="46514" />
+<meta name="city" content="Elkhart" />
+<meta name="county" content="Elkhart" />
+<meta name="state" content="IN" />
+</head>
+<body>
+<!-- ======= Top Bar ======= -->
+<div id="topbar" class="d-lg-flex align-items-center fixed-top">
+<div class="container-fluid d-flex">
+<div class="contact-info mr-auto">
+<a href="tel:(574) 848-1900"><i class="fas fa-phone"></i> (574) 848-1900</a>
+</div>
+<div class="social-links"> 
+</div>
+</div>
+</div>
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+<div class="container-fluid d-md-flex align-items-center">
+<a href="https://tri-powerrecycling.com/" class="logo mr-auto"><img src="https://tri-powerrecycling.com/img/Tri-Power-Recycling-logo.png" alt="Tri-Power Recycling" class="img-fluid"></a>
+<nav class="nav-menu d-none d-lg-block">
+<ul>
+<li class="drop-down" id="dd">
+<a href="https://tri-powerrecycling.com/recycling-services.cfm" class="parentlink" >Recycling Services<b class="caret"></b></a>
+<ul class=""><li class="dropdown-item overview-link"><a href="https://tri-powerrecycling.com/recycling-services.cfm" class="nav-link">Overview</a></li><li class="dropdown-item"><a href="https://tri-powerrecycling.com/services/cardboard-recycling-disposal.cfm" class="nav-link">Cardboard Recycling</a></li>
+<li class="dropdown-item"><a href="https://tri-powerrecycling.com/services/paper-recycling.cfm" class="nav-link">Paper Recycling</a></li>
+<li class="dropdown-item"><a href="https://tri-powerrecycling.com/services/plastic-recycling.cfm" class="nav-link">Plastic Recycling</a></li>
+<li class="dropdown-item"><a href="https://tri-powerrecycling.com/services/styrofoam-recycling.cfm" class="nav-link">Styrofoam Recycling (Polystyrene)</a></li>
+</ul>
+</li>
+<li class="nav-item">
+<a href="https://tri-powerrecycling.com/recycle-styrofoam.cfm" >Home 4 Foam</a>
+</li>
+<li class="nav-item">
+<a href="https://tri-powerrecycling.com/commercial-recycling.cfm" >Commercial</a>
+</li>
+<li class="nav-item">
+<a href="https://tri-powerrecycling.com/recycling-equipment-for-sale.cfm" >Recycling Equipment</a>
+</li>
+<li class="nav-item">
+<a href="https://tri-powerrecycling.com/about-tri-power-recycling.cfm" >About</a>
+</li>
+<li class="nav-item">
+<a href="https://tri-powerrecycling.com/location.cfm" >Location</a>
+</li>
+</ul>
+</nav>
+<span class="cta_button_top">
+<a href="https://tri-powerrecycling.com/contact-us.cfm" class="appointment-btn appointment-btn-top scrollto">Contact Us</a>
+</span>
+</div>
+</header><!-- End Header -->
+<style>
+#hero .btn-get-started {background-color:#005F33 !important; font-weight:bold;}
+</style>
+</section>
+<!-- End Hero -->
+<div class="row hero_inner_pages">
+<div class="col-md-4" style="padding:0px;">
+<img src="https://tri-powerrecycling.com/img/Cardboard-Recycling-Bundle.jpg" class="img-fluid">
+</div>
+<div class="col-md-8 hero_text_right" style="background-color:hero.hero_text_right"> 
+<h1 style="color:#005F33">Cardboard Recycling & Disposal</h1>
+<h2 style="color:#005F33">Cardboard box recycling at our facility in Elkhart, Indiana, includes items such as moving boxes, shipping boxes, corrugated cardboard, and clean food containers like pizza boxes. We accept all cardboard boxes for processing, even if they have tape, staples, or labels on them.</h2>
+</div>
+</div>
+<main id="main">
+<section id="" class="inner space-40">
+<div class="container">
+<div class="row">
+<div class="col-lg-12 d-flex align-items-stretch">
+<div class="content">
+<div data-aos="fade-up" data-aos-delay="100">
+<br />
+Cardboard recycling and disposal for businesses and individuals is one of many ways to help the environment. When you choose to recycle cardboard, it reduces the amount of material that ends up in landfills through responsible recycling practices.<br />
+&nbsp;<br />
+Cardboard recycling makes sense when we consider how much cardboard is around us daily. We find it extensively in individual items we purchase that are packaged and protected by cardboard during shipment.<br />
+&nbsp;<br />
+Homes and businesses alike regularly receive larger cardboard boxes containing these items through deliveries such as Amazon shipping boxes. Many companies now offer shipping in both large and small quantities to their customers as a convenience, increasing the amount of recyclable cardboard in our communities. &nbsp;<br />
+&nbsp;<br />
+Cardboard box processing for recycling at our facility in Elkhart, Indiana, includes items such as moving boxes, shipping boxes, corrugated cardboard, and even clean food containers like pizza boxes. We can accept all cardboard boxes for processing at our facility, even if they have tape, staples, or labels on them.<br />
+&nbsp;
+<h2>Is it Worthwhile to Recycle Cardboard? &nbsp;&nbsp;</h2>
+<img alt="Cardboard to be Recycled" class="img-fluid" src="https://tri-powerrecycling.com/uploaded_files/images/Cardboard-To-Be-Recycled-225.jpg" style="float: left;" title="Cardboard to be Recycled" />Tri-Power Recycling programs are based on a commitment to &ldquo;Reduce, Reuse, Recycle&rdquo;.<br />
+&nbsp;<br />
+There is no charge to businesses or individuals to drop off recyclable items. In fact, businesses may be paid for their recyclable items. Cardboard recycling at our facility includes cardboard that is loose or baled.<br />
+&nbsp;<br />
+Did you know that recent estimates show we only recycle about half of what could be recycled in America? We&rsquo;re committed to helping businesses and individuals find practical and easy solutions to reduce their contributions to landfills.<br />
+&nbsp;
+<h2>What Happens to Recycled Cardboard?</h2>
+<img alt="Cardboard Boxes Made From Recycled Cardboard" class="img-fluid" src="https://tri-powerrecycling.com/uploaded_files/images/Cardboard-Boxes-Made-From-Recycled-Cardboard-300.jpg" style="float: right;" title="Cardboard Boxes Made From Recycled Cardboard" />Cardboard recycling items we receive are baled and sent to paper mills. These mills process cardboard and paper items to make them into new cardboard boxes. This reduces the amount of material sent to landfills and provides useful new products for individuals and companies across the US.<br />
+&nbsp;<br />
+Individuals can choose us as their local cardboard recycling center and bring cardboard to our cardboard recycling bins. Keep us in mind during the holidays or when you want to recycle moving boxes during your next move.<br />
+&nbsp;<br />
+Cardboard dumpsters, such as our Mesh Cubes, can be added to business locations for carboard recycling pickup service. Baled or loose cardboard may be worth money to your business based on current market values.<br />
+&nbsp;<br />
+Please remember the packaging peanuts that may be inside your cardboard shipping boxes are not recyclable items we accept at our facility.<br />
+&nbsp;
+<h2>Commercial Cardboard Collection Services</h2>
+Tri-Power Recycling offers customized commercial collection services for cardboard boxes. We have multiple options that include pickup from your facility, a recycling audit to determine if you need new solutions for waste management, drop off of Mesh Cubes for your location, and rent/purchase options for balers.<br />
+&nbsp;<br />
+If you are a commercial business baling your cardboard recyclables onsite, we can pick up your baled materials. We collect small quantities and truckload amounts and will create a schedule based on how often you need baled cardboard picked up.<br />
+&nbsp;<br />
+Baled cardboard loading options include:<br />
+&nbsp;
+<ul>
+<li><strong>Truckload quantities of cardboard:</strong> We provide live-load service in our van or flatbed, or we can place a trailer at your facility to load at your convenience.<br />
+&nbsp;</li>
+<li><strong>Smaller quantities of cardboard:</strong> This is ideal for small businesses with ground-level or dock-level pickup. We require a minimum of five bales per scheduled pickup.<br />
+&nbsp;</li>
+</ul>
+<img alt="Semi Truckload of Baled Cardboard for Recycling" class="img-fluid" src="https://tri-powerrecycling.com/uploaded_files/images/Paper-Bundles-On-Semi-Trailer.jpg" title="Semi Truckload of Baled Cardboard for Recycling" /><br />
+&nbsp;
+<h2>Commercial Cardboard Collection Options</h2>
+<img alt="Cardboard Recycling in Mesh Cubes" class="img-fluid" src="https://tri-powerrecycling.com/uploaded_files/images/cardboard-recycling1.jpg" style="margin-left: 14px; float: right; margin-top: 6px; margin-bottom: 6px;" title="Cardboard Recycling in Mesh Cubes" /> Other cardboard collection options for cardboard recycling include:
+<div>&nbsp;
+<ul>
+<li>Our Mesh Cubes<br />
+&nbsp;</li>
+<li>Semi-van trailers (live-load or staged)<br />
+&nbsp;</li>
+<li>Open-top roll-off containers<br />
+&nbsp;</li>
+<li>Stationary compactor machines<br />
+&nbsp;</li>
+<li>Balers, both horizontal and vertical<br />
+&nbsp;</li>
+</ul>
+We have a fleet of tractors, trailers, and containers for the collection and transport of your recyclables to our facility for processing.<br />
+&nbsp;<br />
+Our metal Mesh Cubes are ideal for collecting and storing recyclables at your facility. They help reduce the possibility of contamination and allow you to easily see the contents inside. The Mesh Cubes have forklift pockets so they can be easily moved and placed inside or outside your facility.<br />
+&nbsp;
+<h3>Cardboard Recycling Equipment Sales</h3>
+Tri-Power Recycling can provide you with expert advice on the right type of equipment for your recycling needs. From balers to compactors, the equipment is available through lease, lease-to-purchase, or purchase arrangements. Call or email us to discuss the proper <a href="https://tri-powerrecycling.com/recycling-equipment-for-sale.cfm">recycling equipment</a> for your business.<br />
+&nbsp;
+<h2><img alt="Recycling Audit" class="img-fluid" src="https://tri-powerrecycling.com/uploaded_files/images/Recycling-Audit-250.jpg" style="float: right; margin: 6px 14px;" title="Recycling Audit" />Recycling Audit Assistance</h2>
+Do you need help determining whether your current waste management program needs improvement? We can review your recycling needs and provide concrete solutions to improve efficiency with a recycling audit. We will evaluate the type and amount of recyclable material you have, consider your space constraints, and calculate your equipment needs to create a collection schedule customized for you.<br />
+<br />
+We have over eight decades of combined experience and numerous relationships across the globe that allow us to provide your business with efficient and economical waste stream management.<br />
+&nbsp;
+<h3>Ready to Recycle For Good</h3>
+Tri-Power Recycling wants to help you reduce your impact on landfills through recycling.<br />
+&nbsp;</div>
+</div>
+<br><br>
+<p><a href="https://tri-powerrecycling.com/contact-us.cfm" class="appointment-btn appointment-btn-top scrollto">Contact Us</a></p>
+</div><!-- End .content-->
+</div>
+</div>
+</div>
+</section>
+</main><!-- End #main -->
+<!-- ======= Footer ======= -->
+<footer id="footer">
+<div class="footer-top">
+<div class="container">
+<div class="row">
+<div class="col-lg-4 col-md-6 footer-contact">
+<div itemscope itemtype="http://schema.org/LocalBusiness">
+<span itemprop="name"><strong>Tri-Power Recycling</strong></span>
+<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+<span itemprop="streetAddress">1240 Anderson Street</span><br>
+<span itemprop="addressLocality">Elkhart</span>,
+<span itemprop="addressRegion">IN</span>
+<span itemprop="postalCode">46514</span><br /><br />
+</div>
+Phone: <span itemprop="telephone"><a href="tel:(574) 848-1900">(574) 848-1900</a></span>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 footer-links">
+<h4>Useful Links</h4>
+<ul>
+<li><a href="https://tri-powerrecycling.com/" >Home</a></li>
+<li><a href="https://tri-powerrecycling.com/recycling-services.cfm" >Recycling Services</a></li>
+<li><a href="https://tri-powerrecycling.com/recycle-styrofoam.cfm" >Home 4 Foam</a></li>
+<li><a href="https://tri-powerrecycling.com/commercial-recycling.cfm" >Commercial</a></li>
+<li><a href="https://tri-powerrecycling.com/recycling-equipment-for-sale.cfm" >Recycling Equipment</a></li>
+<li><a href="https://tri-powerrecycling.com/about-tri-power-recycling.cfm" >About</a></li>
+<li><a href="https://tri-powerrecycling.com/location.cfm" >Location</a></li>
+<li><a href="https://tri-powerrecycling.com/contact-us.cfm" >Contact Us</a></li>
+<li><a href="https://tri-powerrecycling.com/terms-conditions-privacy-policy.cfm" >Terms & Conditions, Privacy Policy</a></li>
+<li><a href="https://tri-powerrecycling.com/sitemap.cfm" >Sitemap</a></li>
+</ul>
+</div>
+<div class="col-lg-4 col-md-6 footer-newsletter">
+</div>
+</div>
+</div>
+</div>
+<div class="container d-md-flex py-4">
+<div class="mr-md-auto text-center text-md-left">
+<div class="copyright">
+&copy; 2009 - 2026 All Rights Reserved
+<p class="bangfooter"><small>Website by BANG! Web Site Design</small></p>
+</div>
+</div>
+<div class="social-links text-center text-md-right pt-3 pt-md-0">
+<img src=https://tri-powerrecycling.com/img/credit-cards.png class="img-fluid"><br><br><br>
+</div>
+</div>
+</footer><!-- End Footer -->
+<a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+<!-- Vendor JS Files -->
+<script src="https://tri-powerrecycling.com/assets/vendor/jquery/jquery.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/counterup/counterup.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/aos/aos.js"></script>
+<!-- Template Main JS File -->
+<script src="https://tri-powerrecycling.com/assets/js/main.js"></script>
+<script>
+$( document ).ready(function() {
+if (!$('#videomodal').is(':visible')) {
+// if modal is not shown/visible, pause video
+$('.video')[0].pause();
+}
+});
+$('.modal').on('shown.bs.modal', function () {
+$('.video')[0].play();
+});
+$('.modal').on('hidden.bs.modal', function () {
+$('.video')[0].pause();
+});
+</script>
+</body>
+</html>

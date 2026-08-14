@@ -1,0 +1,348 @@
+<style> 
+.alert_top {
+margin-bottom: -5px;
+padding: 16px;
+/*z-index: 50000;
+position: fixed;
+width: 100%;*/
+} 
+.alert_bottom {
+margin-bottom: -5px;
+padding: 16px;
+} 
+#footer_alert_olay {
+position: fixed;
+bottom: 0;
+width: 100%;
+}
+#header_alert_olay {
+position: fixed;
+top: 0;
+width: 100%;
+z-index: 1200;
+}
+</style>
+<style> 
+.alert_close {
+float:right;
+display:inline-block;
+padding:0px 5px;
+background:#fff;
+font-weight: bold;
+border-color:#000;
+border-style:solid;
+border-width:1px;
+border-color:#888;
+cursor: pointer;
+}
+.alert_close:hover {
+float:right;
+display:inline-block;
+padding:0px 5px;
+background:#fff;
+color:#000;
+}
+</style>
+<script>
+function close_alert_js(alert_id, alert_exp, alert_pla){
+var a_id = 'close' + alert_id;
+var bottom_a_id = a_id + 'bottom';
+document.getElementById(a_id).parentNode.parentNode.removeChild(document.getElementById(a_id).parentNode);
+// The stmt above will only close one div. If it's a both (3) then use this if to also close the bottom div.
+if (alert_pla == 3) {
+document.getElementById(bottom_a_id).parentNode.parentNode.removeChild(document.getElementById(bottom_a_id).parentNode);
+}
+setCookie(alert_id, alert_exp);
+};
+function setCookie(avalue, alert_exp) {
+$.ajax({
+type: "POST",
+url: "https://tri-powerrecycling.com/alert-ajax.cfm?act=set",
+data: { id: avalue, exp: alert_exp, }
+});
+};
+</script>
+<div id="header_alert_olay">
+</div>
+<div id="footer_alert_olay" style="z-index: 100;">
+<div class="alert_top" style="background-color: #8BC540;">
+<span class="close12 alert_close" id='close12' onclick='close_alert_js(12,1,2);'>x</span>
+<div style="text-align: center;"><span style="color:#000000;"><strong>We Are Not Currently Accepting Plastics for Recycling With the Exception of&nbsp; EPS Foam aka Styrofoam</strong></span></div>
+</div>
+</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta name="author" content="">
+<meta name="robots" content="max-image-preview:large">
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://tri-powerrecycling.com/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://tri-powerrecycling.com/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://tri-powerrecycling.com/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://tri-powerrecycling.com/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="60x60" href="https://tri-powerrecycling.com/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://tri-powerrecycling.com/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://tri-powerrecycling.com/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://tri-powerrecycling.com/apple-touch-icon-152x152.png" />
+<link rel="icon" type="image/png" href="https://tri-powerrecycling.com/favicon-196x196.png" sizes="196x196" />
+<link rel="icon" type="image/png" href="https://tri-powerrecycling.com/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="https://tri-powerrecycling.com/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="https://tri-powerrecycling.com/favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="https://tri-powerrecycling.com/favicon-128.png" sizes="128x128" />
+<meta name="application-name" content="Tri-Power Recycling"/>
+<meta name="msapplication-TileColor" content="#FFFFFF" />
+<meta name="msapplication-TileImage" content="mstile-144x144.png" />
+<meta name="msapplication-square70x70logo" content="https://tri-powerrecycling.com/mstile-70x70.png" />
+<meta name="msapplication-square150x150logo" content="https://tri-powerrecycling.com/mstile-150x150.png" />
+<meta name="msapplication-wide310x150logo" content="https://tri-powerrecycling.com/mstile-310x150.png" />
+<meta name="msapplication-square310x310logo" content="https://tri-powerrecycling.com/mstile-310x310.png" />
+<meta property="og:url" content="http://tri-powerrecycling.com/services/styrofoam-recycling.cfm" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Styrofoam Recycling | Polystyrene Recycling | EPS Recycling | Disposal" />
+<meta property="og:description" content="Tri-Power Recycling is one of the largest Styrofoam™ & EPS foam recycling centers. We use advanced technology and machinery to sort, clean, & process." />
+<meta property="og:image" content="https://tri-powerrecycling.com/img/Styrofoam1.jpg" />
+<meta property="og:image:type" content="image/jpg" />
+<meta property="og:image:width" content="768" />
+<meta property="og:image:height" content="512" />
+<title>Styrofoam Recycling | Polystyrene Recycling | EPS Recycling | Disposal</title>
+<meta name="description" content="Tri-Power Recycling is one of the largest Styrofoam™ & EPS foam recycling centers. We use advanced technology and machinery to sort, clean, & process."> 
+<link rel="canonical" href="https://tri-powerrecycling.com/services/styrofoam-recycling.cfm">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i" rel="stylesheet">
+<!-- CDN CSS Files -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+<link href="https://tri-powerrecycling.com/assets/vendor/vendors.css" rel="stylesheet">
+<link href="https://tri-powerrecycling.com/assets/vendor/aos/aos.css" rel="stylesheet">
+<!-- Main CSS File -->
+<link href="https://tri-powerrecycling.com/css/main.css" rel="stylesheet">
+<meta name="geo.region" content="US-IN" />
+<meta name="geo.placename" content="Elkhart" />
+<meta name="geo.position" content="41.6997566,-85.9997329" />
+<meta name="ICBM" content="41.6997566,-85.9997329" />
+<meta name="zipcode" content="46514" />
+<meta name="city" content="Elkhart" />
+<meta name="county" content="Elkhart" />
+<meta name="state" content="IN" />
+</head>
+<body>
+<!-- ======= Top Bar ======= -->
+<div id="topbar" class="d-lg-flex align-items-center fixed-top">
+<div class="container-fluid d-flex">
+<div class="contact-info mr-auto">
+<a href="tel:(574) 848-1900"><i class="fas fa-phone"></i> (574) 848-1900</a>
+</div>
+<div class="social-links"> 
+</div>
+</div>
+</div>
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+<div class="container-fluid d-md-flex align-items-center">
+<a href="https://tri-powerrecycling.com/" class="logo mr-auto"><img src="https://tri-powerrecycling.com/img/Tri-Power-Recycling-logo.png" alt="Tri-Power Recycling" class="img-fluid"></a>
+<nav class="nav-menu d-none d-lg-block">
+<ul>
+<li class="drop-down" id="dd">
+<a href="https://tri-powerrecycling.com/recycling-services.cfm" class="parentlink" >Recycling Services<b class="caret"></b></a>
+<ul class=""><li class="dropdown-item overview-link"><a href="https://tri-powerrecycling.com/recycling-services.cfm" class="nav-link">Overview</a></li><li class="dropdown-item"><a href="https://tri-powerrecycling.com/services/cardboard-recycling-disposal.cfm" class="nav-link">Cardboard Recycling</a></li>
+<li class="dropdown-item"><a href="https://tri-powerrecycling.com/services/paper-recycling.cfm" class="nav-link">Paper Recycling</a></li>
+<li class="dropdown-item"><a href="https://tri-powerrecycling.com/services/plastic-recycling.cfm" class="nav-link">Plastic Recycling</a></li>
+<li class="dropdown-item"><a href="https://tri-powerrecycling.com/services/styrofoam-recycling.cfm" class="nav-link">Styrofoam Recycling (Polystyrene)</a></li>
+</ul>
+</li>
+<li class="nav-item">
+<a href="https://tri-powerrecycling.com/recycle-styrofoam.cfm" >Home 4 Foam</a>
+</li>
+<li class="nav-item">
+<a href="https://tri-powerrecycling.com/commercial-recycling.cfm" >Commercial</a>
+</li>
+<li class="nav-item">
+<a href="https://tri-powerrecycling.com/recycling-equipment-for-sale.cfm" >Recycling Equipment</a>
+</li>
+<li class="nav-item">
+<a href="https://tri-powerrecycling.com/about-tri-power-recycling.cfm" >About</a>
+</li>
+<li class="nav-item">
+<a href="https://tri-powerrecycling.com/location.cfm" >Location</a>
+</li>
+</ul>
+</nav>
+<span class="cta_button_top">
+<a href="https://tri-powerrecycling.com/contact-us.cfm" class="appointment-btn appointment-btn-top scrollto">Contact Us</a>
+</span>
+</div>
+</header><!-- End Header -->
+<style>
+#hero .btn-get-started {background-color:#FFFFFF !important; font-weight:bold;}
+</style>
+</section>
+<!-- End Hero -->
+<div class="row hero_inner_pages">
+<div class="col-md-4" style="padding:0px;">
+<img src="https://tri-powerrecycling.com/img/Styrofoam1.jpg" class="img-fluid">
+</div>
+<div class="col-md-8 hero_text_right" style="background-color:hero.hero_text_right"> 
+<h1 style="color:#005F33">Styrofoam Recycling (Polystyrene, EPS, Foam Disposal)</h1>
+<h2 style="color:#005F33">Tri-Power Recycling is one of the largest Styrofoam™ and EPS foam recycling centers in the country. We use the most advanced technology and machinery to sort, clean, and process all types of Styrofoam™ and EPS foam products.</h2>
+</div>
+</div>
+<main id="main">
+<section id="" class="inner space-40">
+<div class="container">
+<div class="row">
+<div class="col-lg-12 d-flex align-items-stretch">
+<div class="content">
+<div data-aos="fade-up" data-aos-delay="100">
+<br />
+<img alt="Styrofoam Food Clamshell" class="img-fluid" src="https://tri-powerrecycling.com/uploaded_files/images/Styrofoam-Food-Clamshell-500.jpg" style="float: right;" title="Styrofoam Food Clamshell" />Foam recycling at Tri-Power Recycling involves pressing the air out of the foam material so it can be recycled into new products. Commonly called Styrofoam&trade; - or more accurately described as expanded polystyrene (EPS) foam &ndash; this lightweight material is used extensively in packaging to protect products during transportation, in the RV industry, and by large appliance manufacturers.<br />
+&nbsp;<br />
+Tri-Power Recycling is one of the largest Styrofoam&trade; and EPS foam recycling centers in the United States. Products made of these foam materials are 90% air and they can take up approximately 30% of landfill space by volume.<br />
+&nbsp;<br />
+EPS foam is not biodegradable without exposure to the sun, which means it can essentially last forever in our nation&rsquo;s landfills. It is our goal to keep this from happening. That&rsquo;s why we use the most advanced technology and machinery to sort, clean, and process all types of Styrofoam&trade; and EPS foam products in our recycling facility.<br />
+&nbsp;
+<h2>Understanding the Difference Between EPS and XPS Foam Products</h2>
+<strong>Expanded polystyrene (EPS) foam</strong> is a lightweight type of plastic that excels in shock absorption and thermal insulation. EPS is one of the most versatile types of plastic because it has a variety of uses and shapes it can take. Like most plastics, EPS is made from petroleum, but EPS is uniquely comprised of more than 90% air.<br />
+&nbsp;<br />
+EPS foam starts as a small styrene pellet that is expanded using a blowing agent. This blowing agent expands the pellet by up to 40 times its original size. Once expanded, they are then packed into a mold. Through heat and chemical processes, these beads are fused into the desired shape.<br />
+&nbsp;<br />
+The product known as Styrofoam&trade; is <strong>extruded polystyrene (XPS)</strong>. It is a specific type of foam manufactured by DuPont de Nemours and used primarily for construction and transportation materials.<br />
+&nbsp;<br />
+XPS foam is created through an extended extrusion process that creates a closed cell of foam insulation. Since most foam products are nearly 90% air, these products are a desirable material for the transportation and packaging of other items.<br />
+&nbsp;
+<h2><img alt="Styrofoam Food Containers" class="img-fluid" src="https://tri-powerrecycling.com/uploaded_files/images/Styrofoam-Food-Packaging-300.jpg" style="float: right; margin-left: 14px; " title="Styrofoam Food Containers" />Can Styrofoam&trade;/EPS Foam be Recycled?</h2>
+At Tri-Power Recycling, one of our goals is to educate consumers and businesses on the recyclability of Styrofoam&trade;/EPS Foam. It is a common misconception these products are not recyclable. The most common recyclable EPS foam products include egg cartons, foam insulation, fast-food and takeout containers, and packaging foam.<br />
+&nbsp;<br />
+&ldquo;Packaging peanuts&rdquo; are almost always not EPS. They are primarily made from a corn starch material. As such, these packaging peanuts are <strong>not accepted</strong> at our recycling center. Most packaging peanuts can be easily dissolved in water. They can also be reused in future packages you send out.<br />
+&nbsp;<br />
+While most EPS foam can be recycled into new products, not every recycling plant is capable of processing foam products. Because EPS products are considered &ldquo;end products&rdquo;, foam is not as easily broken down like other types of plastic. Foam is bulky and can be challenging to transport. Foam waste may need to be ground down and flattened before it can be processed&mdash;an effort that is not cost-efficient for many local recycling centers.<br />
+&nbsp;<br />
+Expanded polystyrene cannot be &ldquo;unexpanded&rdquo;, but through the use of advanced technology at Tri-Power Recycling, EPS foam can be compressed into much smaller material suitable for transportation.<br />
+&nbsp;<br />
+While Tri-Power recycling prides itself in being the largest independent foam recycling center in the country, we realize many recycling facilities don&rsquo;t have the processing capabilities to properly recycle foam products. This often results in a ton of waste, both foam and otherwise, being tossed away even if it was put in a recycling bin.&nbsp;<br />
+&nbsp;
+<h2>Why is Styrofoam&trade;/EPS Foam Worth Recycling?</h2>
+EPS foam and Styrofoam&trade; are worth recycling because of the amount of space they take up in our landfills. In order to make the best use of the available space, it is worth paying close attention to any items that can be recycled at a suitable facility.<br />
+&nbsp;<br />
+While EPS foam products only represent one-one hundredth of a percent (0.01%) of the weight of plastic waste, they can occupy about 30% of landfill space. Being injected with air makes many foam products ideal for packaging but the amount of space these products occupy in landfills is disproportionate to their weight.<br />
+&nbsp;<br />
+EPS foam and Styrofoam&trade; can be broken down naturally through photodegradation&mdash;continuous exposure to the UV rays from our sun. Over months and years, even larger pieces of foam can be turned into a powdery substance. However, when stacked and hidden away from the sun under other waste inside a landfill, the photodegradation process is not possible and foam does not break down as expected.<br />
+&nbsp;<br />
+From small foam cups to large pieces of building foam, studies have shown that EPS foam could last indefinitely within a landfill. Foam products also do not decompose in the same way plants or animals do&mdash;when polystyrene decomposes it breaks apart into harmful microplastics that can easily escape landfills. These tiny pieces of EPS often wind up in natural habitats like oceans and forests. While most EPS foam will not dissolve in water, these small beads of foam can be ingested by fish and other wildlife.<br />
+&nbsp;<br />
+When fish or livestock ingest pieces of EPS foam, it can be detrimental to the animal&rsquo;s health. Then consider what happens when we eat animals that have eaten these harmful pieces of plastic. By not properly disposing of EPS foam, we are poisoning not only our wildlife, but ourselves as well.<br />
+&nbsp;
+<h2>What Can You Do With Styrofoam&trade;/EPS foam?</h2>
+<img alt="Foam Cups" class="img-fluid" src="https://tri-powerrecycling.com/uploaded_files/images/Foam-Cups-300.jpg" style="float: right; margin-left: 14px; margin-right: 14px;" title="Foam Cups" />While it may seem logical to place your foam waste into your recycling bin, you may want to check first if your local recycling center can process your EPS foam products.<br />
+&nbsp;<br />
+For those areas and recycling centers unable to process foam products, EPS/Styrofoam&trade; are considered a &ldquo;recycling contaminant&rdquo;. Depending on their processes, placing foam waste into a recycling bin could mean the whole recycling bin or even the contents of a recycling truck may need to be sent to a landfill instead of being shipped off to a recycling center.<br />
+&nbsp;<br />
+There are still several options for effectively disposing of EPS foam waste. Many local businesses will accept used foam products so that they can be used to package and store other items. The EPS-IA&rsquo;s (EPS Industry Alliance) online directory is an invaluable service that can help direct you to other local means of foam disposal.<br />
+&nbsp;<br />
+If you are a commercial industry looking to conscientiously dispose of your EPS foam waste, Tri-Power Recycling would be happy to serve you. We are located in Elkhart, Indiana and are the largest independent EPS foam recycler in the United States. We are equipped to process a high volume of EPS/XPS foam waste.<br />
+&nbsp;<br />
+Styrofoam&trade;/EPS foam recycling is a costly and labor-intensive undertaking, one that not every recycling center is equipped for. That is why we here at Tri-Power Recycling are excited to announce our <a href="https://tri-powerrecycling.com/recycle-styrofoam.cfm">Home 4 Foam program</a>. This program allows you to ship your foam to us for recycling.<br />
+&nbsp;
+<h2>EPS/Styrofoam&trade; Recycling at Our Facility</h2>
+We support small and large businesses that receive large amounts of EPS foam such as those in the RV industry, manufacturing, logistics and shipping, pharmaceutical, and food industries.&nbsp;<br />
+&nbsp;<br />
+EPS/Styrofoam&trade; collected from these industries is used as insulation and for protection of electronics, appliances, and fragile items.<br />
+&nbsp;<br />
+We collect foam coolers from pharmaceutical companies. For those in the food industry, we accept and process foam cups, trays, takeout containers, and egg crates.<br />
+&nbsp;
+<ul>
+<li>Businesses can drop off their EPS foam for recycling, we can arrange to pick up your foam recyclables, or items can be shipped to us. We accept anything from grocery bag size to a semi-trailer full of recyclable material.<br />
+&nbsp;</li>
+<li>Individuals can drive up and drop off their foam recycling items in our outdoor bins or through our <a href="https://tri-powerrecycling.com/recycle-styrofoam.cfm">Home 4 Foam</a> program. You&rsquo;ll be able to print a shipping label and mail your foam materials to us for proper handling.</li>
+</ul>
+<br />
+At Tri-Power Recycling, we process your recyclables and send them off to be made into new products. Foam is sent throughout the world to be made into new insulation and consumer goods.<br />
+&nbsp;
+<h2>Ready to Recycle For Good</h2>
+Tri-Power Recycling wants to help you recycle your EPS foam and Styrofoam&trade; materials to reduce their impact on landfills. <a href="https://tri-powerrecycling.com/contact-us.cfm">Contact </a>our independently owned and operated family business today.<br />
+&nbsp;
+</div>
+<br><br>
+<p><a href="https://tri-powerrecycling.com/contact-us.cfm" class="appointment-btn appointment-btn-top scrollto">Contact Us</a></p>
+</div><!-- End .content-->
+</div>
+</div>
+</div>
+</section>
+</main><!-- End #main -->
+<!-- ======= Footer ======= -->
+<footer id="footer">
+<div class="footer-top">
+<div class="container">
+<div class="row">
+<div class="col-lg-4 col-md-6 footer-contact">
+<div itemscope itemtype="http://schema.org/LocalBusiness">
+<span itemprop="name"><strong>Tri-Power Recycling</strong></span>
+<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+<span itemprop="streetAddress">1240 Anderson Street</span><br>
+<span itemprop="addressLocality">Elkhart</span>,
+<span itemprop="addressRegion">IN</span>
+<span itemprop="postalCode">46514</span><br /><br />
+</div>
+Phone: <span itemprop="telephone"><a href="tel:(574) 848-1900">(574) 848-1900</a></span>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 footer-links">
+<h4>Useful Links</h4>
+<ul>
+<li><a href="https://tri-powerrecycling.com/" >Home</a></li>
+<li><a href="https://tri-powerrecycling.com/recycling-services.cfm" >Recycling Services</a></li>
+<li><a href="https://tri-powerrecycling.com/recycle-styrofoam.cfm" >Home 4 Foam</a></li>
+<li><a href="https://tri-powerrecycling.com/commercial-recycling.cfm" >Commercial</a></li>
+<li><a href="https://tri-powerrecycling.com/recycling-equipment-for-sale.cfm" >Recycling Equipment</a></li>
+<li><a href="https://tri-powerrecycling.com/about-tri-power-recycling.cfm" >About</a></li>
+<li><a href="https://tri-powerrecycling.com/location.cfm" >Location</a></li>
+<li><a href="https://tri-powerrecycling.com/contact-us.cfm" >Contact Us</a></li>
+<li><a href="https://tri-powerrecycling.com/terms-conditions-privacy-policy.cfm" >Terms & Conditions, Privacy Policy</a></li>
+<li><a href="https://tri-powerrecycling.com/sitemap.cfm" >Sitemap</a></li>
+</ul>
+</div>
+<div class="col-lg-4 col-md-6 footer-newsletter">
+</div>
+</div>
+</div>
+</div>
+<div class="container d-md-flex py-4">
+<div class="mr-md-auto text-center text-md-left">
+<div class="copyright">
+&copy; 2009 - 2026 All Rights Reserved
+<p class="bangfooter"><small>Website by BANG! Web Site Design</small></p>
+</div>
+</div>
+<div class="social-links text-center text-md-right pt-3 pt-md-0">
+<img src=https://tri-powerrecycling.com/img/credit-cards.png class="img-fluid"><br><br><br>
+</div>
+</div>
+</footer><!-- End Footer -->
+<a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+<!-- Vendor JS Files -->
+<script src="https://tri-powerrecycling.com/assets/vendor/jquery/jquery.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/counterup/counterup.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/aos/aos.js"></script>
+<!-- Template Main JS File -->
+<script src="https://tri-powerrecycling.com/assets/js/main.js"></script>
+<script>
+$( document ).ready(function() {
+if (!$('#videomodal').is(':visible')) {
+// if modal is not shown/visible, pause video
+$('.video')[0].pause();
+}
+});
+$('.modal').on('shown.bs.modal', function () {
+$('.video')[0].play();
+});
+$('.modal').on('hidden.bs.modal', function () {
+$('.video')[0].pause();
+});
+</script>
+</body>
+</html>
