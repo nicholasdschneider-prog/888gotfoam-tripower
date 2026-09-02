@@ -8,7 +8,7 @@ This repository contains three separate web experiences:
 - The Tri-Power Recycling replacement in `apps/tri-power`.
 - The She Pallets replacement in `apps/she-pallets`.
 
-BulkBid is a separate product and is not part of either replacement site. Historical BulkBid demo files that predate this migration are not imported by the new apps.
+BulkBid is a separate product and is not part of this repository's active tree. Historical demo files were removed during the Tri-Power cleanup; their committed history remains recoverable in Git.
 
 ## Install and quality checks
 

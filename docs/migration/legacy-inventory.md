@@ -1,6 +1,6 @@
 # Legacy website inventory and disposition ledger
 
-Captured August 14, 2026 and rechecked August 15, 2026. Raw HTML, robots files, sitemaps, and screenshots are stored under `docs/migration/`. The live sites were treated as read-only and no forms were submitted.
+Captured August 14, 2026, rechecked August 15, and reconciled with BANG's August 27 handoff package on September 2, 2026. Raw HTML, robots files, sitemaps, and screenshots are stored under `docs/migration/`. The live sites were treated as read-only and no forms were submitted.
 
 Disposition terms:
 
@@ -26,6 +26,22 @@ Disposition terms:
 | `/location.cfm` | `/location` | Migrated and permanently redirected: 1240 Anderson Street, Elkhart, IN 46514 and 574-848-1900. Hours/Saturday availability carry confirmation flags and are not guessed. |
 | `/contact-us.cfm` | `/contact` | Migrated and permanently redirected: server-validated preview-safe inquiry flow and office phone. Production recipients carry a confirmation flag. |
 | `/terms-conditions-privacy-policy.cfm` | `/privacy` | Migrated and permanently redirected: policy topics and the May 3, 2022 legacy date are preserved; production processors, retention, analytics, and legal approval carry confirmation flags. |
+| `/request-for-quote.cfm` | `/contact` | Permanently redirected to the replacement inquiry flow. Discovered in the BANG server package rather than the public sitemap. |
+| `/rfq-thank-you.cfm` | `/contact` | Retired confirmation page permanently redirected to the replacement inquiry flow. |
+| `/review-form.cfm` and `/review-form-thank-you.cfm` | `/contact` | Retired legacy review forms permanently redirected to the contact page; no old form processing is retained. |
+| `/contactform8.cfm` | `/contact` | Retired internal form template permanently redirected to the replacement inquiry flow. |
+| `/staff.cfm` | `/about` | Permanently redirected to the migrated family-business story; legacy staff data is not republished without confirmation. |
+| `/reviews.cfm` and `/client-reviews.cfm` | `/about` | Permanently redirected to About. No unverified legacy testimonials are presented as current. |
+| `/faq.cfm` | `/services` | Permanently redirected to the current service guidance. |
+| `/employment-opportunities.cfm` | `/contact` | Permanently redirected to Contact. The database-driven legacy job page had no confirmed current openings, so no vacancy is advertised. |
+| `/sitemap.cfm` | `/sitemap.xml` | Permanently redirected to the current XML sitemap. |
+
+### BANG handoff reconciliation
+
+- The private package included the full legacy website, a database backup, six mailbox calendar exports, and ten mailbox contact exports.
+- The package contains private configuration and personal data, so it is intentionally excluded from Git and retained only as migration source material.
+- The primary public route set matched the original crawl. Additional template-era routes found in the server package are recorded above and receive defensive permanent redirects.
+- Authentic Tri-Power family, facility, equipment, cardboard, paper, and foam photography was selected from the package for the rebuild.
 
 ### Tri-Power confirmation flags
 

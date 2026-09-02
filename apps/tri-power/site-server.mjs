@@ -8,7 +8,7 @@ const siteName = process.env.SITE_NAME || 'Tri-Power Recycling'
 const types = { '.css': 'text/css', '.html': 'text/html', '.js': 'text/javascript', '.json': 'application/json', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.svg': 'image/svg+xml', '.txt': 'text/plain', '.xml': 'application/xml', '.webp': 'image/webp', '.woff2': 'font/woff2' }
 
 const pages = {
-  '/': ['Tri-Power Recycling | Elkhart, Indiana', 'Practical recycling programs for cardboard, paper, and EPS foam from Tri-Power Recycling.'],
+  '/': ['Tri-Power Recycling | Cardboard, Paper & EPS Recycling', 'Recycling guidance for cardboard, paper, clean EPS foam, commercial programs, and equipment in Elkhart, Indiana.'],
   '/services': ['Recycling Services | Tri-Power Recycling', 'Explore cardboard, paper, EPS foam, commercial recycling, and equipment support.'],
   '/services/cardboard': ['Cardboard Recycling | Tri-Power Recycling', 'Cardboard drop-off, baling, pickup, and commercial collection options in Elkhart.'],
   '/services/paper': ['Paper Recycling | Tri-Power Recycling', 'Paper and fiber recycling for individuals and commercial operations.'],
@@ -37,6 +37,17 @@ const redirects = {
   '/location.cfm': '/location',
   '/contact-us.cfm': '/contact',
   '/terms-conditions-privacy-policy.cfm': '/privacy',
+  '/request-for-quote.cfm': '/contact',
+  '/rfq-thank-you.cfm': '/contact',
+  '/review-form.cfm': '/contact',
+  '/review-form-thank-you.cfm': '/contact',
+  '/contactform8.cfm': '/contact',
+  '/staff.cfm': '/about',
+  '/reviews.cfm': '/about',
+  '/client-reviews.cfm': '/about',
+  '/faq.cfm': '/services',
+  '/employment-opportunities.cfm': '/contact',
+  '/sitemap.cfm': '/sitemap.xml',
 }
 
 function sendJson(res, status, body) {
@@ -80,7 +91,15 @@ createServer(async (req, res) => {
     try {
       const raw = await readJson(req)
       if (raw.website) return sendJson(res, 200, { ok: true })
-      const input = { name: clean(raw.name, 120), company: clean(raw.company, 160), email: clean(raw.email, 254), phone: clean(raw.phone, 40), message: clean(raw.message, 5000) }
+      const input = {
+        name: clean(raw.name, 120),
+        company: clean(raw.company, 160),
+        email: clean(raw.email, 254),
+        phone: clean(raw.phone, 40),
+        topic: clean(raw.topic, 80),
+        location: clean(raw.location, 160),
+        message: clean(raw.message, 5000),
+      }
       if (!input.name || !input.email || !input.message || !/^\S+@\S+\.\S+$/.test(input.email)) return sendJson(res, 400, { error: 'Please provide a name, valid email, and message.' })
       if (!process.env.LEAD_WEBHOOK_URL) return sendJson(res, 200, { ok: false, preview: true, error: 'Preview mode: inquiry delivery will be connected after recipients are confirmed.' })
       const headers = { 'content-type': 'application/json' }

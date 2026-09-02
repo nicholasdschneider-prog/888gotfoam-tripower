@@ -1,5 +1,11 @@
 # Phase 1 QA report
 
+## September 2 Tri-Power rebuild update
+
+The Tri-Power-only refresh was reconciled against BANG's private handoff package. Authentic business photography replaced generic presentation assets, customer paths and contact questions were clarified, and 11 additional template-era URLs from the server package were added to the permanent redirect set. The private website/database/mailbox source package remains outside Git.
+
+Current Tri-Power checks passed: TypeScript, lint, production build, the repository link/route checker, and Git whitespace validation. The checker now covers all 24 known Tri-Power legacy redirects. The existing Got Foam build and the unchanged She Pallets app are covered again by the full-repository checks before preview publication.
+
 Validated August 15, 2026 against production builds served by each app's Railway-style Node server.
 
 ## Route matrix

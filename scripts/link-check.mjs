@@ -34,9 +34,19 @@ if (sourceUrls.length !== 52 || new Set(sourceUrls).size !== 52) errors.push(`Sh
 if (JSON.stringify(sourceUrls) !== JSON.stringify(archiveUrls)) errors.push('She Pallets: source CAD link order/content differs from archived pallet list')
 
 const triServer = readFileSync(resolve('apps/tri-power/site-server.mjs'), 'utf8')
-for (const legacy of ['/index.cfm', '/recycling-services.cfm', '/services/cardboard-recycling-disposal.cfm', '/services/paper-recycling.cfm', '/services/plastic-recycling.cfm', '/services/styrofoam-recycling.cfm', '/recycle-styrofoam.cfm', '/commercial-recycling.cfm', '/recycling-equipment-for-sale.cfm', '/about-tri-power-recycling.cfm', '/location.cfm', '/contact-us.cfm', '/terms-conditions-privacy-policy.cfm']) {
+const triLegacyRoutes = [
+  '/index.cfm', '/recycling-services.cfm', '/services/cardboard-recycling-disposal.cfm',
+  '/services/paper-recycling.cfm', '/services/plastic-recycling.cfm',
+  '/services/styrofoam-recycling.cfm', '/recycle-styrofoam.cfm', '/commercial-recycling.cfm',
+  '/recycling-equipment-for-sale.cfm', '/about-tri-power-recycling.cfm', '/location.cfm',
+  '/contact-us.cfm', '/terms-conditions-privacy-policy.cfm', '/request-for-quote.cfm',
+  '/rfq-thank-you.cfm', '/review-form.cfm', '/review-form-thank-you.cfm', '/contactform8.cfm',
+  '/staff.cfm', '/reviews.cfm', '/client-reviews.cfm', '/faq.cfm',
+  '/employment-opportunities.cfm', '/sitemap.cfm',
+]
+for (const legacy of triLegacyRoutes) {
   if (!triServer.includes(`'${legacy}'`)) errors.push(`Tri-Power: missing legacy redirect ${legacy}`)
 }
 
 if (errors.length) { console.error(errors.join('\n')); process.exit(1) }
-console.log('Checked 23 canonical routes, 13 legacy redirects, public SEO files, local assets, and all 52 archived pallet CAD links.')
+console.log(`Checked 23 canonical routes, ${triLegacyRoutes.length} Tri-Power legacy redirects, public SEO files, local assets, and all 52 archived pallet CAD links.`)
