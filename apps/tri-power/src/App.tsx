@@ -126,7 +126,7 @@ const routes: Record<string, Page> = {
 const details: Record<string, { heading: string; note: string; items: Detail[] }> = {
   '/services/cardboard': {
     heading: 'From local drop-off to planned collection',
-    note: 'Call before delivery to confirm current acceptance, fees, commodity payments, minimum quantities, and unloading instructions.',
+    note: 'Call before delivery to confirm current acceptance, minimum quantities, preparation, and unloading instructions.',
     items: [
       { title: 'Loose or baled cardboard', text: 'Corrugated shipping and moving boxes may be suitable, including common tape, staples, and labels.' },
       { title: 'Commercial pickup', text: 'Ask about ground-level, dock-level, live-load, or staged-trailer options for recurring volume.' },
@@ -332,7 +332,7 @@ function About() {
 }
 
 function Location() {
-  return <><PageHero page={routes['/location']} /><section className="location"><div><p className="eyebrow dark">Facility details</p><h2>1240 Anderson Street</h2><p>Elkhart, Indiana 46514</p><a href="tel:+15748481900">574-848-1900</a><a className="button primary" href="https://www.google.com/maps/search/?api=1&query=1240+Anderson+Street+Elkhart+IN+46514" target="_blank" rel="noreferrer">Open map <span aria-hidden="true">↗</span></a></div><aside><h3>Before you visit</h3><p>Call the office to confirm current drop-off hours, accepted materials, preparation requirements, and any quantity restrictions.</p><p>Material policies can change; a quick call can prevent a wasted trip.</p></aside></section><ContactBand /></>
+  return <><PageHero page={routes['/location']} /><section className="location"><div><p className="eyebrow dark">Facility details</p><h2>1240 Anderson Street</h2><p>Elkhart, Indiana 46514</p><a href="tel:+15748481900">574-848-1900</a><a className="button primary" href="https://www.google.com/maps/search/?api=1&query=1240+Anderson+Street+Elkhart+IN+46514" target="_blank" rel="noreferrer">Open map <span aria-hidden="true">↗</span></a></div><aside><h3>Outdoor drop-off</h3><p>Free outdoor drop-off bins are available for select accepted recyclable materials.</p><p>Call before visiting to confirm current acceptance, drop-off hours, preparation requirements, and any quantity restrictions.</p></aside></section><ContactBand /></>
 }
 
 function Privacy() {

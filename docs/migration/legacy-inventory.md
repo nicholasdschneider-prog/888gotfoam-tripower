@@ -15,7 +15,7 @@ Disposition terms:
 | `/` | `/` | Migrated: overview, current plastics notice, material paths, commercial service, equipment, location, phone, and inquiry path. |
 | `/index.cfm` | `/` | Redirected permanently to the migrated home page. |
 | `/recycling-services.cfm` | `/services` | Migrated and permanently redirected: current material overview and links to focused streams. |
-| `/services/cardboard-recycling-disposal.cfm` | `/services/cardboard` | Migrated and permanently redirected: loose/baled cardboard, pickup/loading models, collection equipment, and audit context. Fee/payment and current-acceptance details carry a confirmation flag. |
+| `/services/cardboard-recycling-disposal.cfm` | `/services/cardboard` | Migrated and permanently redirected: loose/baled cardboard, pickup/loading models, collection equipment, and audit context. Variable commodity-payment language is intentionally omitted; current acceptance remains flexible. |
 | `/services/paper-recycling.cfm` | `/services/paper` | Migrated and permanently redirected: archived office paper, books/publications, cores/fiber, and commercial-quantity context. Exact current list carries a confirmation flag. |
 | `/services/plastic-recycling.cfm` | `/services/plastics` | Migrated and permanently redirected to a focused status page. Conflicting older “plastics 1–7” claims are explicitly retired; the newer public “EPS only” notice is used. Current plastics policy carries a confirmation flag. |
 | `/services/styrofoam-recycling.cfm` | `/services/eps-foam` | Migrated and permanently redirected: EPS identification, sorting, densification, packaging-peanut exclusion, and commercial-stream context. Exact accepted forms carry a confirmation flag. |
@@ -23,7 +23,7 @@ Disposition terms:
 | `/commercial-recycling.cfm` | `/commercial-recycling` | Migrated and permanently redirected: audit, collection planning, pickup, and equipment support. Service area, minimums, pricing, and schedules carry confirmation flags. |
 | `/recycling-equipment-for-sale.cfm` | `/recycling-equipment` | Migrated and permanently redirected: vertical/horizontal balers, compactors, and purchase/lease arrangements. Inventory and terms carry confirmation flags. |
 | `/about-tri-power-recycling.cfm` | `/about` | Migrated and permanently redirected: family-business and material-recovery story. Unverified national-scale superlatives remain only in the archive. |
-| `/location.cfm` | `/location` | Migrated and permanently redirected: 1240 Anderson Street, Elkhart, IN 46514 and 574-848-1900. Hours/Saturday availability carry confirmation flags and are not guessed. |
+| `/location.cfm` | `/location` | Migrated and permanently redirected: 1240 Anderson Street, Elkhart, IN 46514, 574-848-1900, and free outdoor bins for select accepted recyclables. Exact materials and hours remain flexible and visitors are told to call first. |
 | `/contact-us.cfm` | `/contact` | Migrated and permanently redirected: server-validated preview-safe inquiry flow and office phone. Production recipients carry a confirmation flag. |
 | `/terms-conditions-privacy-policy.cfm` | `/privacy` | Migrated and permanently redirected: policy topics and the May 3, 2022 legacy date are preserved; production processors, retention, analytics, and legal approval carry confirmation flags. |
 | `/request-for-quote.cfm` | `/contact` | Permanently redirected to the replacement inquiry flow. Discovered in the BANG server package rather than the public sitemap. |
@@ -45,10 +45,10 @@ Disposition terms:
 
 ### Tri-Power confirmation flags
 
-- Public drop-off hours and Saturday availability.
+- Public drop-off hours and Saturday availability. Free outdoor bins for select accepted recyclables were confirmed September 4, 2026; the site intentionally avoids a fixed material list because acceptance may change.
 - Exact residential and commercial accepted-material lists.
 - Current plastics policy beyond the public “EPS only” notice.
-- Service area, pickup minimums, fees, commodity payments, equipment availability, and Home 4 Foam status/terms.
+- Service area, pickup minimums, equipment availability, and Home 4 Foam status/terms. Variable commodity-payment language is intentionally omitted from Phase 1.
 - Correct recipients for general, sales, hauling, equipment, and service inquiries.
 - Final legal/privacy language after hosting, lead delivery, analytics, and retention are approved.
 
