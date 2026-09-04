@@ -1,0 +1,130 @@
+import { createReadStream, existsSync, readFileSync } from 'node:fs'
+import { extname, join, normalize, relative, resolve } from 'node:path'
+import { createServer } from 'node:http'
+
+const root = resolve(process.argv[2] || 'dist')
+const port = Number(process.env.PORT || 4173)
+const siteName = process.env.SITE_NAME || 'Tri-Power Recycling'
+const types = { '.css': 'text/css', '.html': 'text/html', '.js': 'text/javascript', '.json': 'application/json', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.svg': 'image/svg+xml', '.txt': 'text/plain', '.xml': 'application/xml', '.webp': 'image/webp', '.woff2': 'font/woff2' }
+
+const pages = {
+  '/': ['Tri-Power Recycling | Cardboard, Paper & EPS Recycling', 'Recycling guidance for cardboard, paper, clean EPS foam, commercial programs, and equipment in Elkhart, Indiana.'],
+  '/services': ['Recycling Services | Tri-Power Recycling', 'Explore cardboard, paper, EPS foam, commercial recycling, and equipment support.'],
+  '/services/cardboard': ['Cardboard Recycling | Tri-Power Recycling', 'Cardboard drop-off, baling, pickup, and commercial collection options in Elkhart.'],
+  '/services/paper': ['Paper Recycling | Tri-Power Recycling', 'Paper and fiber recycling for individuals and commercial operations.'],
+  '/services/plastics': ['Plastic Recycling Status | Tri-Power Recycling', 'Current plastics acceptance notice from Tri-Power Recycling.'],
+  '/services/eps-foam': ['EPS Foam Recycling | Tri-Power Recycling', 'Expanded polystyrene foam processing and commercial EPS recycling in Elkhart.'],
+  '/home-4-foam': ['Home 4 Foam | Ship EPS Foam for Recycling', 'Legacy Home 4 Foam shipping program information from Tri-Power Recycling.'],
+  '/commercial-recycling': ['Commercial Recycling | Tri-Power Recycling', 'Commercial collection, recycling audits, equipment, and pickup planning.'],
+  '/recycling-equipment': ['Recycling Equipment | Tri-Power Recycling', 'Baler and compactor guidance, purchase, lease, and lease-to-purchase options.'],
+  '/about': ['About Tri-Power Recycling | Elkhart, Indiana', 'The family business story behind Tri-Power Recycling.'],
+  '/location': ['Location | Tri-Power Recycling', 'Find Tri-Power Recycling at 1240 Anderson Street in Elkhart, Indiana.'],
+  '/contact': ['Contact Tri-Power Recycling', 'Contact Tri-Power Recycling about materials, commercial programs, or equipment.'],
+  '/privacy': ['Terms & Privacy | Tri-Power Recycling', 'Terms and privacy information for the Tri-Power Recycling website.'],
+}
+
+const redirects = {
+  '/index.cfm': '/',
+  '/recycling-services.cfm': '/services',
+  '/services/cardboard-recycling-disposal.cfm': '/services/cardboard',
+  '/services/paper-recycling.cfm': '/services/paper',
+  '/services/plastic-recycling.cfm': '/services/plastics',
+  '/services/styrofoam-recycling.cfm': '/services/eps-foam',
+  '/recycle-styrofoam.cfm': '/home-4-foam',
+  '/home4foam': '/home-4-foam',
+  '/home4foam/index.cfm': '/home-4-foam',
+  '/home4foam/step2.cfm': '/home-4-foam',
+  '/home4foam/step3.cfm': '/home-4-foam',
+  '/home4foam/print_label.cfm': '/home-4-foam',
+  '/commercial-recycling.cfm': '/commercial-recycling',
+  '/recycling-equipment-for-sale.cfm': '/recycling-equipment',
+  '/about-tri-power-recycling.cfm': '/about',
+  '/location.cfm': '/location',
+  '/contact-us.cfm': '/contact',
+  '/terms-conditions-privacy-policy.cfm': '/privacy',
+  '/request-for-quote.cfm': '/contact',
+  '/rfq-thank-you.cfm': '/contact',
+  '/review-form.cfm': '/contact',
+  '/review-form-thank-you.cfm': '/contact',
+  '/contactform8.cfm': '/contact',
+  '/staff.cfm': '/about',
+  '/reviews.cfm': '/about',
+  '/client-reviews.cfm': '/about',
+  '/faq.cfm': '/services',
+  '/employment-opportunities.cfm': '/contact',
+  '/sitemap.cfm': '/sitemap.xml',
+}
+
+function sendJson(res, status, body) {
+  res.writeHead(status, { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' })
+  res.end(JSON.stringify(body))
+}
+
+async function readJson(req) {
+  let body = ''
+  for await (const chunk of req) {
+    body += chunk
+    if (body.length > 32_000) throw new Error('Request too large')
+  }
+  return JSON.parse(body || '{}')
+}
+
+function clean(value, max) { return typeof value === 'string' ? value.trim().slice(0, max) : '' }
+
+function pageHtml(pathname) {
+  const [title, description] = pages[pathname] || ['Page not found | Tri-Power Recycling', 'The requested Tri-Power Recycling page could not be found.']
+  return readFileSync(join(root, 'index.html'), 'utf8')
+    .replace(/<title>.*?<\/title>/, `<title>${title}</title>`)
+    .replace(/<meta name="description" content="[^"]*"\s*\/?>(?=)/, `<meta name="description" content="${description}"/>`)
+    .replace(/<meta property="og:title" content="[^"]*"\s*\/?>(?=)/, `<meta property="og:title" content="${title}"/>`)
+    .replace(/<meta property="og:description" content="[^"]*"\s*\/?>(?=)/, `<meta property="og:description" content="${description}"/>`)
+    .replace(/<link rel="canonical" href="[^"]*"\s*\/?>(?=)/, `<link rel="canonical" href="https://tri-powerrecycling.com${pathname === '/' ? '' : pathname}"/>`)
+}
+
+createServer(async (req, res) => {
+  const url = new URL(req.url || '/', 'http://localhost')
+  const pathname = url.pathname.length > 1 ? url.pathname.replace(/\/$/, '') : '/'
+  if (req.method === 'GET' && pathname === '/health') return sendJson(res, 200, { ok: true, site: siteName })
+  if ((req.method === 'GET' || req.method === 'HEAD') && url.pathname.length > 1 && url.pathname.endsWith('/')) {
+    res.writeHead(308, { location: `${redirects[pathname] || pathname}${url.search}`, 'cache-control': 'public, max-age=3600' }); return res.end()
+  }
+  if ((req.method === 'GET' || req.method === 'HEAD') && redirects[pathname]) {
+    res.writeHead(308, { location: redirects[pathname], 'cache-control': 'public, max-age=3600' }); return res.end()
+  }
+
+  if (req.method === 'POST' && pathname === '/api/inquiry') {
+    try {
+      const raw = await readJson(req)
+      if (raw.website) return sendJson(res, 200, { ok: true })
+      const input = {
+        name: clean(raw.name, 120),
+        company: clean(raw.company, 160),
+        email: clean(raw.email, 254),
+        phone: clean(raw.phone, 40),
+        topic: clean(raw.topic, 80),
+        location: clean(raw.location, 160),
+        message: clean(raw.message, 5000),
+      }
+      if (!input.name || !input.email || !input.message || !/^\S+@\S+\.\S+$/.test(input.email)) return sendJson(res, 400, { error: 'Please provide a name, valid email, and message.' })
+      if (!process.env.LEAD_WEBHOOK_URL) return sendJson(res, 200, { ok: false, preview: true, error: 'Preview mode: inquiry delivery will be connected after recipients are confirmed.' })
+      const headers = { 'content-type': 'application/json' }
+      if (process.env.LEAD_WEBHOOK_TOKEN) headers.authorization = `Bearer ${process.env.LEAD_WEBHOOK_TOKEN}`
+      const response = await fetch(process.env.LEAD_WEBHOOK_URL, { method: 'POST', headers, body: JSON.stringify({ site: siteName, ...input, receivedAt: new Date().toISOString() }) })
+      if (!response.ok) throw new Error('Lead delivery failed')
+      return sendJson(res, 200, { ok: true })
+    } catch { return sendJson(res, 400, { error: 'We could not send that inquiry. Please call the office instead.' }) }
+  }
+
+  if (req.method !== 'GET' && req.method !== 'HEAD') return sendJson(res, 405, { error: 'Method not allowed' })
+  const candidate = normalize(join(root, pathname))
+  const safe = !relative(root, candidate).startsWith('..')
+  if (safe && existsSync(candidate) && extname(candidate)) {
+    res.writeHead(200, { 'content-type': types[extname(candidate)] || 'application/octet-stream' })
+    if (req.method === 'HEAD') return res.end()
+    return createReadStream(candidate).pipe(res)
+  }
+  const status = pages[pathname] ? 200 : 404
+  res.writeHead(status, { 'content-type': 'text/html; charset=utf-8' })
+  if (req.method === 'HEAD') return res.end()
+  res.end(pageHtml(pathname))
+}).listen(port, '0.0.0.0', () => console.log(`${siteName} listening on ${port}`))

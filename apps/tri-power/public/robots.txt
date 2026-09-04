@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tri-powerrecycling.com/sitemap.xml

@@ -1,0 +1,299 @@
+<style> 
+.alert_top {
+margin-bottom: -5px;
+padding: 16px;
+/*z-index: 50000;
+position: fixed;
+width: 100%;*/
+} 
+.alert_bottom {
+margin-bottom: -5px;
+padding: 16px;
+} 
+#footer_alert_olay {
+position: fixed;
+bottom: 0;
+width: 100%;
+}
+#header_alert_olay {
+position: fixed;
+top: 0;
+width: 100%;
+z-index: 1200;
+}
+</style>
+<style> 
+.alert_close {
+float:right;
+display:inline-block;
+padding:0px 5px;
+background:#fff;
+font-weight: bold;
+border-color:#000;
+border-style:solid;
+border-width:1px;
+border-color:#888;
+cursor: pointer;
+}
+.alert_close:hover {
+float:right;
+display:inline-block;
+padding:0px 5px;
+background:#fff;
+color:#000;
+}
+</style>
+<script>
+function close_alert_js(alert_id, alert_exp, alert_pla){
+var a_id = 'close' + alert_id;
+var bottom_a_id = a_id + 'bottom';
+document.getElementById(a_id).parentNode.parentNode.removeChild(document.getElementById(a_id).parentNode);
+// The stmt above will only close one div. If it's a both (3) then use this if to also close the bottom div.
+if (alert_pla == 3) {
+document.getElementById(bottom_a_id).parentNode.parentNode.removeChild(document.getElementById(bottom_a_id).parentNode);
+}
+setCookie(alert_id, alert_exp);
+};
+function setCookie(avalue, alert_exp) {
+$.ajax({
+type: "POST",
+url: "https://tri-powerrecycling.com/alert-ajax.cfm?act=set",
+data: { id: avalue, exp: alert_exp, }
+});
+};
+</script>
+<div id="header_alert_olay">
+</div>
+<div id="footer_alert_olay" style="z-index: 100;">
+<div class="alert_top" style="background-color: #8BC540;">
+<span class="close12 alert_close" id='close12' onclick='close_alert_js(12,1,2);'>x</span>
+<div style="text-align: center;"><span style="color:#000000;"><strong>We Are Not Currently Accepting Plastics for Recycling With the Exception of&nbsp; EPS Foam aka Styrofoam</strong></span></div>
+</div>
+</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta name="author" content="">
+<meta name="robots" content="max-image-preview:large">
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://tri-powerrecycling.com/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://tri-powerrecycling.com/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://tri-powerrecycling.com/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://tri-powerrecycling.com/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="60x60" href="https://tri-powerrecycling.com/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://tri-powerrecycling.com/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://tri-powerrecycling.com/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://tri-powerrecycling.com/apple-touch-icon-152x152.png" />
+<link rel="icon" type="image/png" href="https://tri-powerrecycling.com/favicon-196x196.png" sizes="196x196" />
+<link rel="icon" type="image/png" href="https://tri-powerrecycling.com/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="https://tri-powerrecycling.com/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="https://tri-powerrecycling.com/favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="https://tri-powerrecycling.com/favicon-128.png" sizes="128x128" />
+<meta name="application-name" content="Tri-Power Recycling"/>
+<meta name="msapplication-TileColor" content="#FFFFFF" />
+<meta name="msapplication-TileImage" content="mstile-144x144.png" />
+<meta name="msapplication-square70x70logo" content="https://tri-powerrecycling.com/mstile-70x70.png" />
+<meta name="msapplication-square150x150logo" content="https://tri-powerrecycling.com/mstile-150x150.png" />
+<meta name="msapplication-wide310x150logo" content="https://tri-powerrecycling.com/mstile-310x150.png" />
+<meta name="msapplication-square310x310logo" content="https://tri-powerrecycling.com/mstile-310x310.png" />
+<meta property="og:url" content="http://tri-powerrecycling.com/recycle-styrofoam.cfm" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Home for Foam | Ship Your Styrofoam For Recycling" />
+<meta property="og:description" content="Ship your Styrofoam™ / EPS Foam to Tri-Power Recycling and keep it out of the landfill." />
+<meta property="og:image" content="https://www.bangwebsitedesignphoenixaz.com/img/BANG-Phoenix-OG-Image.jpg" />
+<meta property="og:image:type" content="image/" />
+<meta property="og:image:width" content="" />
+<meta property="og:image:height" content="" />
+<title>Home for Foam | Ship Your Styrofoam For Recycling</title>
+<meta name="description" content="Ship your Styrofoam™ / EPS Foam to Tri-Power Recycling and keep it out of the landfill."> 
+<link rel="canonical" href="https://tri-powerrecycling.com/recycle-styrofoam.cfm">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i" rel="stylesheet">
+<!-- CDN CSS Files -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+<link href="https://tri-powerrecycling.com/assets/vendor/vendors.css" rel="stylesheet">
+<link href="https://tri-powerrecycling.com/assets/vendor/aos/aos.css" rel="stylesheet">
+<!-- Main CSS File -->
+<link href="https://tri-powerrecycling.com/css/main.css" rel="stylesheet">
+<meta name="geo.region" content="US-IN" />
+<meta name="geo.placename" content="Elkhart" />
+<meta name="geo.position" content="41.6997566,-85.9997329" />
+<meta name="ICBM" content="41.6997566,-85.9997329" />
+<meta name="zipcode" content="46514" />
+<meta name="city" content="Elkhart" />
+<meta name="county" content="Elkhart" />
+<meta name="state" content="IN" />
+</head>
+<body>
+<!-- ======= Top Bar ======= -->
+<div id="topbar" class="d-lg-flex align-items-center fixed-top">
+<div class="container-fluid d-flex">
+<div class="contact-info mr-auto">
+<a href="tel:(574) 848-1900"><i class="fas fa-phone"></i> (574) 848-1900</a>
+</div>
+<div class="social-links"> 
+</div>
+</div>
+</div>
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+<div class="container-fluid d-md-flex align-items-center">
+<a href="https://tri-powerrecycling.com/" class="logo mr-auto"><img src="https://tri-powerrecycling.com/img/Tri-Power-Recycling-logo.png" alt="Tri-Power Recycling" class="img-fluid"></a>
+<nav class="nav-menu d-none d-lg-block">
+<ul>
+<li class="drop-down" id="dd">
+<a href="https://tri-powerrecycling.com/recycling-services.cfm" class="parentlink" >Recycling Services<b class="caret"></b></a>
+<ul class=""><li class="dropdown-item overview-link"><a href="https://tri-powerrecycling.com/recycling-services.cfm" class="nav-link">Overview</a></li><li class="dropdown-item"><a href="https://tri-powerrecycling.com/services/cardboard-recycling-disposal.cfm" class="nav-link">Cardboard Recycling</a></li>
+<li class="dropdown-item"><a href="https://tri-powerrecycling.com/services/paper-recycling.cfm" class="nav-link">Paper Recycling</a></li>
+<li class="dropdown-item"><a href="https://tri-powerrecycling.com/services/plastic-recycling.cfm" class="nav-link">Plastic Recycling</a></li>
+<li class="dropdown-item"><a href="https://tri-powerrecycling.com/services/styrofoam-recycling.cfm" class="nav-link">Styrofoam Recycling (Polystyrene)</a></li>
+</ul>
+</li>
+<li class="nav-item">
+<a href="https://tri-powerrecycling.com/recycle-styrofoam.cfm" >Home 4 Foam</a>
+</li>
+<li class="nav-item">
+<a href="https://tri-powerrecycling.com/commercial-recycling.cfm" >Commercial</a>
+</li>
+<li class="nav-item">
+<a href="https://tri-powerrecycling.com/recycling-equipment-for-sale.cfm" >Recycling Equipment</a>
+</li>
+<li class="nav-item">
+<a href="https://tri-powerrecycling.com/about-tri-power-recycling.cfm" >About</a>
+</li>
+<li class="nav-item">
+<a href="https://tri-powerrecycling.com/location.cfm" >Location</a>
+</li>
+</ul>
+</nav>
+<span class="cta_button_top">
+<a href="https://tri-powerrecycling.com/contact-us.cfm" class="appointment-btn appointment-btn-top scrollto">Contact Us</a>
+</span>
+</div>
+</header><!-- End Header -->
+<main id="main">
+<section id="" class="inner">
+<div class="container">
+<div class="row">
+<div class="col-lg-12 d-flex align-items-stretch">
+<div class="content">
+<h1>Home 4 Foam - Styrofoam Recycling</h1>
+<div class="top_blocks blocks">
+<div class="row">
+<div class="col-md-6" style="background-color:#FFFFFF" data-aos="fade-up" data-aos-delay="100">
+<strong>Now you can ship your Styrofoam&trade; / EPS Foam to us for recycling</strong>.<br />
+<br />
+Styrofoam&trade;/EPS foam is non-biodegradable, so it lasts forever in landfills. That&rsquo;s why we use the most advanced technology and machinery to sort, clean, and process EPS foam.<br />
+&nbsp;<br />
+As one of the largest Styrofoam&trade;/EPS foam recyclers in the U.S., we work with businesses and industries that receive large amounts of EPS foam. We collect foam from the RV industry, manufacturing, logistics and shipping, pharmaceutical, and food industries.<br />
+<br />
+<a class="appointment-btn appointment-btn-top scrollto" href="https://tri-powerrecycling.com/home4foam/">Click Here to Start Your Shipment</a><br />
+&nbsp;
+</div>
+<div class="col-md-6" style="background-color:#FFFFFF" data-aos="fade-up" data-aos-delay="100">
+<div style="text-align: center;"><img alt="Styrofoam Recycling" class="img-fluid" src="https://tri-powerrecycling.com/uploaded_files/images/Home-4-Foam-700.jpg" title="Styrofoam Recycling" /></div>
+<h4 style="text-align: center;">&nbsp;</h4>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div data-aos="fade-up" data-aos-delay="100">
+<br />
+<br />
+<br />
+<br />
+&nbsp;
+</div>
+<div class="top_blocks blocks">
+</div>
+<div class="bottomcontent" data-aos="fade-up" data-aos-delay="100">
+&nbsp;
+<div style="text-align: center;"><br />
+&nbsp;</div>
+</div>
+<br><br>
+<p><a href="https://tri-powerrecycling.com/contact-us.cfm" class="appointment-btn appointment-btn-top scrollto">Contact Us</a></p>
+</div><!-- End .content-->
+</div>
+</div>
+</div>
+</section>
+</main><!-- End #main -->
+<!-- ======= Footer ======= -->
+<footer id="footer">
+<div class="footer-top">
+<div class="container">
+<div class="row">
+<div class="col-lg-4 col-md-6 footer-contact">
+<div itemscope itemtype="http://schema.org/LocalBusiness">
+<span itemprop="name"><strong>Tri-Power Recycling</strong></span>
+<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+<span itemprop="streetAddress">1240 Anderson Street</span><br>
+<span itemprop="addressLocality">Elkhart</span>,
+<span itemprop="addressRegion">IN</span>
+<span itemprop="postalCode">46514</span><br /><br />
+</div>
+Phone: <span itemprop="telephone"><a href="tel:(574) 848-1900">(574) 848-1900</a></span>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 footer-links">
+<h4>Useful Links</h4>
+<ul>
+<li><a href="https://tri-powerrecycling.com/" >Home</a></li>
+<li><a href="https://tri-powerrecycling.com/recycling-services.cfm" >Recycling Services</a></li>
+<li><a href="https://tri-powerrecycling.com/recycle-styrofoam.cfm" >Home 4 Foam</a></li>
+<li><a href="https://tri-powerrecycling.com/commercial-recycling.cfm" >Commercial</a></li>
+<li><a href="https://tri-powerrecycling.com/recycling-equipment-for-sale.cfm" >Recycling Equipment</a></li>
+<li><a href="https://tri-powerrecycling.com/about-tri-power-recycling.cfm" >About</a></li>
+<li><a href="https://tri-powerrecycling.com/location.cfm" >Location</a></li>
+<li><a href="https://tri-powerrecycling.com/contact-us.cfm" >Contact Us</a></li>
+<li><a href="https://tri-powerrecycling.com/terms-conditions-privacy-policy.cfm" >Terms & Conditions, Privacy Policy</a></li>
+<li><a href="https://tri-powerrecycling.com/sitemap.cfm" >Sitemap</a></li>
+</ul>
+</div>
+<div class="col-lg-4 col-md-6 footer-newsletter">
+</div>
+</div>
+</div>
+</div>
+<div class="container d-md-flex py-4">
+<div class="mr-md-auto text-center text-md-left">
+<div class="copyright">
+&copy; 2009 - 2026 All Rights Reserved
+<p class="bangfooter"><small>Website by BANG! Web Site Design</small></p>
+</div>
+</div>
+<div class="social-links text-center text-md-right pt-3 pt-md-0">
+<img src=https://tri-powerrecycling.com/img/credit-cards.png class="img-fluid"><br><br><br>
+</div>
+</div>
+</footer><!-- End Footer -->
+<a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+<!-- Vendor JS Files -->
+<script src="https://tri-powerrecycling.com/assets/vendor/jquery/jquery.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/counterup/counterup.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/aos/aos.js"></script>
+<!-- Template Main JS File -->
+<script src="https://tri-powerrecycling.com/assets/js/main.js"></script>
+<script>
+$( document ).ready(function() {
+if (!$('#videomodal').is(':visible')) {
+// if modal is not shown/visible, pause video
+$('.video')[0].pause();
+}
+});
+$('.modal').on('shown.bs.modal', function () {
+$('.video')[0].play();
+});
+$('.modal').on('hidden.bs.modal', function () {
+$('.video')[0].pause();
+});
+</script>
+</body>
+</html>
