@@ -37,7 +37,9 @@ const triServer = readFileSync(resolve('apps/tri-power/site-server.mjs'), 'utf8'
 const triLegacyRoutes = [
   '/index.cfm', '/recycling-services.cfm', '/services/cardboard-recycling-disposal.cfm',
   '/services/paper-recycling.cfm', '/services/plastic-recycling.cfm',
-  '/services/styrofoam-recycling.cfm', '/recycle-styrofoam.cfm', '/commercial-recycling.cfm',
+  '/services/styrofoam-recycling.cfm', '/recycle-styrofoam.cfm', '/home4foam',
+  '/home4foam/index.cfm', '/home4foam/step2.cfm', '/home4foam/step3.cfm',
+  '/home4foam/print_label.cfm', '/commercial-recycling.cfm',
   '/recycling-equipment-for-sale.cfm', '/about-tri-power-recycling.cfm', '/location.cfm',
   '/contact-us.cfm', '/terms-conditions-privacy-policy.cfm', '/request-for-quote.cfm',
   '/rfq-thank-you.cfm', '/review-form.cfm', '/review-form-thank-you.cfm', '/contactform8.cfm',

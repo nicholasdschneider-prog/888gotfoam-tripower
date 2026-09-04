@@ -380,6 +380,24 @@ h3 { font-size: 2.15rem; }
 .detailGrid article:hover { border-color: var(--lime); }
 .detailGrid p { color: var(--muted); }
 
+.contentSections {
+  padding: 0 clamp(1.2rem, 8vw, 8rem) 7rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+.contentSections article {
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  background: var(--paper);
+}
+.contentSections h2 { margin: 0 0 1rem; font-size: clamp(1.7rem, 3vw, 2.45rem); }
+.contentSections p, .contentSections li { color: var(--muted); }
+.contentSections p:last-child { margin-bottom: 0; }
+.contentSections ul { margin: 1rem 0 0; padding-left: 1.25rem; }
+.contentSections li + li { margin-top: .55rem; }
+
 .story, .location {
   padding: 7rem clamp(1.2rem, 8vw, 8rem);
   display: grid;
@@ -473,8 +491,9 @@ footer > span {
   .heroCopy { padding: 4.5rem 1.2rem 7rem; }
   .heroCopy h1 { font-size: clamp(3.7rem, 17vw, 5.6rem); }
   .heroStat { left: 1.2rem; right: 1.2rem; bottom: 1.2rem; }
-  .sectionHeading, .pathCards, .intro, .commercial, .contact, .story, .location, .detailLead, .pageHero { grid-template-columns: 1fr; }
+  .sectionHeading, .pathCards, .intro, .commercial, .contact, .story, .location, .detailLead, .pageHero, .contentSections { grid-template-columns: 1fr; }
   .startHere, .intro, .commercial, .contact, .story, .location, .detail { padding: 5rem 1.2rem; }
+  .contentSections { padding: 0 1.2rem 5rem; }
   .sectionHeading, .intro { gap: 1rem; }
   .pathCards > a { min-height: 290px; }
   .materials { grid-template-columns: 1fr; }

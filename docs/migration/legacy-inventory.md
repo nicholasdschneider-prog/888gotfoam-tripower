@@ -14,15 +14,16 @@ Disposition terms:
 |---|---|---|
 | `/` | `/` | Migrated: overview, current plastics notice, material paths, commercial service, equipment, location, phone, and inquiry path. |
 | `/index.cfm` | `/` | Redirected permanently to the migrated home page. |
-| `/recycling-services.cfm` | `/services` | Migrated and permanently redirected: current material overview and links to focused streams. |
-| `/services/cardboard-recycling-disposal.cfm` | `/services/cardboard` | Migrated and permanently redirected: loose/baled cardboard, pickup/loading models, collection equipment, and audit context. Variable commodity-payment language is intentionally omitted; current acceptance remains flexible. |
-| `/services/paper-recycling.cfm` | `/services/paper` | Migrated and permanently redirected: archived office paper, books/publications, cores/fiber, and commercial-quantity context. Exact current list carries a confirmation flag. |
+| `/recycling-services.cfm` | `/services` | Migrated and permanently redirected: current material overview, free outdoor drop-off, commercial collection methods, current exclusions, and links to focused streams. Conflicting historic plastics copy is superseded by the newer plastics notice. |
+| `/services/cardboard-recycling-disposal.cfm` | `/services/cardboard` | Migrated and permanently redirected: loose/baled cardboard, box preparation, free drop-off, market-based commercial value, five-bale pickup guidance, loading models, mesh cubes, collection equipment, processing, and audit context. Current acceptance remains flexible. |
+| `/services/paper-recycling.cfm` | `/services/paper` | Migrated and permanently redirected: the current paper list, loose/baled material, 17-cubic-yard mesh cubes, collection options, mill processing, equipment context, and conditional market-based commercial value. |
 | `/services/plastic-recycling.cfm` | `/services/plastics` | Migrated and permanently redirected to a focused status page. Conflicting older “plastics 1–7” claims are explicitly retired; the newer public “EPS only” notice is used. Current plastics policy carries a confirmation flag. |
-| `/services/styrofoam-recycling.cfm` | `/services/eps-foam` | Migrated and permanently redirected: EPS identification, sorting, densification, packaging-peanut exclusion, and commercial-stream context. Exact accepted forms carry a confirmation flag. |
-| `/recycle-styrofoam.cfm` | `/home-4-foam` | Migrated and permanently redirected: distinct mail-in program, material confirmation, shipping-instruction, and commercial-volume guidance. Program activity/fees carry a confirmation flag. |
-| `/commercial-recycling.cfm` | `/commercial-recycling` | Migrated and permanently redirected: audit, collection planning, pickup, and equipment support. Service area, minimums, pricing, and schedules carry confirmation flags. |
-| `/recycling-equipment-for-sale.cfm` | `/recycling-equipment` | Migrated and permanently redirected: vertical/horizontal balers, compactors, and purchase/lease arrangements. Inventory and terms carry confirmation flags. |
-| `/about-tri-power-recycling.cfm` | `/about` | Migrated and permanently redirected: family-business and material-recovery story. Unverified national-scale superlatives remain only in the archive. |
+| `/services/styrofoam-recycling.cfm` | `/services/eps-foam` | Migrated and permanently redirected: EPS/XPS identification, common product forms, industries, sorting, densification, shipment/pickup/drop-off paths, packaging-peanut exclusion, and reuse outcomes. Current cleanliness and acceptance remain flexible. |
+| `/recycle-styrofoam.cfm` | `/home-4-foam` | Migrated and permanently redirected: distinct mail-in program, material confirmation, preparation, legacy UPS label/pickup context, shipping instructions, and commercial-volume guidance. Current payment and label fulfillment begin with direct confirmation. |
+| `/home4foam/`, `/home4foam/index.cfm`, `/home4foam/step2.cfm`, `/home4foam/step3.cfm`, and `/home4foam/print_label.cfm` | `/home-4-foam` | The legacy UPS label workflow and its continuation/label pages are consolidated and permanently redirected to the migrated Home 4 Foam guidance. This preserves old links without exposing retired payment or shipping-label processing. |
+| `/commercial-recycling.cfm` | `/commercial-recycling` | Migrated and permanently redirected: small-to-trailer volumes, industry examples, audit, detailed collection methods, pickup, conditional commodity value, equipment support, and acquisition options. Current pricing and schedules are confirmed directly. |
+| `/recycling-equipment-for-sale.cfm` | `/recycling-equipment` | Migrated and permanently redirected: vertical/horizontal baler operation and fit, compactors, concrete/site needs, trailers, mesh cubes, five-bale pickup guidance, and purchase/rental/lease-to-purchase arrangements. Current inventory and terms are confirmed directly. |
+| `/about-tri-power-recycling.cfm` | `/about` | Migrated and permanently redirected: Frank Ward’s 1976 recycling origins, Cindy and Brent’s family and operating history, the 1998 move, the Elkhart facility since 2010, eight-acre site, five children, combined experience, and independently owned high-volume EPS positioning. |
 | `/location.cfm` | `/location` | Migrated and permanently redirected: 1240 Anderson Street, Elkhart, IN 46514, 574-848-1900, and free outdoor bins for select accepted recyclables. Exact materials and hours remain flexible and visitors are told to call first. |
 | `/contact-us.cfm` | `/contact` | Migrated and permanently redirected: server-validated preview-safe inquiry flow and office phone. Production recipients carry a confirmation flag. |
 | `/terms-conditions-privacy-policy.cfm` | `/privacy` | Migrated and permanently redirected: policy topics and the May 3, 2022 legacy date are preserved; production processors, retention, analytics, and legal approval carry confirmation flags. |
@@ -46,9 +47,9 @@ Disposition terms:
 ### Tri-Power confirmation flags
 
 - Public drop-off hours and Saturday availability. Free outdoor bins for select accepted recyclables were confirmed September 4, 2026; the site intentionally avoids a fixed material list because acceptance may change.
-- Exact residential and commercial accepted-material lists.
+- Exact residential and commercial accepted-material lists as operations change; the Phase 1 site preserves the current-site lists with call-first guidance.
 - Current plastics policy beyond the public “EPS only” notice.
-- Service area, pickup minimums, equipment availability, and Home 4 Foam status/terms. Variable commodity-payment language is intentionally omitted from Phase 1.
+- Service area, current equipment availability, and Home 4 Foam payment/label details. Current-site pickup minimums and conditional commodity-payment language are preserved with call-first guidance.
 - Correct recipients for general, sales, hauling, equipment, and service inquiries.
 - Final legal/privacy language after hosting, lead delivery, analytics, and retention are approved.
 

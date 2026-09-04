@@ -31,6 +31,11 @@ const redirects = {
   '/services/plastic-recycling.cfm': '/services/plastics',
   '/services/styrofoam-recycling.cfm': '/services/eps-foam',
   '/recycle-styrofoam.cfm': '/home-4-foam',
+  '/home4foam': '/home-4-foam',
+  '/home4foam/index.cfm': '/home-4-foam',
+  '/home4foam/step2.cfm': '/home-4-foam',
+  '/home4foam/step3.cfm': '/home-4-foam',
+  '/home4foam/print_label.cfm': '/home-4-foam',
   '/commercial-recycling.cfm': '/commercial-recycling',
   '/recycling-equipment-for-sale.cfm': '/recycling-equipment',
   '/about-tri-power-recycling.cfm': '/about',
@@ -81,7 +86,7 @@ createServer(async (req, res) => {
   const pathname = url.pathname.length > 1 ? url.pathname.replace(/\/$/, '') : '/'
   if (req.method === 'GET' && pathname === '/health') return sendJson(res, 200, { ok: true, site: siteName })
   if ((req.method === 'GET' || req.method === 'HEAD') && url.pathname.length > 1 && url.pathname.endsWith('/')) {
-    res.writeHead(308, { location: `${pathname}${url.search}`, 'cache-control': 'public, max-age=3600' }); return res.end()
+    res.writeHead(308, { location: `${redirects[pathname] || pathname}${url.search}`, 'cache-control': 'public, max-age=3600' }); return res.end()
   }
   if ((req.method === 'GET' || req.method === 'HEAD') && redirects[pathname]) {
     res.writeHead(308, { location: redirects[pathname], 'cache-control': 'public, max-age=3600' }); return res.end()

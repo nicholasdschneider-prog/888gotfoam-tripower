@@ -6,6 +6,10 @@ The Tri-Power-only refresh was reconciled against BANG's private handoff package
 
 Current Tri-Power checks passed: TypeScript, lint, production build, the repository link/route checker, and Git whitespace validation. The checker now covers all 24 known Tri-Power legacy redirects. The existing Got Foam build and the unchanged She Pallets app are covered again by the full-repository checks before preview publication.
 
+## September 4 content-parity pass
+
+The archived public website is the Phase 1 content baseline. Detailed current-site information was restored for cardboard, paper, EPS foam, commercial collection, equipment, Home 4 Foam, free outdoor drop-off, conditional commodity value, and the Fifer family history. The newer “general plastics are not accepted” notice supersedes older rigid/film-plastics copy. Exact current hours, live inventory, and transactional Home 4 Foam fulfillment remain direct-confirmation items rather than launch blockers; future refinements are recorded in `phase-2-backlog.md`. The known redirect set now also covers the legacy `/home4foam/` UPS workflow and its continuation/label pages.
+
 Validated August 15, 2026 against production builds served by each app's Railway-style Node server.
 
 ## Route matrix

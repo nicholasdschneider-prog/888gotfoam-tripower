@@ -11,6 +11,7 @@ type Page = {
 }
 
 type Detail = { title: string; text: string }
+type ContentSection = { heading: string; paragraphs?: string[]; items?: string[] }
 
 const routes: Record<string, Page> = {
   '/services': {
@@ -196,6 +197,137 @@ const details: Record<string, { heading: string; note: string; items: Detail[] }
   },
 }
 
+const moreDetails: Record<string, ContentSection[]> = {
+  '/services': [
+    {
+      heading: 'Free outdoor drop-off',
+      paragraphs: ['Local businesses and individuals can use free outdoor bins for select recyclable materials. Because markets and operating capabilities change, call before visiting to confirm the material, current hours, and preparation requirements.'],
+    },
+    {
+      heading: 'Commercial collection options',
+      paragraphs: ['Tri-Power can build a collection plan around the material, volume, loading area, available floor space, and pickup frequency.'],
+      items: ['Metal mesh collection cubes', 'Live-load or staged semi-trailers', 'Open-top roll-off containers', 'Stationary compactors', 'Horizontal and vertical balers'],
+    },
+    {
+      heading: 'Materials the current program does not collect',
+      paragraphs: ['The current website lists the following exclusions. Call first when a material is mixed, contaminated, or difficult to identify.'],
+      items: ['Packaging peanuts', 'Yard waste', 'Solid waste', 'Glass bottles', 'Electronic waste', 'Metal', 'Aerosol, paint, oil, or gas cans', 'Medical sharps or medical waste', 'Hazardous materials'],
+    },
+  ],
+  '/services/cardboard': [
+    {
+      heading: 'Cardboard accepted by the current program',
+      paragraphs: ['The current program describes moving boxes, shipping boxes, corrugated cardboard, and clean cardboard food containers. Tape, staples, and labels can remain on otherwise acceptable cardboard. Packaging peanuts must be removed.'],
+    },
+    {
+      heading: 'Commercial pickup and storage',
+      paragraphs: ['Tri-Power offers customized cardboard collection, including material audits, mesh cubes, containers, and baler guidance.'],
+      items: ['Ground-level or dock-level pickup for smaller quantities', 'A current-site minimum of five bales for scheduled smaller pickups', 'Live loading into a van or flatbed for truckload quantities', 'Staged trailers that can be loaded at the customer’s convenience', 'Mesh cubes with forklift pockets and visible contents to help limit contamination'],
+    },
+    {
+      heading: 'Material value and next use',
+      paragraphs: ['There is no charge to use the public drop-off bins. For commercial loads, loose or baled cardboard may have value based on current commodity markets. Tri-Power bales the material and sends it to paper mills, where it can become new cardboard products.'],
+    },
+  ],
+  '/services/paper': [
+    {
+      heading: 'Paper streams described by the current program',
+      paragraphs: ['Tri-Power processes loose and baled paper and related clean fiber. Confirm the exact grade before delivery.'],
+      items: ['White and colored office paper', 'Envelopes with windows', 'Booklets, manuals, flyers, and greeting cards', 'Fax or copy paper, adding-machine tape, carbonless forms, and notes', 'Soft-covered books, textbooks, telephone directories, magazines, and newspapers', 'Manila folders, time cards, paper cores, and related fibers'],
+    },
+    {
+      heading: 'Collection and processing',
+      paragraphs: ['Collection options include 17-cubic-yard metal mesh cubes, live-load or staged trailers, open-top roll-offs, compactors, and horizontal or vertical balers. Recovered paper is baled and sent to paper mills for processing into new paper products.'],
+    },
+    {
+      heading: 'Commercial material value',
+      paragraphs: ['Paper collection may cost a business nothing, and eligible material may be purchased by weight when market value supports it. Call for the current material grade, quantity, and terms.'],
+    },
+  ],
+  '/services/eps-foam': [
+    {
+      heading: 'EPS and XPS are different materials',
+      paragraphs: ['Expanded polystyrene (EPS) is a lightweight bead foam used for cushioning and insulation. Styrofoam is a DuPont brand commonly associated with extruded polystyrene (XPS), a closed-cell construction and insulation foam. Similar-looking foams can require different handling, so identification matters.'],
+    },
+    {
+      heading: 'Where commercial foam comes from',
+      paragraphs: ['Tri-Power’s current site describes recurring foam streams from RV production, manufacturing, logistics and shipping, pharmaceutical operations, automotive manufacturing, and food businesses. Examples include protective packaging, appliance and electronics cushioning, insulation, coolers, cups, trays, takeout containers, and egg cartons. Cleanliness and current acceptance must be confirmed.'],
+    },
+    {
+      heading: 'How the material moves',
+      paragraphs: ['Businesses may arrange drop-off, pickup, or shipment for volumes ranging from small bags to semi-trailer loads. Individuals can use the outdoor bins or ask about Home 4 Foam. Tri-Power sorts and densifies foam, pressing out much of its air so the material can be transported and remade into insulation and consumer products.'],
+    },
+  ],
+  '/home-4-foam': [
+    {
+      heading: 'A shipping path for household foam',
+      paragraphs: ['Home 4 Foam was created so people without a nearby EPS processor can ship acceptable foam to Tri-Power. The legacy process offered a UPS label with either store drop-off or scheduled pickup. The replacement site begins with material confirmation so customers receive the current packing, payment, and shipping instructions before buying a label or sending a box.'],
+    },
+    {
+      heading: 'Prepare before shipping',
+      items: ['Confirm that the material is accepted EPS rather than another foam or a biodegradable packaging peanut', 'Keep the foam clean and separated from tape, labels, food residue, and other material', 'Measure the shipping box and pack the foam into the smallest practical volume', 'Ask about a commercial program instead when the material is recurring or high volume'],
+    },
+  ],
+  '/commercial-recycling': [
+    {
+      heading: 'From a small load to a trailer',
+      paragraphs: ['Tri-Power works with small and large businesses. Depending on the stream and location, commercial material can be dropped off, picked up, or shipped in quantities ranging from small loads to a semi-trailer.'],
+    },
+    {
+      heading: 'Collection methods',
+      items: ['Mesh cubes for visible, movable collection', 'Live-load or staged semi-trailers', 'Open-top roll-off containers', 'Stationary compactors', 'Horizontal and vertical balers', 'Ground-level and dock-level bale pickup'],
+    },
+    {
+      heading: 'Material value and equipment',
+      paragraphs: ['Cardboard or paper collection may cost a business nothing, and eligible material may be purchased by weight when commodity markets support it. Tri-Power also offers new and used balers and compactors through purchase, lease, and lease-to-purchase arrangements. Current pricing and terms are confirmed directly.'],
+    },
+    {
+      heading: 'Industries with recurring EPS',
+      paragraphs: ['The current program serves material streams associated with RV production, manufacturing, logistics and distribution, automotive manufacturing, pharmaceutical operations, and food businesses. A recycling audit can match the stream to storage, equipment, loading, and pickup needs.'],
+    },
+  ],
+  '/recycling-equipment': [
+    {
+      heading: 'Vertical balers',
+      paragraphs: ['Vertical balers use a downward hydraulic ram and generally require less floor space than horizontal machines. They require an operator to load material, cycle the ram, and tie finished bales. The current site advises planning for roughly 14 feet of ceiling height and checking the feed opening against the largest boxes.'],
+    },
+    {
+      heading: 'Horizontal balers',
+      paragraphs: ['Horizontal balers accept material through a larger top opening and can process higher volumes and larger pieces. They require more floor space and a larger investment, making volume, material size, labor, and facility layout important selection factors.'],
+    },
+    {
+      heading: 'Compactors',
+      paragraphs: ['Compactors use a horizontal hydraulic ram to move material into a receiving container. Boxes generally do not need to be broken down first, and the machines can reduce storage space and handling labor. Most installations require an outdoor concrete mounting area and scheduled container service.'],
+    },
+    {
+      heading: 'Trailers, mesh cubes, and bale pickup',
+      paragraphs: ['Tri-Power also provides semi-trailers for live loading or staged storage, stationary storage containers, and movable mesh cubes with forklift pockets. Bale pickup can be arranged around the customer’s volume; the current site describes a five-bale minimum for less-than-truckload service.'],
+    },
+    {
+      heading: 'Purchase and lease options',
+      paragraphs: ['New and used equipment may be available through outright purchase, monthly rental, or lease-to-purchase. The current site describes lease-to-purchase periods commonly lasting three to five years, with ownership transferring at the end of the agreement. Confirm availability, condition, service, and terms directly.'],
+    },
+  ],
+  '/about': [
+    {
+      heading: 'A family history in recycling',
+      paragraphs: ['Cindy Fifer grew up around her father Frank Ward’s Chicago waste business. After buying a two-truck company in 1976, Frank began separating office paper and cardboard from loads that otherwise went to landfill. The family later worked with equipment manufacturers as recycling operations and recovery technology expanded.'],
+    },
+    {
+      heading: 'Brent and Cindy build the next chapter',
+      paragraphs: ['Cindy married Brent Fifer in 1986, and they raised five children. Brent brought a construction background into the design, building, and operation of paper recovery facilities, construction-and-demolition recovery plants, material recovery facilities, transfer stations, and wood-grinding operations. The family moved from Chicago to Niles, Michigan, in 1998.'],
+    },
+    {
+      heading: 'Tri-Power in Elkhart',
+      paragraphs: ['Tri-Power Recycling, formerly Nature’s Wood Products, has operated in Elkhart since 2010. Its facility sits on eight acres at 1240 Anderson Street. Brent and Cindy bring more than eight decades of combined industry experience, and their adult children continue to play roles in the family business.'],
+    },
+    {
+      heading: 'High-volume EPS capability',
+      paragraphs: ['The current website describes Tri-Power as one of the country’s largest independently owned EPS recycling operations. Its equipment and industry relationships support sorting, densifying, and moving difficult foam streams into new insulation and consumer products.'],
+    },
+  ],
+}
+
 const serviceCards = [
   { path: '/services/cardboard', title: 'Cardboard', text: 'Loose and baled corrugated material, plus commercial collection planning.', image: '/images/cardboard.jpg', alt: 'Bales of corrugated cardboard' },
   { path: '/services/paper', title: 'Paper & fiber', text: 'Office paper, books, cores, and related clean fiber streams.', image: '/images/paper.jpg', alt: 'Recovered paper prepared for recycling' },
@@ -283,6 +415,12 @@ function Materials() {
   return <section className="materials" aria-label="Material streams">{serviceCards.map((item) => <article key={item.path}><img src={item.image} alt={item.alt} loading="lazy" /><div><span>Material stream</span><h3>{item.title}</h3><p>{item.text}</p><a href={item.path}>View material guidance <span aria-hidden="true">→</span></a></div></article>)}</section>
 }
 
+function Supplemental({ path }: { path: string }) {
+  const sections = moreDetails[path]
+  if (!sections) return null
+  return <section className="contentSections">{sections.map((section) => <article key={section.heading}><h2>{section.heading}</h2>{section.paragraphs?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}{section.items && <ul>{section.items.map((item) => <li key={item}>{item}</li>)}</ul>}</article>)}</section>
+}
+
 function Home() {
   return (
     <>
@@ -319,16 +457,16 @@ function Home() {
 }
 
 function Services() {
-  return <><PageHero page={routes['/services']} /><section className="intro"><p className="eyebrow dark">Current acceptance</p><h2>Cardboard, paper, and clean EPS foam.</h2><p>General plastics are not currently accepted. Confirm the exact material and delivery details before visiting.</p></section><Materials /><ContactBand /></>
+  return <><PageHero page={routes['/services']} /><section className="intro"><p className="eyebrow dark">Current acceptance</p><h2>Cardboard, paper, and clean EPS foam.</h2><p>General plastics are not currently accepted. Confirm the exact material and delivery details before visiting.</p></section><Materials /><Supplemental path="/services" /><ContactBand /></>
 }
 
 function DetailPage({ path }: { path: string }) {
   const detail = details[path]
-  return <><PageHero page={routes[path]} />{detail && <section className="detail"><div className="detailLead"><p className="eyebrow dark">Program details</p><h2>{detail.heading}</h2><p>{detail.note}</p></div><div className="detailGrid">{detail.items.map((item, index) => <article key={item.title}><span>0{index + 1}</span><h3>{item.title}</h3><p>{item.text}</p></article>)}</div></section>}<ContactBand /></>
+  return <><PageHero page={routes[path]} />{detail && <section className="detail"><div className="detailLead"><p className="eyebrow dark">Program details</p><h2>{detail.heading}</h2><p>{detail.note}</p></div><div className="detailGrid">{detail.items.map((item, index) => <article key={item.title}><span>0{index + 1}</span><h3>{item.title}</h3><p>{item.text}</p></article>)}</div></section>}<Supplemental path={path} /><ContactBand /></>
 }
 
 function About() {
-  return <><PageHero page={routes['/about']} /><section className="story"><div><p className="eyebrow dark">The Tri-Power story</p><h2>A family recycling business in Elkhart.</h2><p>Tri-Power grew through material recovery, customer service, and investment in the equipment needed to make difficult streams practical.</p><p>Today the public program centers on cardboard and paper processing, clean EPS foam recovery, commercial recycling planning, and equipment guidance.</p></div><aside><strong>How to begin</strong><h3>Bring the material details.</h3><p>Tell the team what it is, how much you have, where it is, and whether it is a one-time or recurring stream.</p><a href="/contact">Contact Tri-Power →</a></aside></section><ContactBand /></>
+  return <><PageHero page={routes['/about']} /><section className="story"><div><p className="eyebrow dark">The Tri-Power story</p><h2>A family recycling business in Elkhart.</h2><p>Tri-Power grew through material recovery, customer service, and investment in the equipment needed to make difficult streams practical.</p><p>Today the public program centers on cardboard and paper processing, clean EPS foam recovery, commercial recycling planning, and equipment guidance.</p></div><aside><strong>How to begin</strong><h3>Bring the material details.</h3><p>Tell the team what it is, how much you have, where it is, and whether it is a one-time or recurring stream.</p><a href="/contact">Contact Tri-Power →</a></aside></section><Supplemental path="/about" /><ContactBand /></>
 }
 
 function Location() {
