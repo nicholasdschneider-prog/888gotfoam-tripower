@@ -14,7 +14,7 @@ const pages = {
   '/services/paper': ['Paper Recycling | Tri-Power Recycling', 'Paper and fiber recycling for individuals and commercial operations.'],
   '/services/plastics': ['Plastic Recycling Status | Tri-Power Recycling', 'Current plastics acceptance notice from Tri-Power Recycling.'],
   '/services/eps-foam': ['EPS Foam Recycling | Tri-Power Recycling', 'Expanded polystyrene foam processing and commercial EPS recycling in Elkhart.'],
-  '/home-4-foam': ['Home 4 Foam | Ship EPS Foam for Recycling', 'Legacy Home 4 Foam shipping program information from Tri-Power Recycling.'],
+  '/home-4-foam': ['Home 4 Foam | Ship EPS Foam for Recycling', 'Ask Tri-Power Recycling about shipping clean EPS foam for recycling through Home 4 Foam.'],
   '/commercial-recycling': ['Commercial Recycling | Tri-Power Recycling', 'Commercial collection, recycling audits, equipment, and pickup planning.'],
   '/recycling-equipment': ['Recycling Equipment | Tri-Power Recycling', 'Baler and compactor guidance, purchase, lease, and lease-to-purchase options.'],
   '/about': ['About Tri-Power Recycling | Elkhart, Indiana', 'The family business story behind Tri-Power Recycling.'],

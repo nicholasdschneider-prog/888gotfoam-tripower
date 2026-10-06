@@ -147,7 +147,7 @@ const details: Record<string, { heading: string; note: string; items: Detail[] }
   },
   '/services/plastics': {
     heading: 'What to know before loading the truck',
-    note: 'The current public notice says general plastics are not accepted. Clean EPS foam is the exception.',
+    note: 'General plastics are not currently accepted. Clean EPS foam is the exception.',
     items: [
       { title: 'Do not rely on old lists', text: 'Older pages and search results may describe plastics that Tri-Power no longer accepts.' },
       { title: 'Clean EPS exception', text: 'Expanded polystyrene foam is the plastic material currently identified for processing.' },
@@ -209,20 +209,20 @@ const moreDetails: Record<string, ContentSection[]> = {
       items: ['Metal mesh collection cubes', 'Live-load or staged semi-trailers', 'Open-top roll-off containers', 'Stationary compactors', 'Horizontal and vertical balers'],
     },
     {
-      heading: 'Materials the current program does not collect',
-      paragraphs: ['The current website lists the following exclusions. Call first when a material is mixed, contaminated, or difficult to identify.'],
+      heading: 'Materials we do not collect',
+      paragraphs: ['We do not collect the following materials. Call first when a material is mixed, contaminated, or difficult to identify.'],
       items: ['Packaging peanuts', 'Yard waste', 'Solid waste', 'Glass bottles', 'Electronic waste', 'Metal', 'Aerosol, paint, oil, or gas cans', 'Medical sharps or medical waste', 'Hazardous materials'],
     },
   ],
   '/services/cardboard': [
     {
-      heading: 'Cardboard accepted by the current program',
-      paragraphs: ['The current program describes moving boxes, shipping boxes, corrugated cardboard, and clean cardboard food containers. Tape, staples, and labels can remain on otherwise acceptable cardboard. Packaging peanuts must be removed.'],
+      heading: 'Cardboard in our program',
+      paragraphs: ['Our cardboard program covers moving boxes, shipping boxes, corrugated cardboard, and clean cardboard food containers. Tape, staples, and labels can remain on otherwise acceptable cardboard. Packaging peanuts must be removed.'],
     },
     {
       heading: 'Commercial pickup and storage',
       paragraphs: ['Tri-Power offers customized cardboard collection, including material audits, mesh cubes, containers, and baler guidance.'],
-      items: ['Ground-level or dock-level pickup for smaller quantities', 'A current-site minimum of five bales for scheduled smaller pickups', 'Live loading into a van or flatbed for truckload quantities', 'Staged trailers that can be loaded at the customer’s convenience', 'Mesh cubes with forklift pockets and visible contents to help limit contamination'],
+      items: ['Ground-level or dock-level pickup for smaller quantities', 'A minimum of five bales per scheduled pickup for smaller quantities', 'Live loading into a van or flatbed for truckload quantities', 'Staged trailers that can be loaded at the customer’s convenience', 'Mesh cubes with forklift pockets and visible contents to help limit contamination'],
     },
     {
       heading: 'Material value and next use',
@@ -231,7 +231,7 @@ const moreDetails: Record<string, ContentSection[]> = {
   ],
   '/services/paper': [
     {
-      heading: 'Paper streams described by the current program',
+      heading: 'Paper streams in our program',
       paragraphs: ['Tri-Power processes loose and baled paper and related clean fiber. Confirm the exact grade before delivery.'],
       items: ['White and colored office paper', 'Envelopes with windows', 'Booklets, manuals, flyers, and greeting cards', 'Fax or copy paper, adding-machine tape, carbonless forms, and notes', 'Soft-covered books, textbooks, telephone directories, magazines, and newspapers', 'Manila folders, time cards, paper cores, and related fibers'],
     },
@@ -251,7 +251,7 @@ const moreDetails: Record<string, ContentSection[]> = {
     },
     {
       heading: 'Where commercial foam comes from',
-      paragraphs: ['Tri-Power’s current site describes recurring foam streams from RV production, manufacturing, logistics and shipping, pharmaceutical operations, automotive manufacturing, and food businesses. Examples include protective packaging, appliance and electronics cushioning, insulation, coolers, cups, trays, takeout containers, and egg cartons. Cleanliness and current acceptance must be confirmed.'],
+      paragraphs: ['Recurring foam streams come from RV production, manufacturing, logistics and shipping, pharmaceutical operations, automotive manufacturing, and food businesses. Examples include protective packaging, appliance and electronics cushioning, insulation, coolers, cups, trays, takeout containers, and egg cartons. Cleanliness and current acceptance must be confirmed.'],
     },
     {
       heading: 'How the material moves',
@@ -261,7 +261,7 @@ const moreDetails: Record<string, ContentSection[]> = {
   '/home-4-foam': [
     {
       heading: 'A shipping path for household foam',
-      paragraphs: ['Home 4 Foam was created so people without a nearby EPS processor can ship acceptable foam to Tri-Power. The legacy process offered a UPS label with either store drop-off or scheduled pickup. The replacement site begins with material confirmation so customers receive the current packing, payment, and shipping instructions before buying a label or sending a box.'],
+      paragraphs: ['Home 4 Foam was created so people without a nearby EPS processor can ship acceptable foam to Tri-Power. Start by confirming the material with our team so you receive current packing, payment, and shipping instructions before buying a label or sending a box.'],
     },
     {
       heading: 'Prepare before shipping',
@@ -283,13 +283,13 @@ const moreDetails: Record<string, ContentSection[]> = {
     },
     {
       heading: 'Industries with recurring EPS',
-      paragraphs: ['The current program serves material streams associated with RV production, manufacturing, logistics and distribution, automotive manufacturing, pharmaceutical operations, and food businesses. A recycling audit can match the stream to storage, equipment, loading, and pickup needs.'],
+      paragraphs: ['Tri-Power serves material streams associated with RV production, manufacturing, logistics and distribution, automotive manufacturing, pharmaceutical operations, and food businesses. A recycling audit can match the stream to storage, equipment, loading, and pickup needs.'],
     },
   ],
   '/recycling-equipment': [
     {
       heading: 'Vertical balers',
-      paragraphs: ['Vertical balers use a downward hydraulic ram and generally require less floor space than horizontal machines. They require an operator to load material, cycle the ram, and tie finished bales. The current site advises planning for roughly 14 feet of ceiling height and checking the feed opening against the largest boxes.'],
+      paragraphs: ['Vertical balers use a downward hydraulic ram and generally require less floor space than horizontal machines. They require an operator to load material, cycle the ram, and tie finished bales. Plan for roughly 14 feet of ceiling height and check the feed opening against your largest boxes.'],
     },
     {
       heading: 'Horizontal balers',
@@ -301,11 +301,11 @@ const moreDetails: Record<string, ContentSection[]> = {
     },
     {
       heading: 'Trailers, mesh cubes, and bale pickup',
-      paragraphs: ['Tri-Power also provides semi-trailers for live loading or staged storage, stationary storage containers, and movable mesh cubes with forklift pockets. Bale pickup can be arranged around the customer’s volume; the current site describes a five-bale minimum for less-than-truckload service.'],
+      paragraphs: ['Tri-Power also provides semi-trailers for live loading or staged storage, stationary storage containers, and movable mesh cubes with forklift pockets. Bale pickup can be arranged around the customer’s volume; less-than-truckload service has a five-bale minimum.'],
     },
     {
       heading: 'Purchase and lease options',
-      paragraphs: ['New and used equipment may be available through outright purchase, monthly rental, or lease-to-purchase. The current site describes lease-to-purchase periods commonly lasting three to five years, with ownership transferring at the end of the agreement. Confirm availability, condition, service, and terms directly.'],
+      paragraphs: ['New and used equipment may be available through outright purchase, monthly rental, or lease-to-purchase. Lease-to-purchase periods commonly last three to five years, with ownership transferring at the end of the agreement. Confirm availability, condition, service, and terms directly.'],
     },
   ],
   '/about': [
@@ -320,6 +320,10 @@ const moreDetails: Record<string, ContentSection[]> = {
     {
       heading: 'Tri-Power in Elkhart',
       paragraphs: ['Tri-Power Recycling, formerly Nature’s Wood Products, has operated in Elkhart since 2010. Its facility sits on eight acres at 1240 Anderson Street. Brent and Cindy bring more than eight decades of combined industry experience, and their adult children continue to play roles in the family business.'],
+    },
+    {
+      heading: 'In the community',
+      paragraphs: ['Tri-Power sponsors and participates in Green Earth Education Day at the Elkhart County 4-H Fair and takes part in LaPorte County and Berrien County recycling events.'],
     },
     {
       heading: 'High-volume EPS capability',
@@ -474,7 +478,70 @@ function Location() {
 }
 
 function Privacy() {
-  return <><PageHero page={routes['/privacy']} /><article className="policy"><p className="policyNote"><strong>Pre-launch notice:</strong> Final inquiry routing, retention, and analytics details will be updated before this preview becomes the production website.</p><h2>Website information</h2><p>This website provides general information about Tri-Power Recycling and ways to contact the business. Confirm current material acceptance, program availability, hours, shipping instructions, and operational details directly with Tri-Power.</p><h2>Information collected</h2><p>The inquiry form collects information a visitor chooses to provide, including contact details, material location, inquiry type, and message.</p><h2>How information is used</h2><p>Inquiry information is used to respond to the request and operate the relevant service. Tri-Power does not present inquiry details as a public lead log.</p><h2>Retention and security</h2><p>The final production processors and retention period will be documented when the inquiry workflow is approved. No system can guarantee absolute transmission or storage security.</p><h2>Children and external links</h2><p>The service is not directed to children under 13. External links are governed by the destination’s own terms and privacy practices.</p><h2>Policy changes and contact</h2><p>Updates will be posted on this page. Questions can be directed to Tri-Power Recycling at <a href="tel:+15748481900">574-848-1900</a>.</p></article></>
+  return (
+    <>
+      <PageHero page={routes['/privacy']} />
+      <article className="policy">
+        <h2>Terms and conditions</h2>
+        <p>Welcome to tri-powerrecycling.com. This website provides information about Tri-Power Recycling and its recycling services, and ways to contact the business. Confirm current material acceptance, program availability, hours, shipping instructions, and operational details directly with Tri-Power before delivering or shipping material.</p>
+        <p>Questions about our services can be directed to us by phone at <a href="tel:+15748481900">574-848-1900</a>, by mail at 1240 Anderson Street, Elkhart, IN 46514 USA, or through our <a href="/contact">contact form</a>.</p>
+        <h3>International users</h3>
+        <p>This site is controlled, operated, and administered by Tri-Power Recycling from its offices within the United States of America. We make no representation that materials on this site are appropriate or available for use at locations outside the United States, and access to them from territories where their contents are illegal is prohibited. If you access this site from outside the United States, you are responsible for compliance with all local laws. Information published on this site may refer to programs and services that are not available in your country. Such references do not imply that we intend to offer those services in your country.</p>
+
+        <h2>Privacy policy</h2>
+        <p>Last updated: October 6, 2026</p>
+        <p>This Privacy Policy describes our policies and procedures on the collection, use, and disclosure of your information when you use this website, and tells you about your privacy rights. We use your personal data to respond to you and to provide and improve our service. By using the website, you agree to the collection and use of information in accordance with this Privacy Policy.</p>
+        <h3>Definitions</h3>
+        <ul>
+          <li><strong>Company</strong> (“we,” “us,” or “our”) refers to Tri-Power Recycling, 1240 Anderson Street, Elkhart, IN 46514 USA.</li>
+          <li><strong>Website</strong> or <strong>Service</strong> refers to tri-powerrecycling.com.</li>
+          <li><strong>Personal data</strong> is any information that relates to an identified or identifiable individual.</li>
+          <li><strong>Usage data</strong> is data collected automatically, generated by the use of the Service or by the Service infrastructure itself, such as the duration of a page visit.</li>
+          <li><strong>Service provider</strong> means any person or company that processes data on behalf of the Company, such as website hosting and message delivery providers.</li>
+          <li><strong>You</strong> means the individual accessing or using the Service, or the company or other legal entity on whose behalf that individual is using it.</li>
+        </ul>
+        <h3>Information we collect</h3>
+        <p>When you send an inquiry, we collect the information you choose to provide, which may include:</p>
+        <ul>
+          <li>Name and company</li>
+          <li>Email address</li>
+          <li>Phone number</li>
+          <li>Material location</li>
+          <li>The type of inquiry and the details of your message</li>
+        </ul>
+        <p>Usage data, such as your device’s internet address, browser type, the pages you visit, and the time of your visit, may be collected automatically by the systems that host this website. This website does not sell products or accept payments online, and it does not ask you to create an account.</p>
+        <h3>How we use your information</h3>
+        <ul>
+          <li>To respond to and manage your requests.</li>
+          <li>To contact you by email, telephone, or other equivalent forms of communication about your inquiry or the services you asked about.</li>
+          <li>To provide and maintain the Service, including monitoring its use.</li>
+          <li>For other business purposes, such as identifying usage trends and evaluating and improving our website and services.</li>
+        </ul>
+        <h3>How we share your information</h3>
+        <ul>
+          <li><strong>With service providers:</strong> we may share your information with service providers that host the website or deliver your inquiry to us.</li>
+          <li><strong>For business transfers:</strong> we may share or transfer your information in connection with a merger, sale of Company assets, financing, or acquisition of all or a portion of our business.</li>
+          <li><strong>With your consent:</strong> we may disclose your information for any other purpose with your consent.</li>
+          <li><strong>When required:</strong> we may disclose your information to comply with a legal obligation, protect and defend the rights or property of the Company, prevent or investigate possible wrongdoing in connection with the Service, protect the personal safety of users or the public, or protect against legal liability.</li>
+        </ul>
+        <p>We do not sell your personal data.</p>
+        <h3>Retention</h3>
+        <p>We retain your personal data only for as long as necessary for the purposes described in this Privacy Policy, including responding to your inquiry, keeping ordinary business records, and meeting our legal obligations.</p>
+        <h3>Security of your personal data</h3>
+        <p>The security of your personal data is important to us, but no method of transmission over the internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your personal data, including encrypted connections to this website, we cannot guarantee its absolute security.</p>
+        <h3>“Do Not Track” policy</h3>
+        <p>Our Service does not respond to Do Not Track signals. Some third-party websites do keep track of your browsing activities. You can set your preferences in your web browser to inform websites that you do not want to be tracked.</p>
+        <h3>Children’s privacy</h3>
+        <p>Our Service does not address anyone under the age of 13, and we do not knowingly collect personally identifiable information from anyone under the age of 13. If you are a parent or guardian and you are aware that your child has provided us with personal data, please contact us so we can remove that information.</p>
+        <h3>Links to other websites</h3>
+        <p>Our Service may contain links to other websites that are not operated by us. We strongly advise you to review the privacy policy of every site you visit. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.</p>
+        <h3>Changes to this Privacy Policy</h3>
+        <p>We may update our Privacy Policy from time to time. We will post the new Privacy Policy on this page and update the “Last updated” date above. Changes are effective when they are posted on this page.</p>
+        <h3>Contact us</h3>
+        <p>If you have any questions about these terms or this Privacy Policy, you can contact us by phone at <a href="tel:+15748481900">574-848-1900</a>, by mail at Tri-Power Recycling, 1240 Anderson Street, Elkhart, IN 46514 USA, or through our <a href="/contact">contact form</a>.</p>
+      </article>
+    </>
+  )
 }
 
 function App() {
@@ -507,7 +574,7 @@ function App() {
         <a href="/" aria-label="Tri-Power Recycling home"><img src="/images/logo.png" alt="" /></a>
         <div><strong>Tri-Power Recycling</strong><p>1240 Anderson Street · Elkhart, IN 46514</p><a href="tel:+15748481900">574-848-1900</a></div>
         <div className="footerLinks"><a href="/services">Services</a><a href="/location">Location</a><a href="/contact">Contact</a><a href="/privacy">Terms & privacy</a></div>
-        <span>Preview website · Confirm current hours and material acceptance before visiting.</span>
+        <span>Confirm current hours and material acceptance before visiting.</span>
       </footer>
     </>
   )

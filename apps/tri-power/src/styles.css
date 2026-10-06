@@ -422,6 +422,9 @@ h3 { font-size: 2.15rem; }
 
 .policy { max-width: 920px; margin: auto; padding: 7rem 1.2rem; }
 .policy h2 { font-size: 2.8rem; margin-top: 2.5rem; }
+.policy h3 { font-size: 1.5rem; margin-top: 2rem; }
+.policy ul { padding-left: 1.4rem; }
+.policy li { margin: 0.5rem 0; line-height: 1.6; }
 .policyNote {
   background: #eef4d5;
   border-left: 5px solid #86a720;
