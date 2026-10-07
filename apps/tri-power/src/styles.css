@@ -519,3 +519,7 @@ footer > span {
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
+
+.emailCard .button { word-break: break-all; }
+.emailCard .contactAlt { margin-top: 1rem; }
+.emailCard .contactAlt a { font-weight: 700; }

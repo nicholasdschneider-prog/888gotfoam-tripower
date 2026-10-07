@@ -78,7 +78,7 @@ function pageHtml(pathname) {
     .replace(/<meta name="description" content="[^"]*"\s*\/?>(?=)/, `<meta name="description" content="${description}"/>`)
     .replace(/<meta property="og:title" content="[^"]*"\s*\/?>(?=)/, `<meta property="og:title" content="${title}"/>`)
     .replace(/<meta property="og:description" content="[^"]*"\s*\/?>(?=)/, `<meta property="og:description" content="${description}"/>`)
-    .replace(/<link rel="canonical" href="[^"]*"\s*\/?>(?=)/, `<link rel="canonical" href="https://tri-powerrecycling.com${pathname === '/' ? '' : pathname}"/>`)
+    .replace(/<link rel="canonical" href="[^"]*"\s*\/?>(?=)/, `<link rel="canonical" href="https://www.tri-powerrecycling.com${pathname === '/' ? '' : pathname}"/>`)
 }
 
 createServer(async (req, res) => {

@@ -18,7 +18,11 @@ Tri-Power and She Pallets are independently buildable from the repository root. 
 - Sitemap: `/sitemap.xml`
 - Robots: `/robots.txt`
 
-## Inquiry environment variables
+## Inquiry environment variables (legacy, unused since October 7, 2026)
+
+The Tri-Power contact page now shows a mailto link to info@tri-powerrecycling.com; the `/api/inquiry` route remains but no UI posts to it. Canonical host is https://www.tri-powerrecycling.com (Railway custom domain via CNAME; the bare domain forwards to www at GoDaddy).
+
+### Original notes
 
 - `LEAD_WEBHOOK_URL`: approved server-side lead-delivery endpoint.
 - `LEAD_WEBHOOK_TOKEN`: optional bearer token for that endpoint.

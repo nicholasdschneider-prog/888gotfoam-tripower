@@ -25,12 +25,12 @@ Disposition terms:
 | `/recycling-equipment-for-sale.cfm` | `/recycling-equipment` | Migrated and permanently redirected: vertical/horizontal baler operation and fit, compactors, concrete/site needs, trailers, mesh cubes, five-bale pickup guidance, and purchase/rental/lease-to-purchase arrangements. Current inventory and terms are confirmed directly. |
 | `/about-tri-power-recycling.cfm` | `/about` | Migrated and permanently redirected: Frank Ward’s 1976 recycling origins, Cindy and Brent’s family and operating history, the 1998 move, the Elkhart facility since 2010, eight-acre site, five children, combined experience, and independently owned high-volume EPS positioning. |
 | `/location.cfm` | `/location` | Migrated and permanently redirected: 1240 Anderson Street, Elkhart, IN 46514, 574-848-1900, and free outdoor bins for select accepted recyclables. Exact materials and hours remain flexible and visitors are told to call first. |
-| `/contact-us.cfm` | `/contact` | Migrated and permanently redirected: server-validated preview-safe inquiry flow and office phone. Production recipients carry a confirmation flag. |
+| `/contact-us.cfm` | `/contact` | Migrated and permanently redirected (updated October 6-7, 2026): the legacy form is replaced by a clickable email link to info@tri-powerrecycling.com plus the office phone, per Nick and Brent. No form-to-email service. sales@ may replace info@ once Google Workspace exists. |
 | `/terms-conditions-privacy-policy.cfm` | `/privacy` | Migrated and permanently redirected (updated October 6, 2026): the legacy terms and privacy topics are carried over in full, adapted to the replacement site. Legacy clauses about online purchases, credit-card payment, UPS shipping purchases, no-refund terms, user accounts, and cookies were intentionally retired because the replacement site has no checkout, accounts, or tracking cookies. Final wording still needs business/legal approval. |
-| `/request-for-quote.cfm` | `/contact` | Permanently redirected to the replacement inquiry flow. Discovered in the BANG server package rather than the public sitemap. |
-| `/rfq-thank-you.cfm` | `/contact` | Retired confirmation page permanently redirected to the replacement inquiry flow. |
+| `/request-for-quote.cfm` | `/contact` | Permanently redirected to the contact page (email link and phone). Discovered in the BANG server package rather than the public sitemap. |
+| `/rfq-thank-you.cfm` | `/contact` | Retired confirmation page permanently redirected to the contact page. |
 | `/review-form.cfm` and `/review-form-thank-you.cfm` | `/contact` | Retired legacy review forms permanently redirected to the contact page; no old form processing is retained. |
-| `/contactform8.cfm` | `/contact` | Retired internal form template permanently redirected to the replacement inquiry flow. |
+| `/contactform8.cfm` | `/contact` | Retired internal form template permanently redirected to the contact page. |
 | `/staff.cfm` | `/about` | Permanently redirected to the migrated family-business story; legacy staff data is not republished without confirmation. |
 | `/reviews.cfm` and `/client-reviews.cfm` | `/about` | Permanently redirected to About. No unverified legacy testimonials are presented as current. |
 | `/faq.cfm` | `/services` | Permanently redirected to the current service guidance. |

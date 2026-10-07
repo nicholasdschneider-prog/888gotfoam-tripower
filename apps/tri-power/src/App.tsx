@@ -1,4 +1,4 @@
-import { FormEvent, ReactNode, useEffect, useState } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
 
 type Page = {
   title: string
@@ -118,7 +118,7 @@ const routes: Record<string, Page> = {
     description: 'Terms and privacy information for the Tri-Power Recycling website.',
     eyebrow: 'Website policies',
     heading: 'Terms and privacy.',
-    intro: 'How information on this website and information submitted through the inquiry form are handled.',
+    intro: 'How information on this website and information you send us by email are handled.',
     image: '/images/facility.jpg',
     imageAlt: 'Tri-Power Recycling facility at sunrise',
   },
@@ -327,7 +327,7 @@ const moreDetails: Record<string, ContentSection[]> = {
     },
     {
       heading: 'High-volume EPS capability',
-      paragraphs: ['The current website describes Tri-Power as one of the country’s largest independently owned EPS recycling operations. Its equipment and industry relationships support sorting, densifying, and moving difficult foam streams into new insulation and consumer products.'],
+      paragraphs: ['Tri-Power is one of the country’s largest independently owned EPS recycling operations. Its equipment and industry relationships support sorting, densifying, and moving difficult foam streams into new insulation and consumer products.'],
     },
   ],
 }
@@ -347,53 +347,17 @@ function updateMetadata(page?: Page) {
   set('meta[property="og:title"]', title)
   set('meta[property="og:description"]', description)
   const canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]')
-  if (canonical) canonical.href = `https://tri-powerrecycling.com${window.location.pathname === '/' ? '' : window.location.pathname}`
+  if (canonical) canonical.href = `https://www.tri-powerrecycling.com${window.location.pathname === '/' ? '' : window.location.pathname}`
 }
 
-function InquiryForm() {
-  const [status, setStatus] = useState('')
-
-  async function submit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault()
-    const form = event.currentTarget
-    setStatus('Sending…')
-    try {
-      const response = await fetch('/api/inquiry', {
-        method: 'POST',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify(Object.fromEntries(new FormData(form))),
-      })
-      const body = await response.json()
-      setStatus(body.ok ? 'Thanks — your inquiry was sent.' : body.error)
-      if (body.ok) form.reset()
-    } catch {
-      setStatus('Inquiry delivery is not connected yet. Please call 574-848-1900.')
-    }
-  }
-
+function EmailCard() {
   return (
-    <form onSubmit={submit}>
-      <label>Name<input name="name" required autoComplete="name" /></label>
-      <label>Company<input name="company" autoComplete="organization" /></label>
-      <label>Email<input name="email" type="email" required autoComplete="email" /></label>
-      <label>Phone<input name="phone" type="tel" autoComplete="tel" /></label>
-      <label>What can we help with?
-        <select name="topic" defaultValue="">
-          <option value="">Choose one</option>
-          <option value="material">Material or drop-off question</option>
-          <option value="commercial">Commercial recycling program</option>
-          <option value="equipment">Baler or compactor</option>
-          <option value="home-4-foam">Home 4 Foam</option>
-          <option value="other">Something else</option>
-        </select>
-      </label>
-      <label>Material location<input name="location" autoComplete="address-level2" placeholder="City, state" /></label>
-      <label className="messageField">Material, approximate volume, and timing<textarea name="message" required rows={5} /></label>
-      <label className="honeypot" aria-hidden="true">Website<input name="website" tabIndex={-1} autoComplete="off" /></label>
-      <button className="button primary" type="submit">Send inquiry</button>
-      <p className="formStatus" role="status" aria-live="polite">{status}</p>
-      <small>By sending this form, you agree that Tri-Power may contact you about this inquiry.</small>
-    </form>
+    <div className="contactCard emailCard">
+      <span>Email the office</span>
+      <p>Send the material, approximate volume, location, and timing, and the right person will follow up.</p>
+      <a className="button primary" href="mailto:info@tri-powerrecycling.com?subject=Recycling%20inquiry">info@tri-powerrecycling.com</a>
+      <p className="contactAlt">Or call <a href="tel:+15748481900">574-848-1900</a>.</p>
+    </div>
   )
 }
 
@@ -410,7 +374,7 @@ function ContactBand({ form = false }: { form?: boolean }) {
         <p>Call before visiting, or describe the material and approximate volume. The team can confirm current acceptance and the best next step.</p>
         <address><strong>Tri-Power Recycling</strong><br />1240 Anderson Street<br />Elkhart, IN 46514<br /><a href="tel:+15748481900">574-848-1900</a></address>
       </div>
-      {form ? <InquiryForm /> : <div className="contactCard"><span>Not sure where to start?</span><p>Send the material details in one place and the right person can follow up.</p><a className="button primary" href="/contact">Describe your material</a></div>}
+      {form ? <EmailCard /> : <div className="contactCard"><span>Not sure where to start?</span><p>Email the material details and the right person can follow up.</p><a className="button primary" href="/contact">Describe your material</a></div>}
     </section>
   )
 }
@@ -501,13 +465,12 @@ function Privacy() {
           <li><strong>You</strong> means the individual accessing or using the Service, or the company or other legal entity on whose behalf that individual is using it.</li>
         </ul>
         <h3>Information we collect</h3>
-        <p>When you send an inquiry, we collect the information you choose to provide, which may include:</p>
+        <p>When you contact us by email or phone, we collect the information you choose to provide, which may include:</p>
         <ul>
           <li>Name and company</li>
           <li>Email address</li>
           <li>Phone number</li>
-          <li>Material location</li>
-          <li>The type of inquiry and the details of your message</li>
+          <li>Material location and the details of your message</li>
         </ul>
         <p>Usage data, such as your device’s internet address, browser type, the pages you visit, and the time of your visit, may be collected automatically by the systems that host this website. This website does not sell products or accept payments online, and it does not ask you to create an account.</p>
         <h3>How we use your information</h3>
@@ -519,7 +482,7 @@ function Privacy() {
         </ul>
         <h3>How we share your information</h3>
         <ul>
-          <li><strong>With service providers:</strong> we may share your information with service providers that host the website or deliver your inquiry to us.</li>
+          <li><strong>With service providers:</strong> we may share your information with service providers that host the website or our email.</li>
           <li><strong>For business transfers:</strong> we may share or transfer your information in connection with a merger, sale of Company assets, financing, or acquisition of all or a portion of our business.</li>
           <li><strong>With your consent:</strong> we may disclose your information for any other purpose with your consent.</li>
           <li><strong>When required:</strong> we may disclose your information to comply with a legal obligation, protect and defend the rights or property of the Company, prevent or investigate possible wrongdoing in connection with the Service, protect the personal safety of users or the public, or protect against legal liability.</li>
