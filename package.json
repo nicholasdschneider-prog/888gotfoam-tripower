@@ -3,9 +3,16 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "workspaces": [
+    "apps/*"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:sites": "npm run build --workspace @tripower/tri-power && npm run build --workspace @tripower/she-pallets",
+    "typecheck": "npm run typecheck --workspace @tripower/tri-power && npm run typecheck --workspace @tripower/she-pallets",
+    "lint:sites": "npm run lint --workspace @tripower/tri-power && npm run lint --workspace @tripower/she-pallets",
+    "link-check": "node scripts/link-check.mjs",
     "start": "vite preview --host 0.0.0.0 --port ${PORT:-4173}",
     "lint": "oxlint",
     "preview": "vite preview"
@@ -18,6 +25,7 @@
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.3",
+    "typescript": "^5.9.3",
     "oxlint": "^1.71.0",
     "vite": "^8.1.1"
   }

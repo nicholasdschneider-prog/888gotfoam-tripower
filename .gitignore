@@ -12,6 +12,13 @@ dist
 dist-ssr
 *.local
 
+# Local browser validation artifacts
+.playwright-cli/
+output/
+
+# Private migration source packages (may contain legacy configuration/data)
+private-migration/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

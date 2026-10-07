@@ -1,35 +1,46 @@
-# 888 Got Foam prototype
+# Tri-Power website ecosystem
 
-Consumer-facing EPS foam recycling landing page concept for Tri-Power Recycling.
+Canonical repository: `C:\Users\nicho\Projects\TriPower`
+
+This repository contains three separate web experiences:
+
+- The preserved `888 Got Foam` prototype at the repository root.
+- The Tri-Power Recycling replacement in `apps/tri-power`.
+- The She Pallets replacement in `apps/she-pallets`.
+
+BulkBid is a separate product and is not part of this repository's active tree. Historical demo files were removed during the Tri-Power cleanup; their committed history remains recoverable in Git.
+
+## Install and quality checks
+
+```bash
+npm ci
+npm run build             # preserved Got Foam prototype
+npm run build:sites       # both replacement sites
+npm run typecheck
+npm run lint
+npm run lint:sites
+npm run link-check
+```
+
+`link-check` verifies 23 canonical routes, 13 Tri-Power legacy redirects, required SEO files and assets, and all 52 She Pallets size/CAD pairs against the archived legacy HTML.
 
 ## Local development
 
 ```bash
-npm install
-npm run dev
+npm run dev --workspace @tripower/tri-power
+npm run dev --workspace @tripower/she-pallets
 ```
 
-## Production build
+## Production-like local serving
 
 ```bash
-npm run build
-npm start
+npm run build --workspace @tripower/tri-power
+npm run start --workspace @tripower/tri-power
+
+npm run build --workspace @tripower/she-pallets
+npm run start --workspace @tripower/she-pallets
 ```
 
-## Railway deploy
+Each server exposes `/health`, permanent legacy routing where applicable, route-specific metadata, sitemap/robots files, and a server-validated inquiry endpoint. Without approved `LEAD_WEBHOOK_URL`, forms remain in safe preview mode and retain the visitor's entries.
 
-Railway CLI is installed on this machine but was not logged in during creation.
-
-```bash
-railway login
-cd C:/Users/nicho/tripower-888-got-foam
-railway init
-railway up
-railway domain
-```
-
-## Notes
-
-- Brand direction: `888 Got Foam` / `888GotFoam.com` / text-call CTA `888-GOT-FOAM`.
-- Strategy follows the 2026-06-19 Tri-Power foam meeting: simple EPS box-return MVP first; branded bags and Brightmark/mixed plastics later.
-- Public Tri-Power content/images referenced from `tri-powerrecycling.com` for authenticity in the prototype.
+See `docs/deployment.md` for Railway commands and environment variables, and `docs/migration/legacy-inventory.md` for the page-by-page disposition ledger and unresolved business confirmations.

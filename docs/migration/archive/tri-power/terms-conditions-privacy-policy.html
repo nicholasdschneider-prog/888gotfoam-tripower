@@ -1,0 +1,481 @@
+<style> 
+.alert_top {
+margin-bottom: -5px;
+padding: 16px;
+/*z-index: 50000;
+position: fixed;
+width: 100%;*/
+} 
+.alert_bottom {
+margin-bottom: -5px;
+padding: 16px;
+} 
+#footer_alert_olay {
+position: fixed;
+bottom: 0;
+width: 100%;
+}
+#header_alert_olay {
+position: fixed;
+top: 0;
+width: 100%;
+z-index: 1200;
+}
+</style>
+<style> 
+.alert_close {
+float:right;
+display:inline-block;
+padding:0px 5px;
+background:#fff;
+font-weight: bold;
+border-color:#000;
+border-style:solid;
+border-width:1px;
+border-color:#888;
+cursor: pointer;
+}
+.alert_close:hover {
+float:right;
+display:inline-block;
+padding:0px 5px;
+background:#fff;
+color:#000;
+}
+</style>
+<script>
+function close_alert_js(alert_id, alert_exp, alert_pla){
+var a_id = 'close' + alert_id;
+var bottom_a_id = a_id + 'bottom';
+document.getElementById(a_id).parentNode.parentNode.removeChild(document.getElementById(a_id).parentNode);
+// The stmt above will only close one div. If it's a both (3) then use this if to also close the bottom div.
+if (alert_pla == 3) {
+document.getElementById(bottom_a_id).parentNode.parentNode.removeChild(document.getElementById(bottom_a_id).parentNode);
+}
+setCookie(alert_id, alert_exp);
+};
+function setCookie(avalue, alert_exp) {
+$.ajax({
+type: "POST",
+url: "https://tri-powerrecycling.com/alert-ajax.cfm?act=set",
+data: { id: avalue, exp: alert_exp, }
+});
+};
+</script>
+<div id="header_alert_olay">
+</div>
+<div id="footer_alert_olay" style="z-index: 100;">
+<div class="alert_top" style="background-color: #8BC540;">
+<span class="close12 alert_close" id='close12' onclick='close_alert_js(12,1,2);'>x</span>
+<div style="text-align: center;"><span style="color:#000000;"><strong>We Are Not Currently Accepting Plastics for Recycling With the Exception of&nbsp; EPS Foam aka Styrofoam</strong></span></div>
+</div>
+</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta name="author" content="">
+<meta name="robots" content="max-image-preview:large">
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://tri-powerrecycling.com/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://tri-powerrecycling.com/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://tri-powerrecycling.com/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://tri-powerrecycling.com/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="60x60" href="https://tri-powerrecycling.com/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://tri-powerrecycling.com/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://tri-powerrecycling.com/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://tri-powerrecycling.com/apple-touch-icon-152x152.png" />
+<link rel="icon" type="image/png" href="https://tri-powerrecycling.com/favicon-196x196.png" sizes="196x196" />
+<link rel="icon" type="image/png" href="https://tri-powerrecycling.com/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="https://tri-powerrecycling.com/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="https://tri-powerrecycling.com/favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="https://tri-powerrecycling.com/favicon-128.png" sizes="128x128" />
+<meta name="application-name" content="Tri-Power Recycling"/>
+<meta name="msapplication-TileColor" content="#FFFFFF" />
+<meta name="msapplication-TileImage" content="mstile-144x144.png" />
+<meta name="msapplication-square70x70logo" content="https://tri-powerrecycling.com/mstile-70x70.png" />
+<meta name="msapplication-square150x150logo" content="https://tri-powerrecycling.com/mstile-150x150.png" />
+<meta name="msapplication-wide310x150logo" content="https://tri-powerrecycling.com/mstile-310x150.png" />
+<meta name="msapplication-square310x310logo" content="https://tri-powerrecycling.com/mstile-310x310.png" />
+<meta property="og:url" content="http://tri-powerrecycling.com/terms-conditions-privacy-policy.cfm" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Terms & Conditions | Privacy Policy" />
+<meta property="og:description" content="Terms & Conditions, Privacy Policy of Tri-Power Recycling" />
+<meta property="og:image" content="https://www.bangwebsitedesignphoenixaz.com/img/BANG-Phoenix-OG-Image.jpg" />
+<meta property="og:image:type" content="image/" />
+<meta property="og:image:width" content="" />
+<meta property="og:image:height" content="" />
+<title>Terms & Conditions | Privacy Policy</title>
+<meta name="description" content="Terms & Conditions, Privacy Policy of Tri-Power Recycling"> 
+<link rel="canonical" href="https://tri-powerrecycling.com/terms-conditions-privacy-policy.cfm">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i" rel="stylesheet">
+<!-- CDN CSS Files -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+<link href="https://tri-powerrecycling.com/assets/vendor/vendors.css" rel="stylesheet">
+<link href="https://tri-powerrecycling.com/assets/vendor/aos/aos.css" rel="stylesheet">
+<!-- Main CSS File -->
+<link href="https://tri-powerrecycling.com/css/main.css" rel="stylesheet">
+<meta name="geo.region" content="US-IN" />
+<meta name="geo.placename" content="Elkhart" />
+<meta name="geo.position" content="41.6997566,-85.9997329" />
+<meta name="ICBM" content="41.6997566,-85.9997329" />
+<meta name="zipcode" content="46514" />
+<meta name="city" content="Elkhart" />
+<meta name="county" content="Elkhart" />
+<meta name="state" content="IN" />
+</head>
+<body>
+<!-- ======= Top Bar ======= -->
+<div id="topbar" class="d-lg-flex align-items-center fixed-top">
+<div class="container-fluid d-flex">
+<div class="contact-info mr-auto">
+<a href="tel:(574) 848-1900"><i class="fas fa-phone"></i> (574) 848-1900</a>
+</div>
+<div class="social-links"> 
+</div>
+</div>
+</div>
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+<div class="container-fluid d-md-flex align-items-center">
+<a href="https://tri-powerrecycling.com/" class="logo mr-auto"><img src="https://tri-powerrecycling.com/img/Tri-Power-Recycling-logo.png" alt="Tri-Power Recycling" class="img-fluid"></a>
+<nav class="nav-menu d-none d-lg-block">
+<ul>
+<li class="drop-down" id="dd">
+<a href="https://tri-powerrecycling.com/recycling-services.cfm" class="parentlink" >Recycling Services<b class="caret"></b></a>
+<ul class=""><li class="dropdown-item overview-link"><a href="https://tri-powerrecycling.com/recycling-services.cfm" class="nav-link">Overview</a></li><li class="dropdown-item"><a href="https://tri-powerrecycling.com/services/cardboard-recycling-disposal.cfm" class="nav-link">Cardboard Recycling</a></li>
+<li class="dropdown-item"><a href="https://tri-powerrecycling.com/services/paper-recycling.cfm" class="nav-link">Paper Recycling</a></li>
+<li class="dropdown-item"><a href="https://tri-powerrecycling.com/services/plastic-recycling.cfm" class="nav-link">Plastic Recycling</a></li>
+<li class="dropdown-item"><a href="https://tri-powerrecycling.com/services/styrofoam-recycling.cfm" class="nav-link">Styrofoam Recycling (Polystyrene)</a></li>
+</ul>
+</li>
+<li class="nav-item">
+<a href="https://tri-powerrecycling.com/recycle-styrofoam.cfm" >Home 4 Foam</a>
+</li>
+<li class="nav-item">
+<a href="https://tri-powerrecycling.com/commercial-recycling.cfm" >Commercial</a>
+</li>
+<li class="nav-item">
+<a href="https://tri-powerrecycling.com/recycling-equipment-for-sale.cfm" >Recycling Equipment</a>
+</li>
+<li class="nav-item">
+<a href="https://tri-powerrecycling.com/about-tri-power-recycling.cfm" >About</a>
+</li>
+<li class="nav-item">
+<a href="https://tri-powerrecycling.com/location.cfm" >Location</a>
+</li>
+</ul>
+</nav>
+<span class="cta_button_top">
+<a href="https://tri-powerrecycling.com/contact-us.cfm" class="appointment-btn appointment-btn-top scrollto">Contact Us</a>
+</span>
+</div>
+</header><!-- End Header -->
+<main id="main">
+<section id="" class="inner">
+<div class="container">
+<div class="row">
+<div class="col-lg-12 d-flex align-items-stretch">
+<div class="content">
+<h1>Terms & Conditions, Privacy Policy</h1>
+<div data-aos="fade-up" data-aos-delay="100">
+<p>Welcome to&nbsp;<u><a href="https://tri-powerrecycling.com/">Tri-PowerRecycling.com</a></u><br />
+&nbsp;<br />
+This website is both informational regarding our recycling services and transactional where you can purchase recycling of your Styrofoam materials and ship those materials to us.<br />
+&nbsp;<br />
+Questions about our service can be directed to us by&hellip;<br />
+Phone at: 574-848-1900<br />
+&nbsp;<br />
+By Mail at: 1240 Anderson Street, Elkhart, IN 46514 USA<br />
+&nbsp;<br />
+Or via email by using our contact form located here: <a href="https://tri-powerrecycling.com/contact-us.cfm">https://tri-powerrecycling.com/contact-us.cfm</a><br />
+&nbsp;<br />
+&nbsp;<br />
+All financial tractions on this website will be conducted in U.S. currency.<br />
+&nbsp;<br />
+If you purchase our recycling services you will be using UPS to ship your materials to us. As there is no urgency after shipping, we use UPS Ground services and it may take up to a week for us to receive your materials.<br />
+&nbsp;<br />
+Due to that nature of our services NO REFUNDS will be made after paying for our services.<br />
+&nbsp;<br />
+<br />
+<br />
+<strong>International Users</strong><br />
+This Site is controlled, operated and administered by Tri-Power Recycling from its offices within the United States of America. We make no representation that Materials at this Site are appropriate or available for use at other locations outside of the United States and access to them from territories where their contents are illegal is prohibited.<br />
+If you access this Site from a location outside of the United States, you are responsible for compliance with all local laws. Information, Products and Materials published on the World Wide Web may contain references or cross references to our products, programs and services that are not announced or available in your country. Such references do not imply that we intend to announce such services in your country.<br />
+&nbsp;</p>
+<h2>Privacy Policy</h2>
+<p>Last updated: May 3rd, 2022<br />
+This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.<br />
+<br />
+We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy.</p>
+<h3>Interpretation and Definitions</h3>
+<p><strong>Interpretation</strong><br />
+The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.<br />
+<br />
+<strong>Definitions</strong><br />
+For the purposes of this Privacy Policy:</p>
+<ul>
+<li><strong>Account</strong>&nbsp;means a unique account created for You to access our Service or parts of our Service.</li>
+<li><strong>Company</strong>&nbsp;(referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to Tri-Power Recycling, 1240 Anderson Street, Elkhart, IN 46514 USA.</li>
+<li><strong>Cookies</strong>&nbsp;are small files that are placed on Your computer, mobile device or any other device by a website, containing the details of Your browsing history on that website among its many uses.</li>
+<li><strong>Country</strong>&nbsp;refers to: Indiana, United States</li>
+<li><strong>Device</strong>&nbsp;means any device that can access the Service such as a computer, a cellphone or a digital tablet.</li>
+<li><strong>Do Not Track</strong>&nbsp;(DNT) is a concept that has been promoted by US regulatory authorities, in particular the U.S. Federal Trade Commission (FTC), for the Internet industry to develop and implement a mechanism for allowing internet users to control the tracking of their online activities across websites.</li>
+<li><strong>Personal Data</strong>&nbsp;is any information that relates to an identified or identifiable individual.</li>
+<li><strong>Service</strong>&nbsp;refers to the Website.</li>
+<li><strong>Service Provider</strong>&nbsp;means any natural or legal person who processes the data on behalf of the Company. It refers to third-party companies or individuals employed by the Company to facilitate the Service, to provide the Service on behalf of the Company, to perform services related to the Service or to assist the Company in analyzing how the Service is used.</li>
+<li><strong>Usage Data</strong>&nbsp;refers to data collected automatically, either generated by the use of the Service or from the Service infrastructure itself (for example, the duration of a page visit).</li>
+<li><strong>Website</strong>&nbsp;refers to tri-powerrecycling.com, accessible from&nbsp;tri-powerrecycling.com</li>
+<li><strong>You</strong>&nbsp;means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.<br />
+<br />
+&nbsp;</li>
+</ul>
+<h3>Collecting and Using Your Personal Data</h3>
+<strong>Types of Data Collected:&nbsp;</strong><strong>Personal Data</strong><br />
+While using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:
+<ul>
+<li>Email address<br />
+&nbsp;</li>
+<li>First name and last name<br />
+&nbsp;</li>
+<li>Phone number<br />
+&nbsp;</li>
+<li>Address, City, State, ZIP<br />
+&nbsp;</li>
+<li>Credit Card account information to pay for Services<br />
+&nbsp;</li>
+<li>Usage Data<br />
+&nbsp;</li>
+</ul>
+<strong>Usage Data</strong><br />
+Usage Data is collected automatically when using the Service.<br />
+<br />
+Usage Data may include information such as Your Device&#39;s Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data.<br />
+<br />
+When You access the Service by or through a mobile device, We may collect certain information automatically, including, but not limited to, the type of mobile device You use, Your mobile device unique ID, the IP address of Your mobile device, Your mobile operating system, the type of mobile Internet browser You use, unique device identifiers and other diagnostic data.<br />
+<br />
+We may also collect information that Your browser sends whenever You visit our Service or when You access the Service by or through a mobile device.<br />
+<br />
+<br />
+<strong>Tracking Technologies and Cookies</strong><br />
+We use Cookies and similar tracking technologies to track the activity on Our Service and store certain information. Tracking technologies used are beacons, tags, and scripts to collect and track information and to improve and analyze Our Service. The technologies We use may include:
+<ul>
+<li><strong>Cookies or Browser Cookies.</strong>&nbsp;A cookie is a small file placed on Your Device. You can instruct Your browser to refuse all Cookies or to indicate when a Cookie is being sent. However, if You do not accept Cookies, You may not be able to use some parts of our Service. Unless you have adjusted Your browser setting so that it will refuse Cookies, our Service may use Cookies.<br />
+&nbsp;</li>
+<li><strong>Web Beacons.</strong>&nbsp;Certain sections of our Service and our emails may contain small electronic files known as web beacons (also referred to as clear gifs, pixel tags, and single-pixel gifs) that permit the Company, for example, to count users who have visited those pages or opened an email and for other related website statistics (for example, recording the popularity of a certain section and verifying system and server integrity).</li>
+</ul>
+Cookies can be &quot;Persistent&quot; or &quot;Session&quot; Cookies. Persistent Cookies remain on Your personal computer or mobile device when You go offline, while Session Cookies are deleted as soon as You close Your web browser.<br />
+<br />
+We use both Session and Persistent Cookies for the purposes set out below:
+<ul>
+<li><strong>Necessary / Essential Cookies</strong></li>
+</ul>
+Type: Session Cookies<br />
+Administered by: Us<br />
+Purpose: These Cookies are essential to provide You with services available through the Website and to enable You to use some of its features. They help to authenticate users and prevent fraudulent use of user accounts. Without these Cookies, the services that You have asked for cannot be provided, and We only use these Cookies to provide You with those services.
+<ul>
+<li><strong>Cookies Policy / Notice Acceptance Cookies</strong></li>
+</ul>
+Type: Persistent Cookies<br />
+Administered by: Us<br />
+Purpose: These Cookies identify if users have accepted the use of cookies on the Website.
+<ul>
+<li><strong>Functionality Cookies</strong></li>
+</ul>
+Type: Persistent Cookies<br />
+Administered by: Us<br />
+Purpose: These Cookies allow us to remember choices You make when You use the Website, such as remembering your login details or language preference. The purpose of these Cookies is to provide You with a more personal experience and to avoid You having to re-enter your preferences every time You use the Website.<br />
+For more information about the cookies we use and your choices regarding cookies, please visit our Cookies Policy or the Cookies section of our Privacy Policy.<br />
+<br />
+<br />
+Use of Your Personal Data<br />
+The Company may use Personal Data for the following purposes:
+<ul>
+<li><strong>To provide and maintain our Service</strong>, including to monitor the usage of our Service.<br />
+&nbsp;</li>
+<li><strong>To manage Your Account:</strong>&nbsp;to manage Your registration as a user of the Service. The Personal Data You provide can give You access to different functionalities of the Service that are available to You as a registered user.<br />
+&nbsp;</li>
+<li><strong>For the performance of a contract:</strong>&nbsp;the development, compliance and undertaking of the purchase contract for the products, items or services You have purchased or of any other contract with Us through the Service.<br />
+&nbsp;</li>
+<li><strong>To contact You:</strong>&nbsp;To contact You by email, telephone calls, SMS, or other equivalent forms of electronic communication, such as a mobile application&#39;s push notifications regarding updates or informative communications related to the functionalities, products or contracted services, including the security updates, when necessary or reasonable for their implementation.<br />
+&nbsp;</li>
+<li><strong>To provide You</strong>&nbsp;with news, special offers and general information about other goods, services and events which we offer that are similar to those that you have already purchased or enquired about unless You have opted not to receive such information.<br />
+&nbsp;</li>
+<li><strong>To manage Your requests:</strong>&nbsp;To attend and manage Your requests to Us.<br />
+&nbsp;</li>
+<li><strong>For other purposes</strong>: We may use Your information for other purposes, such as data analysis, identifying usage trends, determining the effectiveness of our promotional campaigns and to evaluate and improve our Service, products, services, marketing and your experience.</li>
+</ul>
+We may share Your personal information in the following situations:
+<ul>
+<li><strong>With Service Providers:</strong>&nbsp;We may share Your personal information with Service Providers to monitor and analyze the use of our Service, for payment processing, to contact You.<br />
+&nbsp;</li>
+<li><strong>For business transfers:</strong>&nbsp;We may share or transfer Your personal information in connection with, or during negotiations of, any merger, sale of Company assets, financing, or acquisition of all or a portion of Our business to another company.</li>
+<br />
+<li><strong>With Your consent</strong>: We may disclose Your personal information for any other purpose with Your consent.</li>
+<br />
+&nbsp;
+</ul>
+<strong>Retention of Your Personal Data</strong><br />
+The Company will retain Your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use Your Personal Data to the extent necessary to comply with our legal obligations (for example, if we are required to retain your data to comply with applicable laws), resolve disputes, and enforce our legal agreements and policies.<br />
+<br />
+The Company will also retain Usage Data for internal analysis purposes. Usage Data is generally retained for a shorter period of time, except when this data is used to strengthen the security or to improve the functionality of Our Service, or We are legally obligated to retain this data for longer time periods.<br />
+<br />
+<strong>Transfer of Your Personal Data</strong><br />
+Your information, including Personal Data, is processed at the Company&#39;s operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to &mdash; and maintained on &mdash; computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction.<br />
+<br />
+Your consent to this Privacy Policy followed by Your submission of such information represents Your agreement to that transfer.<br />
+<br />
+The Company will take all steps reasonably necessary to ensure that Your data is treated securely and in accordance with this Privacy Policy and no transfer of Your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of Your data and other personal information.<br />
+&nbsp;<br />
+<strong>Disclosure of Your Personal Data</strong><br />
+<strong>Business Transactions</strong><br />
+If the Company is involved in a merger, acquisition or asset sale, Your Personal Data may be transferred. We will provide notice before Your Personal Data is transferred and becomes subject to a different Privacy Policy.<br />
+<br />
+<strong>Law enforcement</strong><br />
+Under certain circumstances, the Company may be required to disclose Your Personal Data if required to do so by law or in response to valid requests by public authorities (e.g. a court or a government agency).<br />
+<br />
+<strong>Other legal requirements</strong><br />
+The Company may disclose Your Personal Data in the good faith belief that such action is necessary to:
+<ul>
+<li>Comply with a legal obligation<br />
+&nbsp;</li>
+<li>Protect and defend the rights or property of the Company<br />
+&nbsp;</li>
+<li>Prevent or investigate possible wrongdoing in connection with the Service<br />
+&nbsp;</li>
+<li>Protect the personal safety of Users of the Service or the public<br />
+&nbsp;</li>
+<li>Protect against legal liability<br />
+&nbsp;</li>
+</ul>
+<p><strong>Security of Your Personal Data</strong><br />
+The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While We strive to use commercially acceptable means to protect Your Personal Data, We cannot guarantee its absolute security.<br />
+<br />
+We use standard encryption methods of SSL 128 bit encryption while you access our website.<br />
+&nbsp;<br />
+<strong>Detailed Information on the Processing of Your Personal Data</strong><br />
+The Service Providers We use may have access to Your Personal Data. These third-party vendors collect, store, use, process and transfer information about Your activity on Our Service in accordance with their Privacy Policies.<br />
+<br />
+<strong>Payments</strong><br />
+Using our Service will require payment by credit card. We use third-party services for payment processing (e.g. payment processors).<br />
+<br />
+We will not store or collect Your payment card details. That information is provided directly to Our third-party payment processors whose use of Your personal information is governed by their Privacy Policy. These payment processors adhere to the standards set by PCI-DSS as managed by the PCI Security Standards Council, which is a joint effort of brands like Visa, Mastercard, American Express and Discover. PCI-DSS requirements help ensure the secure handling of payment information.<br />
+&nbsp;<br />
+<strong>&quot;Do Not Track&quot; Policy as Required by California Online Privacy Protection Act (CalOPPA)</strong><br />
+Our Service does not respond to Do Not Track signals.<br />
+<br />
+However, some third party websites do keep track of Your browsing activities. If You are visiting such websites, You can set Your preferences in Your web browser to inform websites that You do not want to be tracked. You can enable or disable DNT by visiting the preferences or settings page of Your web browser.<br />
+<br />
+<strong>Children&#39;s Privacy</strong><br />
+Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us. If We become aware that We have collected Personal Data from anyone under the age of 13 without verification of parental consent, We take steps to remove that information from Our servers.<br />
+<br />
+If We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent&#39;s consent before We collect and use that information.<br />
+<br />
+<strong>Links to Other Websites</strong><br />
+Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party&#39;s site. We strongly advise You to review the Privacy Policy of every site You visit.<br />
+<br />
+We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.<br />
+<br />
+<strong>Changes to this Privacy Policy</strong><br />
+We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page.<br />
+<br />
+We will let You know via a notice on this page, prior to the change becoming effective and update the &quot;Last updated&quot; date at the top of this Privacy Policy.<br />
+<br />
+You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.<br />
+<br />
+<strong>Contact Us</strong><br />
+If you have any questions about this Privacy Policy, You can contact us by&hellip;<br />
+&nbsp;<br />
+Phone at: 574-848-1900<br />
+&nbsp;<br />
+By Mail at: Tri-Power Recycling, 1240 Anderson Street, Elkhart, IN 46514 USA<br />
+&nbsp;<br />
+Or via email by using our contact form located here: <a href="https://tri-powerrecycling.com/contact-us.cfm">https://tri-powerrecycling.com/contact-us.cfm</a><br />
+&nbsp;</p>
+</div>
+<br><br>
+<p><a href="https://tri-powerrecycling.com/contact-us.cfm" class="appointment-btn appointment-btn-top scrollto">Contact Us</a></p>
+</div><!-- End .content-->
+</div>
+</div>
+</div>
+</section>
+</main><!-- End #main -->
+<!-- ======= Footer ======= -->
+<footer id="footer">
+<div class="footer-top">
+<div class="container">
+<div class="row">
+<div class="col-lg-4 col-md-6 footer-contact">
+<div itemscope itemtype="http://schema.org/LocalBusiness">
+<span itemprop="name"><strong>Tri-Power Recycling</strong></span>
+<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+<span itemprop="streetAddress">1240 Anderson Street</span><br>
+<span itemprop="addressLocality">Elkhart</span>,
+<span itemprop="addressRegion">IN</span>
+<span itemprop="postalCode">46514</span><br /><br />
+</div>
+Phone: <span itemprop="telephone"><a href="tel:(574) 848-1900">(574) 848-1900</a></span>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 footer-links">
+<h4>Useful Links</h4>
+<ul>
+<li><a href="https://tri-powerrecycling.com/" >Home</a></li>
+<li><a href="https://tri-powerrecycling.com/recycling-services.cfm" >Recycling Services</a></li>
+<li><a href="https://tri-powerrecycling.com/recycle-styrofoam.cfm" >Home 4 Foam</a></li>
+<li><a href="https://tri-powerrecycling.com/commercial-recycling.cfm" >Commercial</a></li>
+<li><a href="https://tri-powerrecycling.com/recycling-equipment-for-sale.cfm" >Recycling Equipment</a></li>
+<li><a href="https://tri-powerrecycling.com/about-tri-power-recycling.cfm" >About</a></li>
+<li><a href="https://tri-powerrecycling.com/location.cfm" >Location</a></li>
+<li><a href="https://tri-powerrecycling.com/contact-us.cfm" >Contact Us</a></li>
+<li><a href="https://tri-powerrecycling.com/terms-conditions-privacy-policy.cfm" >Terms & Conditions, Privacy Policy</a></li>
+<li><a href="https://tri-powerrecycling.com/sitemap.cfm" >Sitemap</a></li>
+</ul>
+</div>
+<div class="col-lg-4 col-md-6 footer-newsletter">
+</div>
+</div>
+</div>
+</div>
+<div class="container d-md-flex py-4">
+<div class="mr-md-auto text-center text-md-left">
+<div class="copyright">
+&copy; 2009 - 2026 All Rights Reserved
+<p class="bangfooter"><small>Website by BANG! Web Site Design</small></p>
+</div>
+</div>
+<div class="social-links text-center text-md-right pt-3 pt-md-0">
+<img src=https://tri-powerrecycling.com/img/credit-cards.png class="img-fluid"><br><br><br>
+</div>
+</div>
+</footer><!-- End Footer -->
+<a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+<!-- Vendor JS Files -->
+<script src="https://tri-powerrecycling.com/assets/vendor/jquery/jquery.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/counterup/counterup.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/aos/aos.js"></script>
+<!-- Template Main JS File -->
+<script src="https://tri-powerrecycling.com/assets/js/main.js"></script>
+<script>
+$( document ).ready(function() {
+if (!$('#videomodal').is(':visible')) {
+// if modal is not shown/visible, pause video
+$('.video')[0].pause();
+}
+});
+$('.modal').on('shown.bs.modal', function () {
+$('.video')[0].play();
+});
+$('.modal').on('hidden.bs.modal', function () {
+$('.video')[0].pause();
+});
+</script>
+</body>
+</html>

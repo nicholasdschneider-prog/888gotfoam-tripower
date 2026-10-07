@@ -1,0 +1,382 @@
+<style> 
+.alert_top {
+margin-bottom: -5px;
+padding: 16px;
+/*z-index: 50000;
+position: fixed;
+width: 100%;*/
+} 
+.alert_bottom {
+margin-bottom: -5px;
+padding: 16px;
+} 
+#footer_alert_olay {
+position: fixed;
+bottom: 0;
+width: 100%;
+}
+#header_alert_olay {
+position: fixed;
+top: 0;
+width: 100%;
+z-index: 1200;
+}
+</style>
+<style> 
+.alert_close {
+float:right;
+display:inline-block;
+padding:0px 5px;
+background:#fff;
+font-weight: bold;
+border-color:#000;
+border-style:solid;
+border-width:1px;
+border-color:#888;
+cursor: pointer;
+}
+.alert_close:hover {
+float:right;
+display:inline-block;
+padding:0px 5px;
+background:#fff;
+color:#000;
+}
+</style>
+<script>
+function close_alert_js(alert_id, alert_exp, alert_pla){
+var a_id = 'close' + alert_id;
+var bottom_a_id = a_id + 'bottom';
+document.getElementById(a_id).parentNode.parentNode.removeChild(document.getElementById(a_id).parentNode);
+// The stmt above will only close one div. If it's a both (3) then use this if to also close the bottom div.
+if (alert_pla == 3) {
+document.getElementById(bottom_a_id).parentNode.parentNode.removeChild(document.getElementById(bottom_a_id).parentNode);
+}
+setCookie(alert_id, alert_exp);
+};
+function setCookie(avalue, alert_exp) {
+$.ajax({
+type: "POST",
+url: "https://tri-powerrecycling.com/alert-ajax.cfm?act=set",
+data: { id: avalue, exp: alert_exp, }
+});
+};
+</script>
+<div id="header_alert_olay">
+</div>
+<div id="footer_alert_olay" style="z-index: 100;">
+<div class="alert_top" style="background-color: #8BC540;">
+<span class="close12 alert_close" id='close12' onclick='close_alert_js(12,1,2);'>x</span>
+<div style="text-align: center;"><span style="color:#000000;"><strong>We Are Not Currently Accepting Plastics for Recycling With the Exception of&nbsp; EPS Foam aka Styrofoam</strong></span></div>
+</div>
+</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta name="author" content="">
+<meta name="robots" content="max-image-preview:large">
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://tri-powerrecycling.com/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://tri-powerrecycling.com/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://tri-powerrecycling.com/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://tri-powerrecycling.com/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="60x60" href="https://tri-powerrecycling.com/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://tri-powerrecycling.com/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://tri-powerrecycling.com/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://tri-powerrecycling.com/apple-touch-icon-152x152.png" />
+<link rel="icon" type="image/png" href="https://tri-powerrecycling.com/favicon-196x196.png" sizes="196x196" />
+<link rel="icon" type="image/png" href="https://tri-powerrecycling.com/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="https://tri-powerrecycling.com/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="https://tri-powerrecycling.com/favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="https://tri-powerrecycling.com/favicon-128.png" sizes="128x128" />
+<meta name="application-name" content="Tri-Power Recycling"/>
+<meta name="msapplication-TileColor" content="#FFFFFF" />
+<meta name="msapplication-TileImage" content="mstile-144x144.png" />
+<meta name="msapplication-square70x70logo" content="https://tri-powerrecycling.com/mstile-70x70.png" />
+<meta name="msapplication-square150x150logo" content="https://tri-powerrecycling.com/mstile-150x150.png" />
+<meta name="msapplication-wide310x150logo" content="https://tri-powerrecycling.com/mstile-310x150.png" />
+<meta name="msapplication-square310x310logo" content="https://tri-powerrecycling.com/mstile-310x310.png" />
+<meta property="og:url" content="http://tri-powerrecycling.com/recycling-equipment-for-sale.cfm" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Recycling Equipment For Sale | Cardboard, Plastic, Styrofoam | Tri-Power Recycling" />
+<meta property="og:description" content="New and used vertical & horizontal balers and compactors to assist with paper, plastic, and cardboard recycling. We offer lease and purchase options." />
+<meta property="og:image" content="https://www.bangwebsitedesignphoenixaz.com/img/BANG-Phoenix-OG-Image.jpg" />
+<meta property="og:image:type" content="image/" />
+<meta property="og:image:width" content="" />
+<meta property="og:image:height" content="" />
+<title>Recycling Equipment For Sale | Cardboard, Plastic, Styrofoam | Tri-Power Recycling</title>
+<meta name="description" content="New and used vertical & horizontal balers and compactors to assist with paper, plastic, and cardboard recycling. We offer lease and purchase options."> 
+<link rel="canonical" href="https://tri-powerrecycling.com/recycling-equipment-for-sale.cfm">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i" rel="stylesheet">
+<!-- CDN CSS Files -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+<link href="https://tri-powerrecycling.com/assets/vendor/vendors.css" rel="stylesheet">
+<link href="https://tri-powerrecycling.com/assets/vendor/aos/aos.css" rel="stylesheet">
+<!-- Main CSS File -->
+<link href="https://tri-powerrecycling.com/css/main.css" rel="stylesheet">
+<meta name="geo.region" content="US-IN" />
+<meta name="geo.placename" content="Elkhart" />
+<meta name="geo.position" content="41.6997566,-85.9997329" />
+<meta name="ICBM" content="41.6997566,-85.9997329" />
+<meta name="zipcode" content="46514" />
+<meta name="city" content="Elkhart" />
+<meta name="county" content="Elkhart" />
+<meta name="state" content="IN" />
+</head>
+<body>
+<!-- ======= Top Bar ======= -->
+<div id="topbar" class="d-lg-flex align-items-center fixed-top">
+<div class="container-fluid d-flex">
+<div class="contact-info mr-auto">
+<a href="tel:(574) 848-1900"><i class="fas fa-phone"></i> (574) 848-1900</a>
+</div>
+<div class="social-links"> 
+</div>
+</div>
+</div>
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+<div class="container-fluid d-md-flex align-items-center">
+<a href="https://tri-powerrecycling.com/" class="logo mr-auto"><img src="https://tri-powerrecycling.com/img/Tri-Power-Recycling-logo.png" alt="Tri-Power Recycling" class="img-fluid"></a>
+<nav class="nav-menu d-none d-lg-block">
+<ul>
+<li class="drop-down" id="dd">
+<a href="https://tri-powerrecycling.com/recycling-services.cfm" class="parentlink" >Recycling Services<b class="caret"></b></a>
+<ul class=""><li class="dropdown-item overview-link"><a href="https://tri-powerrecycling.com/recycling-services.cfm" class="nav-link">Overview</a></li><li class="dropdown-item"><a href="https://tri-powerrecycling.com/services/cardboard-recycling-disposal.cfm" class="nav-link">Cardboard Recycling</a></li>
+<li class="dropdown-item"><a href="https://tri-powerrecycling.com/services/paper-recycling.cfm" class="nav-link">Paper Recycling</a></li>
+<li class="dropdown-item"><a href="https://tri-powerrecycling.com/services/plastic-recycling.cfm" class="nav-link">Plastic Recycling</a></li>
+<li class="dropdown-item"><a href="https://tri-powerrecycling.com/services/styrofoam-recycling.cfm" class="nav-link">Styrofoam Recycling (Polystyrene)</a></li>
+</ul>
+</li>
+<li class="nav-item">
+<a href="https://tri-powerrecycling.com/recycle-styrofoam.cfm" >Home 4 Foam</a>
+</li>
+<li class="nav-item">
+<a href="https://tri-powerrecycling.com/commercial-recycling.cfm" >Commercial</a>
+</li>
+<li class="nav-item">
+<a href="https://tri-powerrecycling.com/recycling-equipment-for-sale.cfm" >Recycling Equipment</a>
+</li>
+<li class="nav-item">
+<a href="https://tri-powerrecycling.com/about-tri-power-recycling.cfm" >About</a>
+</li>
+<li class="nav-item">
+<a href="https://tri-powerrecycling.com/location.cfm" >Location</a>
+</li>
+</ul>
+</nav>
+<span class="cta_button_top">
+<a href="https://tri-powerrecycling.com/contact-us.cfm" class="appointment-btn appointment-btn-top scrollto">Contact Us</a>
+</span>
+</div>
+</header><!-- End Header -->
+<main id="main">
+<section id="" class="inner">
+<div class="container">
+<div class="row">
+<div class="col-lg-12 d-flex align-items-stretch">
+<div class="content">
+<h1>Recycling Equipment For Sale</h1>
+<div data-aos="fade-up" data-aos-delay="100">
+<br />
+<img alt="Styrofoam Ready for Recycling" class="img-fluid" src="https://tri-powerrecycling.com/uploaded_files/images/Styrofoam-Recycling-Mesh-Cube.jpg" style="margin: 8px 14px; float: right;" title="Styrofoam Ready for Recycling" />Recycling equipment, used by businesses to compact recyclable materials at their location, is available for purchase or lease from Tri-Power Recycling. We have new and used balers and compactors to assist with paper, plastic, and cardboard recycling.<br />
+&nbsp;<br />
+As our society becomes more industrialized, business recycling services are key to helping reduce the amount of waste that is sent to landfills around the country.<br />
+&nbsp;<br />
+If your business is thinking about these questions, Tri-Power Recycling can help with our commercial recycling equipment options.<br />
+&nbsp;
+<ol>
+<li>Do you want to reduce your impact on landfills through recycling?<br />
+&nbsp;</li>
+<li>Do you support waste diversion options with local and global environmental benefits?<br />
+&nbsp;</li>
+<li>Do you want to take advantage of possible financial benefits by sending recyclable waste to a recycling plant?<br />
+&nbsp;</li>
+</ol>
+If you answered yes to these questions, we want to help your business with its waste management using baler and compactor equipment on-site. We support businesses that want to REDUCE, REUSE, and RECYCLE materials that would otherwise end up in landfills.<br />
+<br />
+Tri-Power Recycling is proud to offer commercial recycling equipment that helps businesses with their waste removal in environmentally conscious ways. We can also provide Mesh Cubes and pickup services for industrial facilities to process their cardboard, paper, and Styrofoam&trade;/EPS foam waste.<br />
+&nbsp;
+<h2>Collection Services Equipment</h2>
+Cardboard and paper baler machines, both horizontal and vertical baler styles, can assist with efficient recycling processes. Depending on the type of material, some businesses are interested in compactor equipment for cardboard, paper, and plastic waste.<br />
+&nbsp;<br />
+Recycling equipment offers a variety of methods for our commercial clients depending on the material, amount of material, space constraints, and frequency of service needed. We offer lease, lease-to-purchase, and purchase options on recycling processing equipment best suited to your business.<br />
+&nbsp;<br />
+Some state or county jurisdictions have mandatory commercial recycling ordinances that impact businesses solid waste management programs. In order to preserve natural resources and reduce environmental impacts, Tri-Power Recycling helps businesses through the lease or purchase of waste collection equipment such as vertical and horizontal balers and compactors.<br />
+&nbsp;
+<h2>Balers:</h2>
+A terrific addition to any recycling program, balers help businesses package large amounts of recyclable material into compact cubes that are easily stored on-site and transported back to our recycling center. There are two styles of balers &ndash; vertical and horizontal &ndash; and each one has its own unique uses.<br />
+<br />
+<strong><img alt="Vertical Baler for Compacting Recyclable Materials" class="img-fluid" src="https://tri-powerrecycling.com/uploaded_files/images/Vertical-Baler-for-Recycling.jpg" style="float: right;" title="Vertical Baler for Compacting Recyclable Materials" />Vertical Balers</strong>: These balers compress recyclable materials using the downward force created by a mechanical ram. These crushed cubes are then ejected and ready to be transported. Vertical balers are smaller than horizontal balers, can be stored inside or outside, and are capable of processing most of the same materials&mdash;typically corrugated cardboard, plastics, and foam. While vertical balers are the most economical baler models and are the easiest to operate, vertical balers have specific needs and features to consider before buying or renting one:<br />
+&nbsp;
+<ul>
+<li>An operator is required to load the recyclables, cycle the hydraulic ram, and tie off compressed bales.<br />
+&nbsp;</li>
+<li>Although they are easy to install, most vertical balers require a minimum ceiling height of fourteen (14) feet.<br />
+&nbsp;</li>
+<li>Vertical balers have a fixed opening for recyclables. This means cardboard boxes for large items such as refrigerators or other appliances may not easily fit into the baler.</li>
+</ul>
+&nbsp;<br />
+<strong>Horizontal Balers</strong>: These balers process recyclables through a large opening on top of the machine. When the hopper is full, a hydraulic ram compresses the recyclable material with a strong horizontal force into bales that are ready to be ejected, tied up, and transported. While horizontal balers can process a greater volume of recyclables than vertical balers, there are several features of horizontal balers worth considering before renting or buying one:<br />
+&nbsp;
+<ul>
+<li>Horizontal balers are more expensive, costing as much as ten times more than vertical balers.<br />
+&nbsp;</li>
+<li>Horizontal balers can process a larger volume of recyclable waste than vertical balers. Horizontal balers can also handle larger singular pieces of material such as boxes used for large appliances, like refrigerators.<br />
+&nbsp;</li>
+<li>More floor space is required to accommodate horizontal balers than vertical balers.</li>
+</ul>
+&nbsp;<br />
+When deciding which type of baler best fits your business, it is important to consider three things: cost, how much space is available to accommodate one of these machines, and the volume and size of the material you need to process.<br />
+&nbsp;
+<h2>Compactors:</h2>
+A compactor is a machine that uses a horizontal hydraulic ram to compress recyclable material into a receiving container. Most compactors have a compaction ratio of up to four to one, and cardboard boxes do not need to be broken down before being placed into the compactor.<br />
+&nbsp;
+<div style="text-align: center;"><img alt="Stationary Compactor for Compacting Recyclable Materials" class="img-fluid" src="https://tri-powerrecycling.com/uploaded_files/images/Stationary-Compactors-for-Recycling.jpg" title="Stationary Compactor for Compacting Recyclable Materials" /></div>
+&nbsp;<br />
+These features make compactors a tremendous space and time-saver for businesses that process large amounts of cardboard and plastic film waste. While compactors come in a variety of sizes, the most common dimensions for compactors are two- or four-cubic yard capacity. This dimension reflects the size of the compactor opening.<br />
+&nbsp;<br />
+Compactors provide a safe and secure way for your business to store its recyclables. They also require less labor to operate and maintain than a vertical or horizontal baler. If you are considering buying or renting a compactor, here are some features worth considering:<br />
+&nbsp;
+<ul>
+<li>Compactors are normally placed outside and require a large, mountable concrete surface.<br />
+&nbsp;</li>
+<li>A haul fee must be paid for the container to be serviced and emptied, but these costs can be potentially offset by rebates for the recycled material.</li>
+</ul>
+&nbsp;
+<h2>Trailers/Storage Containers</h2>
+Tri-Power provides traditional semi-trailers for storage that can be switched out when full or live-loaded at your convenience. In addition, we provide stationary storage containers that we service on an as needed basis.<br />
+<br />
+<strong>MESH CUBE SERVICE</strong>: Our mesh cubes are ideal for the containment of your recyclables. They have fork pockets on them enabling you to place them strategically in the location that makes the most sense. The mesh cubes work great to minimize contamination since you can easily see the contents of the cube. They have a door for front-loading, or they can be loaded over the top.<br />
+&nbsp;<br />
+<strong>BALE PICK-UP</strong>:&nbsp; Depending on your desired frequency, Tri-Power can arrange for pickup of your baled materials.<br />
+&nbsp;
+<ul>
+<li><strong>LESS THAN TRUCKLOAD QUANTITIES</strong>:&nbsp; Designed for ground-level or dock-level pickup with a minimum of five bales per pickup.<br />
+&nbsp;</li>
+<li><strong>TRUCKLOAD QUANTITIES</strong>:&nbsp; We can provide live-load service into our van or flatbed, or we can arrange to stage a trailer at your facility to load at your convenience.<br />
+&nbsp;</li>
+</ul>
+<div style="text-align: center;">&nbsp;<img alt="Flatbed Semi Trailer Holding Recyclable Materials" class="img-fluid" src="https://tri-powerrecycling.com/uploaded_files/images/Paper-Bundles-On-Semi-Trailer.jpg" title="Flatbed Semi Trailer Holding Recyclable Materials" /></div>
+&nbsp;
+<h2>New and Used Recycling Equipment Options</h2>
+If you are interested in leasing or purchasing a compactor, vertical baler, or horizontal baler, contact us today. Tri-Power Recycling has a selection of new and used recycling processing equipment available through outright purchase, monthly rental, or through a lease-to-purchase agreement.<br />
+&nbsp;<br />
+Our lease-to-purchase services usually last between three to five years, and at the end of the agreed-upon period, the machine belongs to the customer. Tri-Power Recycling is proud to service the commercial sector by making waste management both affordable and environmentally conscious.<br />
+&nbsp;
+<h2>What Happens to Recycled Paper and Cardboard?</h2>
+Cardboard recycling items that have been baled are sent to paper mills. These mills use efficient recycling processes for cardboard and paper items to make them into new cardboard boxes. This reduces the amount of material sent to landfills and provides useful new products for individuals and companies across the US.<br />
+&nbsp;<br />
+Cardboard dumpsters, such as our Mesh Cubes, can be added to business locations for carboard recycling pickup service. Baled or loose cardboard may be worth money to your business based on current market values.<br />
+&nbsp;<br />
+Please remember the packaging peanuts that may be inside your cardboard shipping boxes are not recyclable items we accept at our facility.<br />
+&nbsp;
+<h2>Commercial Collection Services</h2>
+Tri-Power Recycling offers customized commercial collection services for recyclable materials. We offer material pickup from your facility, an in-depth recycling audit to determine if you need waste management solutions, drop-off of Mesh Cubes at your location, and rent/purchase options for balers.<br />
+&nbsp;<br />
+If you are a commercial business baling your recyclables onsite, we can pick up your baled materials. We can collect both small quantities up to truckload amounts and we will create a schedule based on how often you need baled recyclables picked up.<br />
+&nbsp;<br />
+Baled paper and cardboard loading options include:<br />
+&nbsp;
+<ul>
+<li>Truckload quantities: We provide live-load service in our van or flatbed, or we can place a trailer at your location to load baled materials at your convenience.<br />
+&nbsp;</li>
+<li>Smaller quantities: Ideal for smaller businesses with ground-level or dock-level pickup. We require a minimum of five bales per pickup.</li>
+</ul>
+&nbsp;
+<h2>Supporting Commercial Recycling for Businesses</h2>
+Tri-Power Recycling is ready to assist your business with efficient and practical recycling equipment to assist with your paper, cardboard, and plastic recycling.<br />
+<br />
+With over eight decades of combined experience in commercial recycling services, we are ready to assist you with efficient and economical waste stream management. Contact Tri-Power Recycling today to learn more about our commercial recycling equipment for sale or lease.<br />
+<br />
+Our experience as a commercial recycling company has fostered numerous relationships across the globe to reduce the impact to our landfills and find suitable solutions for all recyclable materials. Contact Tri-Power Recycling today to learn more about our commercial recycling services.<br />
+&nbsp;<br />
+&nbsp;
+</div>
+<br><br>
+<p><a href="https://tri-powerrecycling.com/contact-us.cfm" class="appointment-btn appointment-btn-top scrollto">Contact Us</a></p>
+</div><!-- End .content-->
+</div>
+</div>
+</div>
+</section>
+</main><!-- End #main -->
+<!-- ======= Footer ======= -->
+<footer id="footer">
+<div class="footer-top">
+<div class="container">
+<div class="row">
+<div class="col-lg-4 col-md-6 footer-contact">
+<div itemscope itemtype="http://schema.org/LocalBusiness">
+<span itemprop="name"><strong>Tri-Power Recycling</strong></span>
+<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+<span itemprop="streetAddress">1240 Anderson Street</span><br>
+<span itemprop="addressLocality">Elkhart</span>,
+<span itemprop="addressRegion">IN</span>
+<span itemprop="postalCode">46514</span><br /><br />
+</div>
+Phone: <span itemprop="telephone"><a href="tel:(574) 848-1900">(574) 848-1900</a></span>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 footer-links">
+<h4>Useful Links</h4>
+<ul>
+<li><a href="https://tri-powerrecycling.com/" >Home</a></li>
+<li><a href="https://tri-powerrecycling.com/recycling-services.cfm" >Recycling Services</a></li>
+<li><a href="https://tri-powerrecycling.com/recycle-styrofoam.cfm" >Home 4 Foam</a></li>
+<li><a href="https://tri-powerrecycling.com/commercial-recycling.cfm" >Commercial</a></li>
+<li><a href="https://tri-powerrecycling.com/recycling-equipment-for-sale.cfm" >Recycling Equipment</a></li>
+<li><a href="https://tri-powerrecycling.com/about-tri-power-recycling.cfm" >About</a></li>
+<li><a href="https://tri-powerrecycling.com/location.cfm" >Location</a></li>
+<li><a href="https://tri-powerrecycling.com/contact-us.cfm" >Contact Us</a></li>
+<li><a href="https://tri-powerrecycling.com/terms-conditions-privacy-policy.cfm" >Terms & Conditions, Privacy Policy</a></li>
+<li><a href="https://tri-powerrecycling.com/sitemap.cfm" >Sitemap</a></li>
+</ul>
+</div>
+<div class="col-lg-4 col-md-6 footer-newsletter">
+</div>
+</div>
+</div>
+</div>
+<div class="container d-md-flex py-4">
+<div class="mr-md-auto text-center text-md-left">
+<div class="copyright">
+&copy; 2009 - 2026 All Rights Reserved
+<p class="bangfooter"><small>Website by BANG! Web Site Design</small></p>
+</div>
+</div>
+<div class="social-links text-center text-md-right pt-3 pt-md-0">
+<img src=https://tri-powerrecycling.com/img/credit-cards.png class="img-fluid"><br><br><br>
+</div>
+</div>
+</footer><!-- End Footer -->
+<a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+<!-- Vendor JS Files -->
+<script src="https://tri-powerrecycling.com/assets/vendor/jquery/jquery.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/counterup/counterup.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/aos/aos.js"></script>
+<!-- Template Main JS File -->
+<script src="https://tri-powerrecycling.com/assets/js/main.js"></script>
+<script>
+$( document ).ready(function() {
+if (!$('#videomodal').is(':visible')) {
+// if modal is not shown/visible, pause video
+$('.video')[0].pause();
+}
+});
+$('.modal').on('shown.bs.modal', function () {
+$('.video')[0].play();
+});
+$('.modal').on('hidden.bs.modal', function () {
+$('.video')[0].pause();
+});
+</script>
+</body>
+</html>

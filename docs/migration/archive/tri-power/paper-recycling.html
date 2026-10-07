@@ -1,0 +1,420 @@
+<style> 
+.alert_top {
+margin-bottom: -5px;
+padding: 16px;
+/*z-index: 50000;
+position: fixed;
+width: 100%;*/
+} 
+.alert_bottom {
+margin-bottom: -5px;
+padding: 16px;
+} 
+#footer_alert_olay {
+position: fixed;
+bottom: 0;
+width: 100%;
+}
+#header_alert_olay {
+position: fixed;
+top: 0;
+width: 100%;
+z-index: 1200;
+}
+</style>
+<style> 
+.alert_close {
+float:right;
+display:inline-block;
+padding:0px 5px;
+background:#fff;
+font-weight: bold;
+border-color:#000;
+border-style:solid;
+border-width:1px;
+border-color:#888;
+cursor: pointer;
+}
+.alert_close:hover {
+float:right;
+display:inline-block;
+padding:0px 5px;
+background:#fff;
+color:#000;
+}
+</style>
+<script>
+function close_alert_js(alert_id, alert_exp, alert_pla){
+var a_id = 'close' + alert_id;
+var bottom_a_id = a_id + 'bottom';
+document.getElementById(a_id).parentNode.parentNode.removeChild(document.getElementById(a_id).parentNode);
+// The stmt above will only close one div. If it's a both (3) then use this if to also close the bottom div.
+if (alert_pla == 3) {
+document.getElementById(bottom_a_id).parentNode.parentNode.removeChild(document.getElementById(bottom_a_id).parentNode);
+}
+setCookie(alert_id, alert_exp);
+};
+function setCookie(avalue, alert_exp) {
+$.ajax({
+type: "POST",
+url: "https://tri-powerrecycling.com/alert-ajax.cfm?act=set",
+data: { id: avalue, exp: alert_exp, }
+});
+};
+</script>
+<div id="header_alert_olay">
+</div>
+<div id="footer_alert_olay" style="z-index: 100;">
+<div class="alert_top" style="background-color: #8BC540;">
+<span class="close12 alert_close" id='close12' onclick='close_alert_js(12,1,2);'>x</span>
+<div style="text-align: center;"><span style="color:#000000;"><strong>We Are Not Currently Accepting Plastics for Recycling With the Exception of&nbsp; EPS Foam aka Styrofoam</strong></span></div>
+</div>
+</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta name="author" content="">
+<meta name="robots" content="max-image-preview:large">
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://tri-powerrecycling.com/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://tri-powerrecycling.com/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://tri-powerrecycling.com/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://tri-powerrecycling.com/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="60x60" href="https://tri-powerrecycling.com/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://tri-powerrecycling.com/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://tri-powerrecycling.com/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://tri-powerrecycling.com/apple-touch-icon-152x152.png" />
+<link rel="icon" type="image/png" href="https://tri-powerrecycling.com/favicon-196x196.png" sizes="196x196" />
+<link rel="icon" type="image/png" href="https://tri-powerrecycling.com/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="https://tri-powerrecycling.com/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="https://tri-powerrecycling.com/favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="https://tri-powerrecycling.com/favicon-128.png" sizes="128x128" />
+<meta name="application-name" content="Tri-Power Recycling"/>
+<meta name="msapplication-TileColor" content="#FFFFFF" />
+<meta name="msapplication-TileImage" content="mstile-144x144.png" />
+<meta name="msapplication-square70x70logo" content="https://tri-powerrecycling.com/mstile-70x70.png" />
+<meta name="msapplication-square150x150logo" content="https://tri-powerrecycling.com/mstile-150x150.png" />
+<meta name="msapplication-wide310x150logo" content="https://tri-powerrecycling.com/mstile-310x150.png" />
+<meta name="msapplication-square310x310logo" content="https://tri-powerrecycling.com/mstile-310x310.png" />
+<meta property="og:url" content="http://tri-powerrecycling.com/services/paper-recycling.cfm" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Paper Recycling | Shredded Paper | Newspaper | Books | Near Elkhart, IN" />
+<meta property="og:description" content="We recycle a variety of paper products including cardboard, paper, cores, books, and other related fibers, and are accepted loose or baled." />
+<meta property="og:image" content="https://tri-powerrecycling.com/img/Paper-Recycling.jpg" />
+<meta property="og:image:type" content="image/jpg" />
+<meta property="og:image:width" content="768" />
+<meta property="og:image:height" content="512" />
+<title>Paper Recycling | Shredded Paper | Newspaper | Books | Near Elkhart, IN</title>
+<meta name="description" content="We recycle a variety of paper products including cardboard, paper, cores, books, and other related fibers, and are accepted loose or baled."> 
+<link rel="canonical" href="https://tri-powerrecycling.com/services/paper-recycling.cfm">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i" rel="stylesheet">
+<!-- CDN CSS Files -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+<link href="https://tri-powerrecycling.com/assets/vendor/vendors.css" rel="stylesheet">
+<link href="https://tri-powerrecycling.com/assets/vendor/aos/aos.css" rel="stylesheet">
+<!-- Main CSS File -->
+<link href="https://tri-powerrecycling.com/css/main.css" rel="stylesheet">
+<meta name="geo.region" content="US-IN" />
+<meta name="geo.placename" content="Elkhart" />
+<meta name="geo.position" content="41.6997566,-85.9997329" />
+<meta name="ICBM" content="41.6997566,-85.9997329" />
+<meta name="zipcode" content="46514" />
+<meta name="city" content="Elkhart" />
+<meta name="county" content="Elkhart" />
+<meta name="state" content="IN" />
+</head>
+<body>
+<!-- ======= Top Bar ======= -->
+<div id="topbar" class="d-lg-flex align-items-center fixed-top">
+<div class="container-fluid d-flex">
+<div class="contact-info mr-auto">
+<a href="tel:(574) 848-1900"><i class="fas fa-phone"></i> (574) 848-1900</a>
+</div>
+<div class="social-links"> 
+</div>
+</div>
+</div>
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+<div class="container-fluid d-md-flex align-items-center">
+<a href="https://tri-powerrecycling.com/" class="logo mr-auto"><img src="https://tri-powerrecycling.com/img/Tri-Power-Recycling-logo.png" alt="Tri-Power Recycling" class="img-fluid"></a>
+<nav class="nav-menu d-none d-lg-block">
+<ul>
+<li class="drop-down" id="dd">
+<a href="https://tri-powerrecycling.com/recycling-services.cfm" class="parentlink" >Recycling Services<b class="caret"></b></a>
+<ul class=""><li class="dropdown-item overview-link"><a href="https://tri-powerrecycling.com/recycling-services.cfm" class="nav-link">Overview</a></li><li class="dropdown-item"><a href="https://tri-powerrecycling.com/services/cardboard-recycling-disposal.cfm" class="nav-link">Cardboard Recycling</a></li>
+<li class="dropdown-item"><a href="https://tri-powerrecycling.com/services/paper-recycling.cfm" class="nav-link">Paper Recycling</a></li>
+<li class="dropdown-item"><a href="https://tri-powerrecycling.com/services/plastic-recycling.cfm" class="nav-link">Plastic Recycling</a></li>
+<li class="dropdown-item"><a href="https://tri-powerrecycling.com/services/styrofoam-recycling.cfm" class="nav-link">Styrofoam Recycling (Polystyrene)</a></li>
+</ul>
+</li>
+<li class="nav-item">
+<a href="https://tri-powerrecycling.com/recycle-styrofoam.cfm" >Home 4 Foam</a>
+</li>
+<li class="nav-item">
+<a href="https://tri-powerrecycling.com/commercial-recycling.cfm" >Commercial</a>
+</li>
+<li class="nav-item">
+<a href="https://tri-powerrecycling.com/recycling-equipment-for-sale.cfm" >Recycling Equipment</a>
+</li>
+<li class="nav-item">
+<a href="https://tri-powerrecycling.com/about-tri-power-recycling.cfm" >About</a>
+</li>
+<li class="nav-item">
+<a href="https://tri-powerrecycling.com/location.cfm" >Location</a>
+</li>
+</ul>
+</nav>
+<span class="cta_button_top">
+<a href="https://tri-powerrecycling.com/contact-us.cfm" class="appointment-btn appointment-btn-top scrollto">Contact Us</a>
+</span>
+</div>
+</header><!-- End Header -->
+<style>
+#hero .btn-get-started {background-color:#FFFFFF !important; font-weight:bold;}
+</style>
+</section>
+<!-- End Hero -->
+<div class="row hero_inner_pages">
+<div class="col-md-4" style="padding:0px;">
+<img src="https://tri-powerrecycling.com/img/Paper-Recycling.jpg" class="img-fluid">
+</div>
+<div class="col-md-8 hero_text_right" style="background-color:hero.hero_text_right"> 
+<h1 style="color:#005F33">Paper Recycling</h1>
+<h2 style="color:#005F33">We recycle a variety of paper products including cardboard, paper, cores, books, and other related fibers. Our facility in Elkhart, Indiana, accepts both loose and baled paper with a variety of service and collection options.</h2>
+</div>
+</div>
+<main id="main">
+<section id="" class="inner space-40">
+<div class="container">
+<div class="row">
+<div class="col-lg-12 d-flex align-items-stretch">
+<div class="content">
+<div data-aos="fade-up" data-aos-delay="100">
+<br />
+Paper recycling cuts down on the materials sent to our landfills, which have a finite amount of space. Landfills use a process of adding clay liners to prevent seepage, then adding a layer of dirt over the trash, and repeating the process.<br />
+&nbsp;<br />
+Items such as paper require light and air to decompose over time, which is not possible with the clay liners and dirt layering. This process can effectively petrify the items in the landfill instead of allowing for normal decomposition.<br />
+&nbsp;<br />
+Recycling paper &ndash; both by individuals and businesses &ndash; reduces the number of tons of paper sent to our landfills every year. Paper is then baled and sent to paper mills by our facility for processing into new paper products.<br />
+<br />
+<img alt="Mesh Recycling Cubes" class="img-flulid" src="https://tri-powerrecycling.com/uploaded_files/images/cardboard-recycling1.jpg" style="float: right; margin-left: 14px; margin-top: 28px;" title="Mesh Recycling Cubes" />
+<h2>Options for Paper Recycling</h2>
+We process various types of paper fiber products including cardboard, paper, cores, books, and other related fibers. Our facilities process tons of old paper that is now waste material.<br />
+<br />
+We accept both loose and baled paper with a variety of service and collection options:<br />
+&nbsp;
+<ul>
+<li>Metal mesh cubes (17 cubic yard capacity)<br />
+&nbsp;</li>
+<li>Semi-van trailers (live-load or staged)<br />
+&nbsp;</li>
+<li>Open top roll-off containers<br />
+&nbsp;</li>
+<li>Stationary compactor machines<br />
+&nbsp;</li>
+<li>Balers, both horizontal and vertical<br />
+<br />
+&nbsp;</li>
+</ul>
+<h2>Paper Recycling Facts</h2>
+According to&nbsp;<a href="https://www.epa.gov/facts-and-figures-about-materials-waste-and-recycling/national-overview-facts-and-figures-materials">the EPA</a>, 25-percent of waste in the average landfill in the United States is paper. Landfills lose available space for true garbage (waste that cannot be recycled) when large amounts of paper waste are collected as trash instead of being recycled. This is unfortunate because paper is easily recycled and then turned into new paper products.<br />
+&nbsp;<br />
+Paper mills use a process where hot water is added to recyclable paper materials, essentially creating a &ldquo;paper soup&rdquo;. Improved technology now allows for tape and plastic film to float to the top of the soup, where it can easily be sifted out. Metal items such as staples and paper clips then float to the bottom so they can be removed as well.<br />
+&nbsp;
+<h2>Why Recycle Paper?</h2>
+<a href="https://greenliving.lovetoknow.com/United_States_Recycling_Statistics" title="United States Recycling Statistics">Statistics</a> on paper use and recycling:<br />
+&nbsp;
+<ul>
+<li>A typical office generates about one pound of paper a day per employee. From that amount of paper, 77 percent is recyclable.<br />
+&nbsp;</li>
+<li>Most of the paper wasted is high-grade paper.<br />
+&nbsp;</li>
+<li>Pollution is reduced by 95 percent when recycled paper is made into new paper.<br />
+&nbsp;</li>
+<li>Some estimates show about 24 trees can be saved by recycling one ton of office paper.<br />
+&nbsp;</li>
+<li>The EPA estimates it takes 900-million trees to meet the needs of American paper and pulp mills.<br />
+&nbsp;</li>
+<li>Recycling old paper to make new paper uses 30 to 50 percent less energy than making new paper from trees.<br />
+&nbsp;</li>
+<li>Newspaper can be recycled into egg cartons, game boards, new newspaper, gift boxes, animal bedding, insulation, and packaging material.<br />
+&nbsp;</li>
+<li>Office paper can be recycled into paper towels, tissue paper, and toilet paper.<br />
+&nbsp;</li>
+<li>Corrugated cardboard is created into new cardboard and cereal boxes.<br />
+&nbsp;</li>
+</ul>
+If your business would like to improve its recycling efforts with paper, cardboard, and related materials, contact our office to discuss how you can divert various kinds of paper and fiber. We offer on-site Mesh Cubes for collection, or you can purchase/lease a baler or compactor for your business.<br />
+<br />
+<img alt="Office Paper Can Be Recycled" class="img-fluid" src="https://tri-powerrecycling.com/uploaded_files/images/Crumpled-Office-Paper.jpg" title="Office Paper Can Be Recycled" /><br />
+&nbsp;
+<h2>What Can be Recycled</h2>
+Paper recycling includes items such as books, textbooks, newspapers, wrapping paper, and more. The following cardboard and paper items can be recycled at our facility:<br />
+&nbsp;
+</div>
+<div class="top_blocks blocks">
+<div class="row">
+<div class="col-md-6" style="background-color:#FFFFFF" data-aos="fade-up" data-aos-delay="100">
+<ul>
+<li>White paper<br />
+&nbsp;</li>
+<li>Colored paper<br />
+&nbsp;</li>
+<li>White and colored envelopes with windows<br />
+&nbsp;</li>
+<li>Booklets<br />
+&nbsp;</li>
+<li>Manuals<br />
+&nbsp;</li>
+<li>Fax and telex copy paper<br />
+&nbsp;</li>
+<li><a href="https://greenliving.lovetoknow.com/Recycle_Christmas_Card" title="Recycle Christmas Card">Greeting cards</a><br />
+&nbsp;</li>
+<li>Adding machine tape<br />
+<br />
+&nbsp;</li>
+</ul>
+</div>
+<div class="col-md-6" style="background-color:#FFFFFF" data-aos="fade-up" data-aos-delay="100">
+<ul>
+<li>Carbon-less forms<br />
+&nbsp;</li>
+<li>Post-It notes<br />
+&nbsp;</li>
+<li>Soft-covered books with white pages<br />
+&nbsp;</li>
+<li>Time cards<br />
+&nbsp;</li>
+<li>Manila folders<br />
+&nbsp;</li>
+<li>Telephone directories<br />
+&nbsp;</li>
+<li>Magazines<br />
+&nbsp;</li>
+<li>Newspapers<br />
+&nbsp;</li>
+<li>Flyers<br />
+&nbsp;</li>
+</ul>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="middlecontent" data-aos="fade-up" data-aos-delay="100">
+Paper recycling items collected from your business may cost nothing. In fact, based on market value, we may pay you for these items by weight. If your business needs assistance choosing the right size baler or compactor for paper and cardboard recyclables, contact us today.<br />
+&nbsp;
+<h2>Paper Recycling Equipment</h2>
+Tri-Power Recycling is committed to options and solutions that support businesses and individuals who want to reduce, reuse, and recycle materials that would otherwise end up in landfills. Our goal is to help preserve natural resources and reduce environmental impacts through recycling efforts.<br />
+Depending on the kinds of paper, cardboard, and other recyclables you may have, we can evaluate the amount of material, space constraints, and frequency of service needed at your business. We offer lease, lease-to-purchase, and purchase options on recycling processing equipment best suited to your business.<br />
+&nbsp;<br />
+If your industry or business receives large amounts of paper and cardboard materials, we can provide waste collection equipment such as balers and compactors.<br />
+&nbsp;
+<p><strong>Balers:</strong> compress large amounts of recyclable paper waste material into compact cubes. These can be easily stored on-site and transported to our recycling center. There are two styles of balers &ndash; vertical and horizontal &ndash; and each one has its own unique uses.</p>
+&nbsp;
+<ul>
+<li><strong>Vertical Balers:</strong> Smaller than horizontal balers, can be stored inside or outside, capable of processing paper, corrugated cardboard, plastics, and foam. Easy to operate and install but require a minimum ceiling height of 14 feet. Large cardboard boxes may not fit in these balers.<br />
+&nbsp;</li>
+<li><strong>Horizontal Balers:</strong> Larger opening on top for larger boxes and can process a greater volume than vertical balers. More expensive than vertical baler, and more floor space is required compared to vertical balers.</li>
+</ul>
+&nbsp;<br />
+It is important to consider three things when considering a baler for your business: cost, how much available space is available to accommodate one of these machines, and the volume and size of the material you need to process.<br />
+&nbsp;
+<p><strong>Compactor:</strong> cardboard boxes do not need to be broken down to be placed in the compactor. Require less labor to operate and maintain than balers. Normally placed outside on a large concrete surface. There is a haul fee for the compactor to be serviced and emptied, sometimes offset by rebates for the recycled material.</p>
+&nbsp;
+<h2>Supporting Paper Recycling for Businesses</h2>
+If your office or business would like to reduce the impact on our nation&rsquo;s landfills through paper recycling efforts, Tri-Power Recycling is ready to assist you. From office paper to book/textbook recycling to newspaper and mixed paper waste, trust our experience and solutions.<br />
+<br />
+Contact Tri-Power Recycling today to learn more about our commercial paper recycling services, both on-site with our Mesh Cubes or with our commercial recycling equipment and service options.<br />
+<br />
+<img alt="Recycling Saves The Environment" class="img-fluid" src="https://tri-powerrecycling.com/uploaded_files/images/Toilet-Paper-Tube-Recycling.jpg" title="Recycling Saves The Environment" /><br />
+&nbsp;<br />
+&nbsp;
+</div>
+<br><br>
+<p><a href="https://tri-powerrecycling.com/contact-us.cfm" class="appointment-btn appointment-btn-top scrollto">Contact Us</a></p>
+</div><!-- End .content-->
+</div>
+</div>
+</div>
+</section>
+</main><!-- End #main -->
+<!-- ======= Footer ======= -->
+<footer id="footer">
+<div class="footer-top">
+<div class="container">
+<div class="row">
+<div class="col-lg-4 col-md-6 footer-contact">
+<div itemscope itemtype="http://schema.org/LocalBusiness">
+<span itemprop="name"><strong>Tri-Power Recycling</strong></span>
+<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+<span itemprop="streetAddress">1240 Anderson Street</span><br>
+<span itemprop="addressLocality">Elkhart</span>,
+<span itemprop="addressRegion">IN</span>
+<span itemprop="postalCode">46514</span><br /><br />
+</div>
+Phone: <span itemprop="telephone"><a href="tel:(574) 848-1900">(574) 848-1900</a></span>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 footer-links">
+<h4>Useful Links</h4>
+<ul>
+<li><a href="https://tri-powerrecycling.com/" >Home</a></li>
+<li><a href="https://tri-powerrecycling.com/recycling-services.cfm" >Recycling Services</a></li>
+<li><a href="https://tri-powerrecycling.com/recycle-styrofoam.cfm" >Home 4 Foam</a></li>
+<li><a href="https://tri-powerrecycling.com/commercial-recycling.cfm" >Commercial</a></li>
+<li><a href="https://tri-powerrecycling.com/recycling-equipment-for-sale.cfm" >Recycling Equipment</a></li>
+<li><a href="https://tri-powerrecycling.com/about-tri-power-recycling.cfm" >About</a></li>
+<li><a href="https://tri-powerrecycling.com/location.cfm" >Location</a></li>
+<li><a href="https://tri-powerrecycling.com/contact-us.cfm" >Contact Us</a></li>
+<li><a href="https://tri-powerrecycling.com/terms-conditions-privacy-policy.cfm" >Terms & Conditions, Privacy Policy</a></li>
+<li><a href="https://tri-powerrecycling.com/sitemap.cfm" >Sitemap</a></li>
+</ul>
+</div>
+<div class="col-lg-4 col-md-6 footer-newsletter">
+</div>
+</div>
+</div>
+</div>
+<div class="container d-md-flex py-4">
+<div class="mr-md-auto text-center text-md-left">
+<div class="copyright">
+&copy; 2009 - 2026 All Rights Reserved
+<p class="bangfooter"><small>Website by BANG! Web Site Design</small></p>
+</div>
+</div>
+<div class="social-links text-center text-md-right pt-3 pt-md-0">
+<img src=https://tri-powerrecycling.com/img/credit-cards.png class="img-fluid"><br><br><br>
+</div>
+</div>
+</footer><!-- End Footer -->
+<a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+<!-- Vendor JS Files -->
+<script src="https://tri-powerrecycling.com/assets/vendor/jquery/jquery.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/counterup/counterup.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/aos/aos.js"></script>
+<!-- Template Main JS File -->
+<script src="https://tri-powerrecycling.com/assets/js/main.js"></script>
+<script>
+$( document ).ready(function() {
+if (!$('#videomodal').is(':visible')) {
+// if modal is not shown/visible, pause video
+$('.video')[0].pause();
+}
+});
+$('.modal').on('shown.bs.modal', function () {
+$('.video')[0].play();
+});
+$('.modal').on('hidden.bs.modal', function () {
+$('.video')[0].pause();
+});
+</script>
+</body>
+</html>

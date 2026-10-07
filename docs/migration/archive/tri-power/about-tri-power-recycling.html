@@ -1,0 +1,321 @@
+<style> 
+.alert_top {
+margin-bottom: -5px;
+padding: 16px;
+/*z-index: 50000;
+position: fixed;
+width: 100%;*/
+} 
+.alert_bottom {
+margin-bottom: -5px;
+padding: 16px;
+} 
+#footer_alert_olay {
+position: fixed;
+bottom: 0;
+width: 100%;
+}
+#header_alert_olay {
+position: fixed;
+top: 0;
+width: 100%;
+z-index: 1200;
+}
+</style>
+<style> 
+.alert_close {
+float:right;
+display:inline-block;
+padding:0px 5px;
+background:#fff;
+font-weight: bold;
+border-color:#000;
+border-style:solid;
+border-width:1px;
+border-color:#888;
+cursor: pointer;
+}
+.alert_close:hover {
+float:right;
+display:inline-block;
+padding:0px 5px;
+background:#fff;
+color:#000;
+}
+</style>
+<script>
+function close_alert_js(alert_id, alert_exp, alert_pla){
+var a_id = 'close' + alert_id;
+var bottom_a_id = a_id + 'bottom';
+document.getElementById(a_id).parentNode.parentNode.removeChild(document.getElementById(a_id).parentNode);
+// The stmt above will only close one div. If it's a both (3) then use this if to also close the bottom div.
+if (alert_pla == 3) {
+document.getElementById(bottom_a_id).parentNode.parentNode.removeChild(document.getElementById(bottom_a_id).parentNode);
+}
+setCookie(alert_id, alert_exp);
+};
+function setCookie(avalue, alert_exp) {
+$.ajax({
+type: "POST",
+url: "https://tri-powerrecycling.com/alert-ajax.cfm?act=set",
+data: { id: avalue, exp: alert_exp, }
+});
+};
+</script>
+<div id="header_alert_olay">
+</div>
+<div id="footer_alert_olay" style="z-index: 100;">
+<div class="alert_top" style="background-color: #8BC540;">
+<span class="close12 alert_close" id='close12' onclick='close_alert_js(12,1,2);'>x</span>
+<div style="text-align: center;"><span style="color:#000000;"><strong>We Are Not Currently Accepting Plastics for Recycling With the Exception of&nbsp; EPS Foam aka Styrofoam</strong></span></div>
+</div>
+</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta name="author" content="">
+<meta name="robots" content="max-image-preview:large">
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://tri-powerrecycling.com/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://tri-powerrecycling.com/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://tri-powerrecycling.com/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://tri-powerrecycling.com/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="60x60" href="https://tri-powerrecycling.com/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://tri-powerrecycling.com/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://tri-powerrecycling.com/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://tri-powerrecycling.com/apple-touch-icon-152x152.png" />
+<link rel="icon" type="image/png" href="https://tri-powerrecycling.com/favicon-196x196.png" sizes="196x196" />
+<link rel="icon" type="image/png" href="https://tri-powerrecycling.com/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="https://tri-powerrecycling.com/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="https://tri-powerrecycling.com/favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="https://tri-powerrecycling.com/favicon-128.png" sizes="128x128" />
+<meta name="application-name" content="Tri-Power Recycling"/>
+<meta name="msapplication-TileColor" content="#FFFFFF" />
+<meta name="msapplication-TileImage" content="mstile-144x144.png" />
+<meta name="msapplication-square70x70logo" content="https://tri-powerrecycling.com/mstile-70x70.png" />
+<meta name="msapplication-square150x150logo" content="https://tri-powerrecycling.com/mstile-150x150.png" />
+<meta name="msapplication-wide310x150logo" content="https://tri-powerrecycling.com/mstile-310x150.png" />
+<meta name="msapplication-square310x310logo" content="https://tri-powerrecycling.com/mstile-310x310.png" />
+<meta property="og:url" content="http://tri-powerrecycling.com/about-tri-power-recycling.cfm" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Recycling Company | Elkhart IN | Cardboard, Paper, Plastic, Styrofoam | Tri-Power Recycling" />
+<meta property="og:description" content="Tri-Power Recycling accepts large qtys of recyclables at their Elkhart facility. They are the largest independently owned Styrofoam™ recycler in U.S." />
+<meta property="og:image" content="https://www.bangwebsitedesignphoenixaz.com/img/BANG-Phoenix-OG-Image.jpg" />
+<meta property="og:image:type" content="image/" />
+<meta property="og:image:width" content="" />
+<meta property="og:image:height" content="" />
+<title>Recycling Company | Elkhart IN | Cardboard, Paper, Plastic, Styrofoam | Tri-Power Recycling</title>
+<meta name="description" content="Tri-Power Recycling accepts large qtys of recyclables at their Elkhart facility. They are the largest independently owned Styrofoam™ recycler in U.S."> 
+<link rel="canonical" href="https://tri-powerrecycling.com/about-tri-power-recycling.cfm">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i" rel="stylesheet">
+<!-- CDN CSS Files -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+<link href="https://tri-powerrecycling.com/assets/vendor/vendors.css" rel="stylesheet">
+<link href="https://tri-powerrecycling.com/assets/vendor/aos/aos.css" rel="stylesheet">
+<!-- Main CSS File -->
+<link href="https://tri-powerrecycling.com/css/main.css" rel="stylesheet">
+<meta name="geo.region" content="US-IN" />
+<meta name="geo.placename" content="Elkhart" />
+<meta name="geo.position" content="41.6997566,-85.9997329" />
+<meta name="ICBM" content="41.6997566,-85.9997329" />
+<meta name="zipcode" content="46514" />
+<meta name="city" content="Elkhart" />
+<meta name="county" content="Elkhart" />
+<meta name="state" content="IN" />
+</head>
+<body>
+<!-- ======= Top Bar ======= -->
+<div id="topbar" class="d-lg-flex align-items-center fixed-top">
+<div class="container-fluid d-flex">
+<div class="contact-info mr-auto">
+<a href="tel:(574) 848-1900"><i class="fas fa-phone"></i> (574) 848-1900</a>
+</div>
+<div class="social-links"> 
+</div>
+</div>
+</div>
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+<div class="container-fluid d-md-flex align-items-center">
+<a href="https://tri-powerrecycling.com/" class="logo mr-auto"><img src="https://tri-powerrecycling.com/img/Tri-Power-Recycling-logo.png" alt="Tri-Power Recycling" class="img-fluid"></a>
+<nav class="nav-menu d-none d-lg-block">
+<ul>
+<li class="drop-down" id="dd">
+<a href="https://tri-powerrecycling.com/recycling-services.cfm" class="parentlink" >Recycling Services<b class="caret"></b></a>
+<ul class=""><li class="dropdown-item overview-link"><a href="https://tri-powerrecycling.com/recycling-services.cfm" class="nav-link">Overview</a></li><li class="dropdown-item"><a href="https://tri-powerrecycling.com/services/cardboard-recycling-disposal.cfm" class="nav-link">Cardboard Recycling</a></li>
+<li class="dropdown-item"><a href="https://tri-powerrecycling.com/services/paper-recycling.cfm" class="nav-link">Paper Recycling</a></li>
+<li class="dropdown-item"><a href="https://tri-powerrecycling.com/services/plastic-recycling.cfm" class="nav-link">Plastic Recycling</a></li>
+<li class="dropdown-item"><a href="https://tri-powerrecycling.com/services/styrofoam-recycling.cfm" class="nav-link">Styrofoam Recycling (Polystyrene)</a></li>
+</ul>
+</li>
+<li class="nav-item">
+<a href="https://tri-powerrecycling.com/recycle-styrofoam.cfm" >Home 4 Foam</a>
+</li>
+<li class="nav-item">
+<a href="https://tri-powerrecycling.com/commercial-recycling.cfm" >Commercial</a>
+</li>
+<li class="nav-item">
+<a href="https://tri-powerrecycling.com/recycling-equipment-for-sale.cfm" >Recycling Equipment</a>
+</li>
+<li class="nav-item">
+<a href="https://tri-powerrecycling.com/about-tri-power-recycling.cfm" >About</a>
+</li>
+<li class="nav-item">
+<a href="https://tri-powerrecycling.com/location.cfm" >Location</a>
+</li>
+</ul>
+</nav>
+<span class="cta_button_top">
+<a href="https://tri-powerrecycling.com/contact-us.cfm" class="appointment-btn appointment-btn-top scrollto">Contact Us</a>
+</span>
+</div>
+</header><!-- End Header -->
+<main id="main">
+<section id="" class="inner">
+<div class="container">
+<div class="row">
+<div class="col-lg-12 d-flex align-items-stretch">
+<div class="content">
+<h1>Recycling Company in Elkhart, IN - Tri-Power Recycling</h1>
+<div data-aos="fade-up" data-aos-delay="100">
+<br />
+Tri-Power Recycling is the largest independently owned Styrofoam&trade;/EPS foam recycling center in the United States. They use the most advanced technology and machinery to sort, clean, and process EPS foam. Their many global partnerships allow them to send these recyclable products to be repurposed into new products. Such efforts provide countless benefits to businesses, our community, and the global environment through efficient and economical waste management.<br />
+<br />
+<img alt="Recycling Center" class="img-fluid" src="https://tri-powerrecycling.com/uploaded_files/images/Recycling-Center-1200.jpg" title="Recycling Center" /><br />
+&nbsp;
+<h2>Where We Started</h2>
+It is safe to say Cindy Fifer has spent the bulk of her life in the trash business. As a young girl, she had the opportunity to ride with her dad in a garbage truck, picking up trash in Chicago and bringing it to the landfill. Even then, she was amazed by the &ldquo;stuff&rdquo; that went to the landfill. It was literally everything and the kitchen sink.&nbsp;&nbsp;<br />
+&nbsp;<br />
+Landfills in the 1960&rsquo;s and 70&rsquo;s were literally just holes in the ground accepting whatever Americans were discarding. There was very little regulation of the waste industry - or the landfills for that matter. The Environmental Protection Agency (EPA) came into existence in 1970.<br />
+&nbsp;<br />
+In 1998, the EPA proposed a program entitled Subtitle D to establish the minimum landfill management requirements states had to meet. It was designed to address the number of open dumps in the United States and concerns about leachate contaminating the water table. The principal idea of the regulation was to regulate landfill containment with liner requirements, daily cover of the waste stream, and a final cap of the landfill when it is closed.&nbsp;<br />
+&nbsp;<br />
+Initially, states were slow in complying. Today, most open dumps have been shut down. Some smaller landfills were closed because their owners could not finance the cost of Subtitle D compliance. In fact, the number of landfills declined from an EPA estimate of 20,000 in the 1970s to 2,893 in 1995, according to a Washington, D.C.-based Environmental Industry Associations study, &ldquo;Solid Waste Disposal Trends: 1999 Update.&rdquo;<br />
+&nbsp;
+<h2>It Starts With One Man Making A Difference</h2>
+In 1976, Cindy&rsquo;s father, Frank Ward, purchased a small, two-truck trash company whose primary customer base included office buildings in downtown Chicago. Frank was a very energetic, charismatic family man who worked hard to grow the business.<br />
+<br />
+Shortly after purchasing the company, he realized he was doing the same thing every other garbage company in Chicago was doing - picking up trash and taking it to the landfill. He needed to &ldquo;build a better mousetrap&rdquo; and differentiate his company from his competitors.<br />
+&nbsp;<br />
+Most of the &ldquo;trash&rdquo; he was collecting was office paper and cardboard, so he got an idea to start taking what was going to the landfill back to his yard. There, he sorted the paper and cardboard out of the waste and began &ldquo;recycling&rdquo;. Most of these collected recyclables were going to roofing mills that were making felt roofing paper out of the paper and cardboard. He and his children were true pioneers in the waste recycling industry. They paved the way for others in the waste industry.<br />
+&nbsp;<br />
+They worked with manufacturers of heavy-duty equipment to design and improve the functionality of waste processing equipment that previously did not exist. Over the next 20 years, they grew to become one of the largest independently owned waste recycling companies in the United States.<br />
+&nbsp;
+<h2>The Fifer Family Expands</h2>
+In 1986, Cindy married Brent Fifer and they were quickly blessed with five great children in 10 years. Brent joined the family company with a background in the construction and building business.<br />
+&nbsp;
+<div style="text-align: center;"><img alt="Fifer Family" class="img-fluid" src="https://tri-powerrecycling.com/uploaded_files/images/Fifer-Family.jpg" /><br />
+&nbsp;</div>
+Because of his background, he became instrumental in the design, build, and operation of a variety of recycling facilities throughout the country &ndash; including high- and low-grade paper recovery facilities, construction and demolition recovery facilities, residential MRF (materials recovery facility), solid waste transfer stations, and waste wood grinding operations. Brent was involved in all aspects of each operation and thoroughly knows the mechanics and operations of all the machinery involved.<br />
+&nbsp;<br />
+<img alt="Map Showing Tri-Power Recycling in Elkhart, IN" class="img-fluid" src="https://tri-powerrecycling.com/uploaded_files/images/Map-of-Midwest.png" style="margin-left: 14px; margin-right: 14px; float: right;" title="Map Showing Tri-Power Recycling in Elkhart, IN" />In 1998, Brent and Cindy decided to leave Chicago and placed roots in Niles, Michigan, where they currently reside. Tri-Power Recycling, formerly Natures Wood Products, has been operating in Elkhart, Indiana since 2010. Its facilities are located on eight acres at 1240 Anderson Street. Brent has built a state-of-the-art full-service recycling facility designed to handle three specific waste streams &ndash; fiber (paper, cardboard), plastics (EPS foam, rigids, and films), and wood. Brent&rsquo;s expertise in material handling flow keeps him actively involved in further modernizing the facility in the most efficient ways.<br />
+&nbsp;<br />
+Brent and Cindy have a combined 80+ years of industry experience. They have traveled throughout the United States to see other recycling operations and equipment they can use to improve their own facility. Their extensive industry experience allows them to design custom recycling operations for their customers. Brent, Cindy, and each of their now grown children play important roles in the family business.<br />
+&nbsp;
+<h2>Business Services That Make Sense for You</h2>
+Tri-Power Recycling allows large amounts of recyclables from businesses to be dropped off at their Elkhart, Indiana, facility or they can pick up them up. Recycling items can even be shipped to them. Commercial customer recyclable items are accepted in both smaller quantities up to a semi-trailer full of material.<br />
+&nbsp;<br />
+Cardboard or paper recycling can cost a business nothing to have them recycled. They may even pay for recyclable items by weight based on market value.<br />
+&nbsp;<br />
+If your business needs assistance purchasing a baler or compactor for cardboard recyclables, contact Tri-Power Recycling for more information today. This equipment is available through lease, lease to purchase, and purchase arrangements. Call or email us to discuss the right equipment for your business recycling needs.<br />
+&nbsp;<br />
+We have an experienced team who will audit your waste items and review or create a waste diversion program that makes sense for your business.<br />
+&nbsp;
+<h2>Location and Purpose Make All the Difference</h2>
+The Fifer family seeks to continue to grow their recycling business in the Elkhart, Indiana area and beyond. They have intentionally located their business with proximity to transportation options that allow easy access to their facility. The Fifers truly believe they are an important part of the Elkhart RV industry by providing a recycling service for the RV industries and all their material.<br />
+&nbsp;<br />
+The family continuously looks for opportunities to educate the community and businesses on recycling. They are actively involved with area fairs and county recycling events. They sponsor and participant of the &ldquo;Green Earth Education Day&rdquo; event at the Elkhart County 4-H fair and are active participants in LaPorte County and Berrien County Recycling events.<br />
+&nbsp;
+</div>
+<div class="middlecontent" data-aos="fade-up" data-aos-delay="100">
+<br />
+<br />
+&nbsp;
+</div>
+<br><br>
+<p><a href="https://tri-powerrecycling.com/contact-us.cfm" class="appointment-btn appointment-btn-top scrollto">Contact Us</a></p>
+</div><!-- End .content-->
+</div>
+</div>
+</div>
+</section>
+</main><!-- End #main -->
+<!-- ======= Footer ======= -->
+<footer id="footer">
+<div class="footer-top">
+<div class="container">
+<div class="row">
+<div class="col-lg-4 col-md-6 footer-contact">
+<div itemscope itemtype="http://schema.org/LocalBusiness">
+<span itemprop="name"><strong>Tri-Power Recycling</strong></span>
+<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+<span itemprop="streetAddress">1240 Anderson Street</span><br>
+<span itemprop="addressLocality">Elkhart</span>,
+<span itemprop="addressRegion">IN</span>
+<span itemprop="postalCode">46514</span><br /><br />
+</div>
+Phone: <span itemprop="telephone"><a href="tel:(574) 848-1900">(574) 848-1900</a></span>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 footer-links">
+<h4>Useful Links</h4>
+<ul>
+<li><a href="https://tri-powerrecycling.com/" >Home</a></li>
+<li><a href="https://tri-powerrecycling.com/recycling-services.cfm" >Recycling Services</a></li>
+<li><a href="https://tri-powerrecycling.com/recycle-styrofoam.cfm" >Home 4 Foam</a></li>
+<li><a href="https://tri-powerrecycling.com/commercial-recycling.cfm" >Commercial</a></li>
+<li><a href="https://tri-powerrecycling.com/recycling-equipment-for-sale.cfm" >Recycling Equipment</a></li>
+<li><a href="https://tri-powerrecycling.com/about-tri-power-recycling.cfm" >About</a></li>
+<li><a href="https://tri-powerrecycling.com/location.cfm" >Location</a></li>
+<li><a href="https://tri-powerrecycling.com/contact-us.cfm" >Contact Us</a></li>
+<li><a href="https://tri-powerrecycling.com/terms-conditions-privacy-policy.cfm" >Terms & Conditions, Privacy Policy</a></li>
+<li><a href="https://tri-powerrecycling.com/sitemap.cfm" >Sitemap</a></li>
+</ul>
+</div>
+<div class="col-lg-4 col-md-6 footer-newsletter">
+</div>
+</div>
+</div>
+</div>
+<div class="container d-md-flex py-4">
+<div class="mr-md-auto text-center text-md-left">
+<div class="copyright">
+&copy; 2009 - 2026 All Rights Reserved
+<p class="bangfooter"><small>Website by BANG! Web Site Design</small></p>
+</div>
+</div>
+<div class="social-links text-center text-md-right pt-3 pt-md-0">
+<img src=https://tri-powerrecycling.com/img/credit-cards.png class="img-fluid"><br><br><br>
+</div>
+</div>
+</footer><!-- End Footer -->
+<a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+<!-- Vendor JS Files -->
+<script src="https://tri-powerrecycling.com/assets/vendor/jquery/jquery.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/counterup/counterup.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+<script src="https://tri-powerrecycling.com/assets/vendor/aos/aos.js"></script>
+<!-- Template Main JS File -->
+<script src="https://tri-powerrecycling.com/assets/js/main.js"></script>
+<script>
+$( document ).ready(function() {
+if (!$('#videomodal').is(':visible')) {
+// if modal is not shown/visible, pause video
+$('.video')[0].pause();
+}
+});
+$('.modal').on('shown.bs.modal', function () {
+$('.video')[0].play();
+});
+$('.modal').on('hidden.bs.modal', function () {
+$('.video')[0].pause();
+});
+</script>
+</body>
+</html>
